@@ -1,0 +1,7079 @@
+[
+  {
+    "id": 32,
+    "pName": "TERRAN_SIEGE_TANK_SIEGED",
+    "name": "SiegeTankSieged",
+    "cost": {
+      "minerals": 150,
+      "vespene": 125,
+      "buildTime": 68.66797
+    },
+    "buildAbility": 388,
+    "race": "TERRAN",
+    "food": -3.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      3665,
+      390,
+      3674
+    ],
+    "techAliases": [
+      33
+    ],
+    "unitAlias": 33,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 722,
+    "pName": "UNIT_TYPE_722",
+    "name": "ShakurasLightBridgeNW10",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2463,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 751,
+    "pName": "UNIT_TYPE_751",
+    "name": "PortCity_Bridge_UnitSE8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2608,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 753,
+    "pName": "UNIT_TYPE_753",
+    "name": "PortCity_Bridge_UnitNW8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2612,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 126,
+    "pName": "ZERG_QUEEN",
+    "name": "Queen",
+    "cost": {
+      "minerals": 150,
+      "vespene": 0,
+      "buildTime": 800.0
+    },
+    "buildAbility": 1632,
+    "race": "ZERG",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1664,
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      3691,
+      251,
+      3661
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 89,
+    "requireAttached": false
+  },
+  {
+    "id": 25,
+    "pName": "TERRAN_SENSOR_TOWER",
+    "name": "SensorTower",
+    "cost": {
+      "minerals": 125,
+      "vespene": 100,
+      "buildTime": 400.0
+    },
+    "buildAbility": 326,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3659,
+      3660
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 22,
+    "requireAttached": false
+  },
+  {
+    "id": 736,
+    "pName": "UNIT_TYPE_736",
+    "name": "AiurLightBridgeAbandonedNE8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2566,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 72,
+    "pName": "PROTOSS_CYBERNETICS_CORE",
+    "name": "CyberneticsCore",
+    "cost": {
+      "minerals": 150,
+      "vespene": 0,
+      "buildTime": 800.0
+    },
+    "buildAbility": 894,
+    "race": "PROTOSS",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1568,
+      3671,
+      3659,
+      3692,
+      3693
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 62,
+    "requireAttached": false
+  },
+  {
+    "id": 667,
+    "pName": "UNIT_TYPE_667",
+    "name": "SnowRefinery_Terran_ExtendingBridgeNEShort8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2246,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 27,
+    "pName": "TERRAN_FACTORY",
+    "name": "Factory",
+    "cost": {
+      "minerals": 150,
+      "vespene": 100,
+      "buildTime": 960.0
+    },
+    "buildAbility": 328,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      3682,
+      3683,
+      614,
+      3659,
+      3660,
+      591,
+      594,
+      595,
+      596,
+      597,
+      3671,
+      3673,
+      3679
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 21,
+    "requireAttached": false
+  },
+  {
+    "id": 18,
+    "pName": "TERRAN_COMMAND_CENTER",
+    "name": "CommandCenter",
+    "cost": {
+      "minerals": 400,
+      "vespene": 0,
+      "buildTime": 1600.0
+    },
+    "buildAbility": 318,
+    "race": "TERRAN",
+    "food": 15.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3664,
+      1,
+      3671,
+      1450,
+      3690,
+      3659,
+      3660,
+      1516,
+      524,
+      3679,
+      3663
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 41,
+    "pName": "TERRAN_STARPORT_TECHLAB",
+    "name": "StarportTechLab",
+    "cost": {
+      "minerals": 50,
+      "vespene": 25,
+      "buildTime": 400.0
+    },
+    "buildAbility": 487,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      803,
+      804,
+      805,
+      790,
+      3671,
+      793,
+      3659,
+      799
+    ],
+    "techAliases": [
+      5
+    ],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 793,
+    "pName": "UNIT_TYPE_793",
+    "name": "PortCity_Bridge_UnitE12",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2692,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 718,
+    "pName": "UNIT_TYPE_718",
+    "name": "ShakurasLightBridgeNE12",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2455,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 97,
+    "pName": "ZERG_ROACH_WARREN",
+    "name": "RoachWarren",
+    "cost": {
+      "minerals": 200,
+      "vespene": 0,
+      "buildTime": 880.0
+    },
+    "buildAbility": 1165,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3671,
+      216,
+      217,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 89,
+    "requireAttached": false
+  },
+  {
+    "id": 99,
+    "pName": "ZERG_SPORE_CRAWLER",
+    "name": "SporeCrawler",
+    "cost": {
+      "minerals": 125,
+      "vespene": 0,
+      "buildTime": 480.0
+    },
+    "buildAbility": 1167,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      3681,
+      3665,
+      3674,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 89,
+    "requireAttached": false
+  },
+  {
+    "id": 111,
+    "pName": "ZERG_INFESTOR",
+    "name": "Infestor",
+    "cost": {
+      "minerals": 100,
+      "vespene": 150,
+      "buildTime": 800.0
+    },
+    "buildAbility": 1352,
+    "race": "ZERG",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      247,
+      249,
+      3674,
+      74,
+      3659,
+      3661
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 94,
+    "requireAttached": false
+  },
+  {
+    "id": 24,
+    "pName": "TERRAN_BUNKER",
+    "name": "Bunker",
+    "cost": {
+      "minerals": 100,
+      "vespene": 0,
+      "buildTime": 640.0
+    },
+    "buildAbility": 324,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      32,
+      3664,
+      1,
+      3665,
+      3668,
+      3673,
+      3674,
+      3659,
+      3675,
+      3660
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 21,
+    "requireAttached": false
+  },
+  {
+    "id": 725,
+    "pName": "UNIT_TYPE_725",
+    "name": "VoidMPImmortalReviveCorpse",
+    "cost": {
+      "minerals": 250,
+      "vespene": 100,
+      "buildTime": 0.0
+    },
+    "buildAbility": 2471,
+    "race": "PROTOSS",
+    "food": -4.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 745,
+    "pName": "UNIT_TYPE_745",
+    "name": "AiurLightBridgeAbandonedNW12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2584,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 22,
+    "pName": "TERRAN_ENGINEERING_BAY",
+    "name": "EngineeringBay",
+    "cost": {
+      "minerals": 125,
+      "vespene": 0,
+      "buildTime": 560.0
+    },
+    "buildAbility": 322,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3697,
+      3698,
+      3671,
+      650,
+      3659,
+      651,
+      3660,
+      655
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 18,
+    "requireAttached": false
+  },
+  {
+    "id": 792,
+    "pName": "UNIT_TYPE_792",
+    "name": "PortCity_Bridge_UnitE12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2690,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 311,
+    "pName": "PROTOSS_ADEPT",
+    "name": "Adept",
+    "cost": {
+      "minerals": 100,
+      "vespene": 25,
+      "buildTime": 672.0
+    },
+    "buildAbility": 922,
+    "race": "PROTOSS",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      2544,
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3673,
+      3674,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 72,
+    "requireAttached": false
+  },
+  {
+    "id": 693,
+    "pName": "ZERG_LOCUS_TMP_FLYING",
+    "name": "LocustMPFlying",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 8.0
+    },
+    "buildAbility": 2385,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      2387,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 489,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 114,
+    "pName": "ZERG_BROODLORD",
+    "name": "BroodLord",
+    "cost": {
+      "minerals": 300,
+      "vespene": 250,
+      "buildTime": 541.34766
+    },
+    "buildAbility": 1372,
+    "race": "ZERG",
+    "food": -4.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 102,
+    "requireAttached": false
+  },
+  {
+    "id": 790,
+    "pName": "UNIT_TYPE_790",
+    "name": "PortCity_Bridge_UnitS12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2686,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 713,
+    "pName": "UNIT_TYPE_713",
+    "name": "ShakurasLightBridgeNE8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2445,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 19,
+    "pName": "TERRAN_SUPPLY_DEPOT",
+    "name": "SupplyDepot",
+    "cost": {
+      "minerals": 100,
+      "vespene": 0,
+      "buildTime": 480.0
+    },
+    "buildAbility": 319,
+    "race": "TERRAN",
+    "food": 8.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3659,
+      3660,
+      556
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 86,
+    "pName": "ZERG_HATCHERY",
+    "name": "Hatchery",
+    "cost": {
+      "minerals": 350,
+      "vespene": 0,
+      "buildTime": 1600.0
+    },
+    "buildAbility": 1152,
+    "race": "ZERG",
+    "food": 6.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1216,
+      1632,
+      1,
+      3671,
+      1223,
+      3673,
+      1225,
+      3690,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 47,
+    "pName": "TERRAN_SUPPLY_DEPOT_LOWERED",
+    "name": "SupplyDepotLowered",
+    "cost": {
+      "minerals": 100,
+      "vespene": 0,
+      "buildTime": 20.800781
+    },
+    "buildAbility": 556,
+    "race": "TERRAN",
+    "food": 8.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      558
+    ],
+    "techAliases": [
+      19
+    ],
+    "unitAlias": 19,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 781,
+    "pName": "UNIT_TYPE_781",
+    "name": "PortCity_Bridge_UnitN10",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2668,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 30,
+    "pName": "TERRAN_FUSION_CORE",
+    "name": "FusionCore",
+    "cost": {
+      "minerals": 150,
+      "vespene": 150,
+      "buildTime": 1040.0
+    },
+    "buildAbility": 333,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3671,
+      3659,
+      3660,
+      1532
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 28,
+    "requireAttached": false
+  },
+  {
+    "id": 115,
+    "pName": "ZERG_BANELING_BURROWED",
+    "name": "BanelingBurrowed",
+    "cost": {
+      "minerals": 50,
+      "vespene": 25,
+      "buildTime": 18.96289
+    },
+    "buildAbility": 1374,
+    "race": "ZERG",
+    "food": -0.5,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      42,
+      3662
+    ],
+    "techAliases": [],
+    "unitAlias": 9,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 716,
+    "pName": "UNIT_TYPE_716",
+    "name": "ShakurasLightBridgeNE10",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2451,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 140,
+    "pName": "ZERG_SPORE_CRAWLER_UPROOTED",
+    "name": "SporeCrawlerUprooted",
+    "cost": {
+      "minerals": 125,
+      "vespene": 0,
+      "buildTime": 16.0
+    },
+    "buildAbility": 1727,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3680,
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 99,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 100,
+    "pName": "ZERG_LAIR",
+    "name": "Lair",
+    "cost": {
+      "minerals": 500,
+      "vespene": 100,
+      "buildTime": 1280.0
+    },
+    "buildAbility": 1216,
+    "race": "ZERG",
+    "food": 6.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1632,
+      1,
+      1218,
+      3671,
+      1223,
+      3673,
+      1225,
+      3690,
+      3659
+    ],
+    "techAliases": [
+      86
+    ],
+    "unitAlias": 0,
+    "techRequirement": 89,
+    "requireAttached": false
+  },
+  {
+    "id": 28,
+    "pName": "TERRAN_STARPORT",
+    "name": "Starport",
+    "cost": {
+      "minerals": 150,
+      "vespene": 100,
+      "buildTime": 800.0
+    },
+    "buildAbility": 329,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      3682,
+      3683,
+      3659,
+      3660,
+      620,
+      621,
+      622,
+      623,
+      624,
+      626,
+      3671,
+      3673,
+      3679
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 27,
+    "requireAttached": false
+  },
+  {
+    "id": 63,
+    "pName": "PROTOSS_FORGE",
+    "name": "Forge",
+    "cost": {
+      "minerals": 150,
+      "vespene": 0,
+      "buildTime": 720.0
+    },
+    "buildAbility": 884,
+    "race": "PROTOSS",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3696,
+      3671,
+      3659,
+      3694,
+      3695
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 59,
+    "requireAttached": false
+  },
+  {
+    "id": 106,
+    "pName": "ZERG_OVERLORD",
+    "name": "Overlord",
+    "cost": {
+      "minerals": 100,
+      "vespene": 0,
+      "buildTime": 400.0
+    },
+    "buildAbility": 1344,
+    "race": "ZERG",
+    "food": 8.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      2708,
+      1448,
+      3674,
+      3659,
+      1692,
+      1693
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 494,
+    "pName": "ZERG_SWARM_HOST_MP",
+    "name": "SwarmHostMP",
+    "cost": {
+      "minerals": 100,
+      "vespene": 75,
+      "buildTime": 640.0
+    },
+    "buildAbility": 1356,
+    "race": "ZERG",
+    "food": -3.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      2704,
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      3661
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 94,
+    "requireAttached": false
+  },
+  {
+    "id": 95,
+    "pName": "ZERG_NYDUS_NETWORK",
+    "name": "NydusNetwork",
+    "cost": {
+      "minerals": 200,
+      "vespene": 150,
+      "buildTime": 800.0
+    },
+    "buildAbility": 1161,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3664,
+      1,
+      3665,
+      3668,
+      1768,
+      3673,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 100,
+    "requireAttached": false
+  },
+  {
+    "id": 557,
+    "pName": "UNIT_TYPE_557",
+    "name": "XelNaga_Caverns_Floating_BridgeV12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2240,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 538,
+    "pName": "UNIT_TYPE_538",
+    "name": "XelNaga_Caverns_Floating_BridgeNW8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2202,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 144,
+    "pName": "UNIT_TYPE_144",
+    "name": "GhostAlternate",
+    "cost": {
+      "minerals": 150,
+      "vespene": 125,
+      "buildTime": 0.0
+    },
+    "buildAbility": 1835,
+    "race": "TERRAN",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 50,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 757,
+    "pName": "UNIT_TYPE_757",
+    "name": "PortCity_Bridge_UnitNE10",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2620,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 125,
+    "pName": "ZERG_QUEEN_BURROWED",
+    "name": "QueenBurrowed",
+    "cost": {
+      "minerals": 150,
+      "vespene": 0,
+      "buildTime": 15.332031
+    },
+    "buildAbility": 1433,
+    "race": "ZERG",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3662
+    ],
+    "techAliases": [
+      126
+    ],
+    "unitAlias": 126,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 44,
+    "pName": "TERRAN_STARPORT_FLYING",
+    "name": "StarportFlying",
+    "cost": {
+      "minerals": 150,
+      "vespene": 100,
+      "buildTime": 32.0
+    },
+    "buildAbility": 518,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      3682,
+      18,
+      3683,
+      3678
+    ],
+    "techAliases": [
+      28
+    ],
+    "unitAlias": 28,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 77,
+    "pName": "PROTOSS_SENTRY",
+    "name": "Sentry",
+    "cost": {
+      "minerals": 50,
+      "vespene": 100,
+      "buildTime": 592.0
+    },
+    "buildAbility": 921,
+    "race": "PROTOSS",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      160,
+      1,
+      2114,
+      162,
+      164,
+      76,
+      16,
+      17,
+      3665,
+      146,
+      18,
+      148,
+      2389,
+      1526,
+      150,
+      2391,
+      152,
+      3673,
+      3674,
+      154,
+      156,
+      158
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 72,
+    "requireAttached": false
+  },
+  {
+    "id": 695,
+    "pName": "UNIT_TYPE_695",
+    "name": "AiurLightBridgeNE8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2397,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 484,
+    "pName": "TERRAN_HELLION_TANK",
+    "name": "HellionTank",
+    "cost": {
+      "minerals": 100,
+      "vespene": 0,
+      "buildTime": 480.0
+    },
+    "buildAbility": 596,
+    "race": "TERRAN",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      1978
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 29,
+    "requireAttached": false
+  },
+  {
+    "id": 116,
+    "pName": "ZERG_DRONE_BURROWED",
+    "name": "DroneBurrowed",
+    "cost": {
+      "minerals": 50,
+      "vespene": 0,
+      "buildTime": 23.328125
+    },
+    "buildAbility": 1378,
+    "race": "ZERG",
+    "food": -1.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3662
+    ],
+    "techAliases": [],
+    "unitAlias": 104,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 558,
+    "pName": "UNIT_TYPE_558",
+    "name": "XelNaga_Caverns_Floating_BridgeV12",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2242,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 795,
+    "pName": "UNIT_TYPE_795",
+    "name": "PortCity_Bridge_UnitW12",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2696,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 38,
+    "pName": "TERRAN_BARRACKS_REACTOR",
+    "name": "BarracksReactor",
+    "cost": {
+      "minerals": 50,
+      "vespene": 50,
+      "buildTime": 800.0
+    },
+    "buildAbility": 422,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3659
+    ],
+    "techAliases": [
+      6
+    ],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 55,
+    "pName": "TERRAN_BANSHEE",
+    "name": "Banshee",
+    "cost": {
+      "minerals": 150,
+      "vespene": 100,
+      "buildTime": 960.0
+    },
+    "buildAbility": 621,
+    "race": "TERRAN",
+    "food": -3.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      3676,
+      3677
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 5,
+    "requireAttached": true
+  },
+  {
+    "id": 756,
+    "pName": "UNIT_TYPE_756",
+    "name": "PortCity_Bridge_UnitNE10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2618,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 555,
+    "pName": "UNIT_TYPE_555",
+    "name": "XelNaga_Caverns_Floating_BridgeH12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2236,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 34,
+    "pName": "TERRAN_VIKING_ASSAULT",
+    "name": "VikingAssault",
+    "cost": {
+      "minerals": 150,
+      "vespene": 75,
+      "buildTime": 41.441406
+    },
+    "buildAbility": 403,
+    "race": "TERRAN",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      405,
+      3674
+    ],
+    "techAliases": [
+      1940
+    ],
+    "unitAlias": 35,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 698,
+    "pName": "UNIT_TYPE_698",
+    "name": "AiurLightBridgeNE10",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2403,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 62,
+    "pName": "PROTOSS_GATEWAY",
+    "name": "Gateway",
+    "cost": {
+      "minerals": 150,
+      "vespene": 0,
+      "buildTime": 1040.0
+    },
+    "buildAbility": 883,
+    "race": "PROTOSS",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      916,
+      917,
+      3671,
+      919,
+      920,
+      3673,
+      921,
+      922,
+      3659,
+      1518
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 59,
+    "requireAttached": false
+  },
+  {
+    "id": 48,
+    "pName": "TERRAN_MARINE",
+    "name": "Marine",
+    "cost": {
+      "minerals": 50,
+      "vespene": 0,
+      "buildTime": 400.0
+    },
+    "buildAbility": 560,
+    "race": "TERRAN",
+    "food": -1.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      3675
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 71,
+    "pName": "PROTOSS_ROBOTICS_FACILITY",
+    "name": "RoboticsFacility",
+    "cost": {
+      "minerals": 150,
+      "vespene": 100,
+      "buildTime": 1040.0
+    },
+    "buildAbility": 893,
+    "race": "PROTOSS",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      976,
+      1,
+      977,
+      978,
+      994,
+      979,
+      3671,
+      3673,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 72,
+    "requireAttached": false
+  },
+  {
+    "id": 700,
+    "pName": "UNIT_TYPE_700",
+    "name": "AiurLightBridgeNE12",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2407,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 750,
+    "pName": "UNIT_TYPE_750",
+    "name": "PortCity_Bridge_UnitSE8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2606,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 539,
+    "pName": "UNIT_TYPE_539",
+    "name": "XelNaga_Caverns_Floating_BridgeNE10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2204,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 510,
+    "pName": "UNIT_TYPE_510",
+    "name": "ExtendingBridgeNEWide10",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2128,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 61,
+    "pName": "PROTOSS_ASSIMILATOR",
+    "name": "Assimilator",
+    "cost": {
+      "minerals": 75,
+      "vespene": 0,
+      "buildTime": 480.0
+    },
+    "buildAbility": 882,
+    "race": "PROTOSS",
+    "food": 0.0,
+    "hasVespene": true,
+    "hasMinerals": false,
+    "abilities": [
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 515,
+    "pName": "UNIT_TYPE_515",
+    "name": "ExtendingBridgeNWWide12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2138,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 5,
+    "pName": "TERRAN_TECHLAB",
+    "name": "TechLab",
+    "cost": {
+      "minerals": 50,
+      "vespene": 25,
+      "buildTime": 2.0
+    },
+    "buildAbility": 1666,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 1910,
+    "pName": "PROTOSS_SHIELD_BATTERY",
+    "name": "ShieldBattery",
+    "cost": {
+      "minerals": 100,
+      "vespene": 0,
+      "buildTime": 640.0
+    },
+    "buildAbility": 895,
+    "race": "PROTOSS",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      3665,
+      3765,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 72,
+    "requireAttached": false
+  },
+  {
+    "id": 507,
+    "pName": "UNIT_TYPE_507",
+    "name": "ExtendingBridgeNWWide8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2122,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 506,
+    "pName": "UNIT_TYPE_506",
+    "name": "ExtendingBridgeNEWide8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2120,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 715,
+    "pName": "UNIT_TYPE_715",
+    "name": "ShakurasLightBridgeNE10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2449,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 707,
+    "pName": "UNIT_TYPE_707",
+    "name": "AiurTempleBridgeNE8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2421,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 774,
+    "pName": "UNIT_TYPE_774",
+    "name": "PortCity_Bridge_UnitS8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2654,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 107,
+    "pName": "ZERG_HYDRALISK",
+    "name": "Hydralisk",
+    "cost": {
+      "minerals": 100,
+      "vespene": 50,
+      "buildTime": 528.0
+    },
+    "buildAbility": 1345,
+    "race": "ZERG",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      2332,
+      3661
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 91,
+    "requireAttached": false
+  },
+  {
+    "id": 136,
+    "pName": "PROTOSS_WARP_PRISM_PHASING",
+    "name": "WarpPrismPhasing",
+    "cost": {
+      "minerals": 250,
+      "vespene": 0,
+      "buildTime": 24.0
+    },
+    "buildAbility": 1528,
+    "race": "PROTOSS",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      3665,
+      3668,
+      3669,
+      1530
+    ],
+    "techAliases": [
+      81
+    ],
+    "unitAlias": 81,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 69,
+    "pName": "PROTOSS_DARK_SHRINE",
+    "name": "DarkShrine",
+    "cost": {
+      "minerals": 150,
+      "vespene": 150,
+      "buildTime": 1600.0
+    },
+    "buildAbility": 891,
+    "race": "PROTOSS",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      2720,
+      3671,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 65,
+    "requireAttached": false
+  },
+  {
+    "id": 137,
+    "pName": "ZERG_CREEP_TUMOR_BURROWED",
+    "name": "CreepTumorBurrowed",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 18.960938
+    },
+    "buildAbility": 1662,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      3691,
+      3659
+    ],
+    "techAliases": [
+      87
+    ],
+    "unitAlias": 87,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 556,
+    "pName": "UNIT_TYPE_556",
+    "name": "XelNaga_Caverns_Floating_BridgeH12",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2238,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 729,
+    "pName": "UNIT_TYPE_729",
+    "name": "DevourerMP",
+    "cost": {
+      "minerals": 250,
+      "vespene": 150,
+      "buildTime": 640.0156
+    },
+    "buildAbility": 2481,
+    "race": "ZERG",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 102,
+    "requireAttached": false
+  },
+  {
+    "id": 748,
+    "pName": "UNIT_TYPE_748",
+    "name": "PortCity_Bridge_UnitNE8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2602,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 697,
+    "pName": "UNIT_TYPE_697",
+    "name": "AiurLightBridgeNE10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2401,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 551,
+    "pName": "UNIT_TYPE_551",
+    "name": "XelNaga_Caverns_Floating_BridgeH10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2228,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 770,
+    "pName": "UNIT_TYPE_770",
+    "name": "PortCity_Bridge_UnitSW12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2646,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 42,
+    "pName": "TERRAN_STARPORT_REACTOR",
+    "name": "StarportReactor",
+    "cost": {
+      "minerals": 50,
+      "vespene": 50,
+      "buildTime": 800.0
+    },
+    "buildAbility": 488,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3659
+    ],
+    "techAliases": [
+      6
+    ],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 762,
+    "pName": "UNIT_TYPE_762",
+    "name": "PortCity_Bridge_UnitSW10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2630,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 548,
+    "pName": "UNIT_TYPE_548",
+    "name": "XelNaga_Caverns_Floating_BridgeH8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2222,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 717,
+    "pName": "UNIT_TYPE_717",
+    "name": "ShakurasLightBridgeNE12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2453,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 545,
+    "pName": "UNIT_TYPE_545",
+    "name": "XelNaga_Caverns_Floating_BridgeNW12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2216,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 758,
+    "pName": "UNIT_TYPE_758",
+    "name": "PortCity_Bridge_UnitSE10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2622,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 512,
+    "pName": "UNIT_TYPE_512",
+    "name": "ExtendingBridgeNWWide10",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2132,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 101,
+    "pName": "ZERG_HIVE",
+    "name": "Hive",
+    "cost": {
+      "minerals": 700,
+      "vespene": 250,
+      "buildTime": 1600.0
+    },
+    "buildAbility": 1218,
+    "race": "ZERG",
+    "food": 6.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1632,
+      1,
+      3671,
+      1223,
+      3673,
+      1225,
+      3690
+    ],
+    "techAliases": [
+      100,
+      86
+    ],
+    "unitAlias": 0,
+    "techRequirement": 94,
+    "requireAttached": false
+  },
+  {
+    "id": 737,
+    "pName": "UNIT_TYPE_737",
+    "name": "AiurLightBridgeAbandonedNE10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2568,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 4,
+    "pName": "PROTOSS_COLOSSUS",
+    "name": "Colossus",
+    "cost": {
+      "minerals": 300,
+      "vespene": 200,
+      "buildTime": 1200.0
+    },
+    "buildAbility": 978,
+    "race": "PROTOSS",
+    "food": -6.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 70,
+    "requireAttached": false
+  },
+  {
+    "id": 36,
+    "pName": "TERRAN_COMMAND_CENTER_FLYING",
+    "name": "CommandCenterFlying",
+    "cost": {
+      "minerals": 400,
+      "vespene": 0,
+      "buildTime": 32.0
+    },
+    "buildAbility": 417,
+    "race": "TERRAN",
+    "food": 15.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      3664,
+      1,
+      17,
+      3665,
+      18,
+      3678,
+      3663
+    ],
+    "techAliases": [
+      18
+    ],
+    "unitAlias": 18,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 1943,
+    "pName": "TERRAN_REFINERY_RICH",
+    "name": "RefineryRich",
+    "cost": {
+      "minerals": 75,
+      "vespene": 0,
+      "buildTime": 480.0
+    },
+    "buildAbility": 325,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": true,
+    "hasMinerals": false,
+    "abilities": [
+      3659,
+      3660
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 709,
+    "pName": "UNIT_TYPE_709",
+    "name": "AiurTempleBridgeNE12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2429,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 46,
+    "pName": "TERRAN_BARRACKS_FLYING",
+    "name": "BarracksFlying",
+    "cost": {
+      "minerals": 150,
+      "vespene": 0,
+      "buildTime": 32.0
+    },
+    "buildAbility": 452,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      3682,
+      18,
+      3683,
+      3678
+    ],
+    "techAliases": [
+      21
+    ],
+    "unitAlias": 21,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 51,
+    "pName": "TERRAN_MARAUDER",
+    "name": "Marauder",
+    "cost": {
+      "minerals": 100,
+      "vespene": 25,
+      "buildTime": 480.0
+    },
+    "buildAbility": 563,
+    "race": "TERRAN",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      3675
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 5,
+    "requireAttached": true
+  },
+  {
+    "id": 894,
+    "pName": "PROTOSS_PYLON_OVERCHARGED",
+    "name": "PylonOvercharged",
+    "cost": {
+      "minerals": 100,
+      "vespene": 0,
+      "buildTime": 0.0
+    },
+    "buildAbility": 2716,
+    "race": "PROTOSS",
+    "food": 8.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      3665,
+      3674
+    ],
+    "techAliases": [
+      60
+    ],
+    "unitAlias": 60,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 118,
+    "pName": "ZERG_ROACH_BURROWED",
+    "name": "RoachBurrowed",
+    "cost": {
+      "minerals": 75,
+      "vespene": 25,
+      "buildTime": 9.691406
+    },
+    "buildAbility": 1386,
+    "race": "ZERG",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      3662
+    ],
+    "techAliases": [],
+    "unitAlias": 110,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 45,
+    "pName": "TERRAN_SCV",
+    "name": "SCV",
+    "cost": {
+      "minerals": 50,
+      "vespene": 0,
+      "buildTime": 272.0
+    },
+    "buildAbility": 524,
+    "race": "TERRAN",
+    "food": -1.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      320,
+      1,
+      321,
+      322,
+      323,
+      324,
+      3684,
+      3685,
+      326,
+      327,
+      328,
+      329,
+      331,
+      3660,
+      333,
+      16,
+      17,
+      3665,
+      3666,
+      18,
+      3667,
+      3674,
+      318,
+      319
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 692,
+    "pName": "TERRAN_CYCLONE",
+    "name": "Cyclone",
+    "cost": {
+      "minerals": 150,
+      "vespene": 100,
+      "buildTime": 720.0
+    },
+    "buildAbility": 597,
+    "race": "TERRAN",
+    "food": -3.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      3659,
+      2350
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 5,
+    "requireAttached": true
+  },
+  {
+    "id": 80,
+    "pName": "PROTOSS_VOIDRAY",
+    "name": "VoidRay",
+    "cost": {
+      "minerals": 250,
+      "vespene": 150,
+      "buildTime": 963.1992
+    },
+    "buildAbility": 950,
+    "race": "PROTOSS",
+    "food": -4.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      2393,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 40,
+    "pName": "TERRAN_FACTORY_REACTOR",
+    "name": "FactoryReactor",
+    "cost": {
+      "minerals": 50,
+      "vespene": 50,
+      "buildTime": 800.0
+    },
+    "buildAbility": 455,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3659
+    ],
+    "techAliases": [
+      6
+    ],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 511,
+    "pName": "UNIT_TYPE_511",
+    "name": "ExtendingBridgeNWWide10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2130,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 734,
+    "pName": "TERRAN_LIBERATOR_AG",
+    "name": "LiberatorAG",
+    "cost": {
+      "minerals": 150,
+      "vespene": 150,
+      "buildTime": 64.66797
+    },
+    "buildAbility": 2554,
+    "race": "TERRAN",
+    "food": -3.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      2560,
+      1,
+      3665,
+      3674
+    ],
+    "techAliases": [
+      689
+    ],
+    "unitAlias": 689,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 488,
+    "pName": "PROTOSS_MOTHER_SHIP_CORE",
+    "name": "MothershipCore",
+    "cost": {
+      "minerals": 100,
+      "vespene": 100,
+      "buildTime": 480.0
+    },
+    "buildAbility": 1853,
+    "race": "PROTOSS",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      2162,
+      18,
+      2244,
+      3686,
+      1847,
+      3674,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 719,
+    "pName": "UNIT_TYPE_719",
+    "name": "ShakurasLightBridgeNW8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2457,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 769,
+    "pName": "UNIT_TYPE_769",
+    "name": "PortCity_Bridge_UnitNW12",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2644,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 763,
+    "pName": "UNIT_TYPE_763",
+    "name": "PortCity_Bridge_UnitSW10",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2632,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 772,
+    "pName": "UNIT_TYPE_772",
+    "name": "PortCity_Bridge_UnitN8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2650,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 489,
+    "pName": "ZERG_LOCUS_TMP",
+    "name": "LocustMP",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 0.0
+    },
+    "buildAbility": 2018,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 64,
+    "pName": "PROTOSS_FLEET_BEACON",
+    "name": "FleetBeacon",
+    "cost": {
+      "minerals": 300,
+      "vespene": 200,
+      "buildTime": 960.0
+    },
+    "buildAbility": 885,
+    "race": "PROTOSS",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3671,
+      3659,
+      44,
+      46
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 67,
+    "requireAttached": false
+  },
+  {
+    "id": 710,
+    "pName": "UNIT_TYPE_710",
+    "name": "AiurTempleBridgeNW8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2433,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 15,
+    "pName": "ZERG_CHANGELING_MARINE",
+    "name": "ChangelingMarine",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 8.0
+    },
+    "buildAbility": 187,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 12,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 741,
+    "pName": "UNIT_TYPE_741",
+    "name": "AiurLightBridgeAbandonedNW8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2576,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 109,
+    "pName": "ZERG_ULTRALISK",
+    "name": "Ultralisk",
+    "cost": {
+      "minerals": 300,
+      "vespene": 200,
+      "buildTime": 880.0
+    },
+    "buildAbility": 1348,
+    "race": "ZERG",
+    "food": -6.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      3661
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 93,
+    "requireAttached": false
+  },
+  {
+    "id": 513,
+    "pName": "UNIT_TYPE_513",
+    "name": "ExtendingBridgeNEWide12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2134,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 39,
+    "pName": "TERRAN_FACTORY_TECHLAB",
+    "name": "FactoryTechLab",
+    "cost": {
+      "minerals": 50,
+      "vespene": 25,
+      "buildTime": 400.0
+    },
+    "buildAbility": 454,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      769,
+      3671,
+      761,
+      3659,
+      764,
+      766
+    ],
+    "techAliases": [
+      5
+    ],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 90,
+    "pName": "ZERG_EVOLUTION_CHAMBER",
+    "name": "EvolutionChamber",
+    "cost": {
+      "minerals": 125,
+      "vespene": 0,
+      "buildTime": 560.0
+    },
+    "buildAbility": 1156,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3671,
+      3704,
+      3705,
+      3706,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 86,
+    "requireAttached": false
+  },
+  {
+    "id": 142,
+    "pName": "ZERG_NYDUS_CANAL",
+    "name": "NydusCanal",
+    "cost": {
+      "minerals": 75,
+      "vespene": 75,
+      "buildTime": 320.0
+    },
+    "buildAbility": 1768,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3664,
+      1,
+      3665,
+      3668,
+      3673
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 95,
+    "requireAttached": false
+  },
+  {
+    "id": 66,
+    "pName": "PROTOSS_PHOTON_CANNON",
+    "name": "PhotonCannon",
+    "cost": {
+      "minerals": 150,
+      "vespene": 0,
+      "buildTime": 640.0
+    },
+    "buildAbility": 887,
+    "race": "PROTOSS",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      3665,
+      3674,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 63,
+    "requireAttached": false
+  },
+  {
+    "id": 145,
+    "pName": "UNIT_TYPE_145",
+    "name": "GhostNova",
+    "cost": {
+      "minerals": 150,
+      "vespene": 125,
+      "buildTime": 0.0
+    },
+    "buildAbility": 1837,
+    "race": "TERRAN",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 50,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 712,
+    "pName": "UNIT_TYPE_712",
+    "name": "AiurTempleBridgeNW12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2441,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 787,
+    "pName": "UNIT_TYPE_787",
+    "name": "PortCity_Bridge_UnitW10",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2680,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 554,
+    "pName": "UNIT_TYPE_554",
+    "name": "XelNaga_Caverns_Floating_BridgeV10",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2234,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 701,
+    "pName": "UNIT_TYPE_701",
+    "name": "AiurLightBridgeNW8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2409,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 789,
+    "pName": "UNIT_TYPE_789",
+    "name": "PortCity_Bridge_UnitN12",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2684,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 105,
+    "pName": "ZERG_ZERGLING",
+    "name": "Zergling",
+    "cost": {
+      "minerals": 25,
+      "vespene": 0,
+      "buildTime": 384.0
+    },
+    "buildAbility": 1343,
+    "race": "ZERG",
+    "food": -0.5,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      80,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      3661
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 89,
+    "requireAttached": false
+  },
+  {
+    "id": 768,
+    "pName": "UNIT_TYPE_768",
+    "name": "PortCity_Bridge_UnitNW12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2642,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 70,
+    "pName": "PROTOSS_ROBOTICS_BAY",
+    "name": "RoboticsBay",
+    "cost": {
+      "minerals": 150,
+      "vespene": 150,
+      "buildTime": 1040.0
+    },
+    "buildAbility": 892,
+    "race": "PROTOSS",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1093,
+      1094,
+      3671,
+      1097,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 71,
+    "requireAttached": false
+  },
+  {
+    "id": 92,
+    "pName": "ZERG_SPIRE",
+    "name": "Spire",
+    "cost": {
+      "minerals": 250,
+      "vespene": 200,
+      "buildTime": 1600.0
+    },
+    "buildAbility": 1158,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1220,
+      3702,
+      3671,
+      3703,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 100,
+    "requireAttached": false
+  },
+  {
+    "id": 537,
+    "pName": "UNIT_TYPE_537",
+    "name": "XelNaga_Caverns_Floating_BridgeNW8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2200,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 33,
+    "pName": "TERRAN_SIEGE_TANK",
+    "name": "SiegeTank",
+    "cost": {
+      "minerals": 150,
+      "vespene": 125,
+      "buildTime": 720.0
+    },
+    "buildAbility": 591,
+    "race": "TERRAN",
+    "food": -3.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      388,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 5,
+    "requireAttached": true
+  },
+  {
+    "id": 689,
+    "pName": "TERRAN_LIBERATOR",
+    "name": "Liberator",
+    "cost": {
+      "minerals": 150,
+      "vespene": 150,
+      "buildTime": 960.0
+    },
+    "buildAbility": 626,
+    "race": "TERRAN",
+    "food": -3.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      2558
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 766,
+    "pName": "UNIT_TYPE_766",
+    "name": "PortCity_Bridge_UnitSE12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2638,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 785,
+    "pName": "UNIT_TYPE_785",
+    "name": "PortCity_Bridge_UnitE10",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2676,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 690,
+    "pName": "ZERG_RAVAGER_BURROWED",
+    "name": "RavagerBurrowed",
+    "cost": {
+      "minerals": 100,
+      "vespene": 100,
+      "buildTime": 9.691406
+    },
+    "buildAbility": 2340,
+    "race": "ZERG",
+    "food": -3.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3662
+    ],
+    "techAliases": [],
+    "unitAlias": 688,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 779,
+    "pName": "UNIT_TYPE_779",
+    "name": "PortCity_Bridge_UnitW8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2664,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 88,
+    "pName": "ZERG_EXTRACTOR",
+    "name": "Extractor",
+    "cost": {
+      "minerals": 75,
+      "vespene": 0,
+      "buildTime": 480.0
+    },
+    "buildAbility": 1154,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": true,
+    "hasMinerals": false,
+    "abilities": [
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 134,
+    "pName": "TERRAN_ORBITAL_COMMAND_FLYING",
+    "name": "OrbitalCommandFlying",
+    "cost": {
+      "minerals": 550,
+      "vespene": 0,
+      "buildTime": 32.0
+    },
+    "buildAbility": 1522,
+    "race": "TERRAN",
+    "food": 15.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3678
+    ],
+    "techAliases": [
+      18
+    ],
+    "unitAlias": 132,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 76,
+    "pName": "PROTOSS_DARK_TEMPLAR",
+    "name": "DarkTemplar",
+    "cost": {
+      "minerals": 125,
+      "vespene": 125,
+      "buildTime": 880.0
+    },
+    "buildAbility": 920,
+    "race": "PROTOSS",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3687,
+      3673,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 69,
+    "requireAttached": false
+  },
+  {
+    "id": 110,
+    "pName": "ZERG_ROACH",
+    "name": "Roach",
+    "cost": {
+      "minerals": 75,
+      "vespene": 25,
+      "buildTime": 432.0
+    },
+    "buildAbility": 1351,
+    "race": "ZERG",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      2330,
+      3661
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 97,
+    "requireAttached": false
+  },
+  {
+    "id": 699,
+    "pName": "UNIT_TYPE_699",
+    "name": "AiurLightBridgeNE12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2405,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 17,
+    "pName": "ZERG_CHANGELING_ZERGLING",
+    "name": "ChangelingZergling",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 8.0
+    },
+    "buildAbility": 191,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 12,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 739,
+    "pName": "UNIT_TYPE_739",
+    "name": "AiurLightBridgeAbandonedNE12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2572,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 759,
+    "pName": "UNIT_TYPE_759",
+    "name": "PortCity_Bridge_UnitSE10",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2624,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 547,
+    "pName": "UNIT_TYPE_547",
+    "name": "XelNaga_Caverns_Floating_BridgeH8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2220,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 73,
+    "pName": "PROTOSS_ZEALOT",
+    "name": "Zealot",
+    "cost": {
+      "minerals": 100,
+      "vespene": 0,
+      "buildTime": 608.0
+    },
+    "buildAbility": 916,
+    "race": "PROTOSS",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3673,
+      3674,
+      1819
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 89,
+    "pName": "ZERG_SPAWNING_POOL",
+    "name": "SpawningPool",
+    "cost": {
+      "minerals": 250,
+      "vespene": 0,
+      "buildTime": 1040.0
+    },
+    "buildAbility": 1155,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1252,
+      1253,
+      3671,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 86,
+    "requireAttached": false
+  },
+  {
+    "id": 550,
+    "pName": "UNIT_TYPE_550",
+    "name": "XelNaga_Caverns_Floating_BridgeV8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2226,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 553,
+    "pName": "UNIT_TYPE_553",
+    "name": "XelNaga_Caverns_Floating_BridgeV10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2232,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 776,
+    "pName": "UNIT_TYPE_776",
+    "name": "PortCity_Bridge_UnitE8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2658,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 786,
+    "pName": "UNIT_TYPE_786",
+    "name": "PortCity_Bridge_UnitW10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2678,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 65,
+    "pName": "PROTOSS_TWILIGHT_COUNCIL",
+    "name": "TwilightCouncil",
+    "cost": {
+      "minerals": 150,
+      "vespene": 100,
+      "buildTime": 800.0
+    },
+    "buildAbility": 886,
+    "race": "PROTOSS",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3671,
+      1592,
+      1593,
+      1594,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 72,
+    "requireAttached": false
+  },
+  {
+    "id": 542,
+    "pName": "UNIT_TYPE_542",
+    "name": "XelNaga_Caverns_Floating_BridgeNW10",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2210,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 37,
+    "pName": "TERRAN_BARRACKS_TECHLAB",
+    "name": "BarracksTechLab",
+    "cost": {
+      "minerals": 50,
+      "vespene": 25,
+      "buildTime": 400.0
+    },
+    "buildAbility": 421,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3671,
+      730,
+      3659,
+      731,
+      732
+    ],
+    "techAliases": [
+      5
+    ],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 108,
+    "pName": "ZERG_MUTALISK",
+    "name": "Mutalisk",
+    "cost": {
+      "minerals": 100,
+      "vespene": 100,
+      "buildTime": 528.0
+    },
+    "buildAbility": 1346,
+    "race": "ZERG",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 92,
+    "requireAttached": false
+  },
+  {
+    "id": 509,
+    "pName": "UNIT_TYPE_509",
+    "name": "ExtendingBridgeNEWide10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2126,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 14,
+    "pName": "ZERG_CHANGELING_MARINE_SHIELD",
+    "name": "ChangelingMarineShield",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 8.0
+    },
+    "buildAbility": 185,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 12,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 21,
+    "pName": "TERRAN_BARRACKS",
+    "name": "Barracks",
+    "cost": {
+      "minerals": 150,
+      "vespene": 0,
+      "buildTime": 1040.0
+    },
+    "buildAbility": 321,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      560,
+      1,
+      561,
+      3682,
+      562,
+      3683,
+      563,
+      3671,
+      3673,
+      3659,
+      3660,
+      3679
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 19,
+    "requireAttached": false
+  },
+  {
+    "id": 104,
+    "pName": "ZERG_DRONE",
+    "name": "Drone",
+    "cost": {
+      "minerals": 50,
+      "vespene": 0,
+      "buildTime": 272.0
+    },
+    "buildAbility": 1342,
+    "race": "ZERG",
+    "food": -1.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1152,
+      1,
+      1154,
+      1155,
+      1156,
+      3684,
+      1157,
+      1158,
+      1159,
+      1160,
+      1161,
+      1162,
+      1165,
+      3661,
+      1166,
+      1167,
+      16,
+      17,
+      3665,
+      3666,
+      18,
+      3667,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 20,
+    "pName": "TERRAN_REFINERY",
+    "name": "Refinery",
+    "cost": {
+      "minerals": 75,
+      "vespene": 0,
+      "buildTime": 480.0
+    },
+    "buildAbility": 320,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": true,
+    "hasMinerals": false,
+    "abilities": [
+      3659,
+      3660
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 94,
+    "pName": "ZERG_INFESTATION_PIT",
+    "name": "InfestationPit",
+    "cost": {
+      "minerals": 150,
+      "vespene": 100,
+      "buildTime": 800.0
+    },
+    "buildAbility": 1160,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3671,
+      3659,
+      1454,
+      1455
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 100,
+    "requireAttached": false
+  },
+  {
+    "id": 546,
+    "pName": "UNIT_TYPE_546",
+    "name": "XelNaga_Caverns_Floating_BridgeNW12",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2218,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 50,
+    "pName": "TERRAN_GHOST",
+    "name": "Ghost",
+    "cost": {
+      "minerals": 150,
+      "vespene": 125,
+      "buildTime": 640.0
+    },
+    "buildAbility": 562,
+    "race": "TERRAN",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      3688,
+      3689,
+      3659,
+      16,
+      17,
+      3665,
+      18,
+      1622,
+      3674,
+      2714,
+      3676,
+      1628,
+      3677
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 778,
+    "pName": "UNIT_TYPE_778",
+    "name": "PortCity_Bridge_UnitW8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2662,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 43,
+    "pName": "TERRAN_FACTORY_FLYING",
+    "name": "FactoryFlying",
+    "cost": {
+      "minerals": 150,
+      "vespene": 100,
+      "buildTime": 32.0
+    },
+    "buildAbility": 485,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      3682,
+      18,
+      3683,
+      3678
+    ],
+    "techAliases": [
+      27
+    ],
+    "unitAlias": 27,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 54,
+    "pName": "TERRAN_MEDIVAC",
+    "name": "Medivac",
+    "cost": {
+      "minerals": 100,
+      "vespene": 100,
+      "buildTime": 672.0
+    },
+    "buildAbility": 620,
+    "race": "TERRAN",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      386,
+      18,
+      2116,
+      3668,
+      3669,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 743,
+    "pName": "UNIT_TYPE_743",
+    "name": "AiurLightBridgeAbandonedNW10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2580,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 749,
+    "pName": "UNIT_TYPE_749",
+    "name": "PortCity_Bridge_UnitNE8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2604,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 96,
+    "pName": "ZERG_BANELING_NEST",
+    "name": "BanelingNest",
+    "cost": {
+      "minerals": 150,
+      "vespene": 50,
+      "buildTime": 960.0
+    },
+    "buildAbility": 1162,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3671,
+      1482,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 89,
+    "requireAttached": false
+  },
+  {
+    "id": 119,
+    "pName": "ZERG_ZERGLING_BURROWED",
+    "name": "ZerglingBurrowed",
+    "cost": {
+      "minerals": 25,
+      "vespene": 0,
+      "buildTime": 24.291016
+    },
+    "buildAbility": 1390,
+    "race": "ZERG",
+    "food": -0.5,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3662
+    ],
+    "techAliases": [],
+    "unitAlias": 105,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 68,
+    "pName": "PROTOSS_TEMPLAR_ARCHIVE",
+    "name": "TemplarArchive",
+    "cost": {
+      "minerals": 150,
+      "vespene": 200,
+      "buildTime": 800.0
+    },
+    "buildAbility": 890,
+    "race": "PROTOSS",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1126,
+      3671,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 65,
+    "requireAttached": false
+  },
+  {
+    "id": 16,
+    "pName": "ZERG_CHANGELING_ZERGLING_WINGS",
+    "name": "ChangelingZerglingWings",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 8.0
+    },
+    "buildAbility": 189,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 12,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 508,
+    "pName": "UNIT_TYPE_508",
+    "name": "ExtendingBridgeNWWide8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2124,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 549,
+    "pName": "UNIT_TYPE_549",
+    "name": "XelNaga_Caverns_Floating_BridgeV8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2224,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 9,
+    "pName": "ZERG_BANELING",
+    "name": "Baneling",
+    "cost": {
+      "minerals": 50,
+      "vespene": 25,
+      "buildTime": 320.0
+    },
+    "buildAbility": 80,
+    "race": "ZERG",
+    "food": -0.5,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      2081,
+      17,
+      3665,
+      2082,
+      18,
+      3674,
+      42,
+      3661
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 96,
+    "requireAttached": false
+  },
+  {
+    "id": 742,
+    "pName": "UNIT_TYPE_742",
+    "name": "AiurLightBridgeAbandonedNW8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2578,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 735,
+    "pName": "UNIT_TYPE_735",
+    "name": "AiurLightBridgeAbandonedNE8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2564,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 60,
+    "pName": "PROTOSS_PYLON",
+    "name": "Pylon",
+    "cost": {
+      "minerals": 100,
+      "vespene": 0,
+      "buildTime": 400.0
+    },
+    "buildAbility": 881,
+    "race": "PROTOSS",
+    "food": 8.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 53,
+    "pName": "TERRAN_HELLION",
+    "name": "Hellion",
+    "cost": {
+      "minerals": 100,
+      "vespene": 0,
+      "buildTime": 480.0
+    },
+    "buildAbility": 595,
+    "race": "TERRAN",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      1998
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 499,
+    "pName": "ZERG_VIPER",
+    "name": "Viper",
+    "cost": {
+      "minerals": 100,
+      "vespene": 200,
+      "buildTime": 640.0
+    },
+    "buildAbility": 1354,
+    "race": "ZERG",
+    "food": -3.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      2067,
+      2073,
+      3674,
+      2542,
+      2063
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 101,
+    "requireAttached": false
+  },
+  {
+    "id": 540,
+    "pName": "UNIT_TYPE_540",
+    "name": "XelNaga_Caverns_Floating_BridgeNE10",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2206,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 761,
+    "pName": "UNIT_TYPE_761",
+    "name": "PortCity_Bridge_UnitNW10",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2628,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 10,
+    "pName": "PROTOSS_MOTHERSHIP",
+    "name": "Mothership",
+    "cost": {
+      "minerals": 400,
+      "vespene": 400,
+      "buildTime": 2560.0
+    },
+    "buildAbility": 110,
+    "race": "PROTOSS",
+    "food": -8.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      2162,
+      18,
+      2244,
+      3686,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 23,
+    "pName": "TERRAN_MISSILE_TURRET",
+    "name": "MissileTurret",
+    "cost": {
+      "minerals": 100,
+      "vespene": 0,
+      "buildTime": 400.0
+    },
+    "buildAbility": 323,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      3665,
+      3674,
+      3659,
+      3660
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 22,
+    "requireAttached": false
+  },
+  {
+    "id": 78,
+    "pName": "PROTOSS_PHOENIX",
+    "name": "Phoenix",
+    "cost": {
+      "minerals": 150,
+      "vespene": 100,
+      "buildTime": 560.0
+    },
+    "buildAbility": 946,
+    "race": "PROTOSS",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      3659,
+      173
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 93,
+    "pName": "ZERG_ULTRALISK_CAVERN",
+    "name": "UltraliskCavern",
+    "cost": {
+      "minerals": 200,
+      "vespene": 200,
+      "buildTime": 1040.0
+    },
+    "buildAbility": 1159,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3671,
+      265,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 101,
+    "requireAttached": false
+  },
+  {
+    "id": 112,
+    "pName": "ZERG_CORRUPTOR",
+    "name": "Corruptor",
+    "cost": {
+      "minerals": 150,
+      "vespene": 100,
+      "buildTime": 640.0
+    },
+    "buildAbility": 1353,
+    "race": "ZERG",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      2324,
+      3674,
+      1372
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 92,
+    "requireAttached": false
+  },
+  {
+    "id": 788,
+    "pName": "UNIT_TYPE_788",
+    "name": "PortCity_Bridge_UnitN12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2682,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 708,
+    "pName": "UNIT_TYPE_708",
+    "name": "AiurTempleBridgeNE10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2425,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 782,
+    "pName": "UNIT_TYPE_782",
+    "name": "PortCity_Bridge_UnitS10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2670,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 767,
+    "pName": "UNIT_TYPE_767",
+    "name": "PortCity_Bridge_UnitSE12",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2640,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 31,
+    "pName": "TERRAN_AUTO_TURRET",
+    "name": "AutoTurret",
+    "cost": {
+      "minerals": 100,
+      "vespene": 0,
+      "buildTime": 16.0
+    },
+    "buildAbility": 349,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      3665,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 791,
+    "pName": "UNIT_TYPE_791",
+    "name": "PortCity_Bridge_UnitS12",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2688,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 493,
+    "pName": "ZERG_SWARM_HOST_BURROWED_MP",
+    "name": "SwarmHostBurrowedMP",
+    "cost": {
+      "minerals": 100,
+      "vespene": 75,
+      "buildTime": 42.0
+    },
+    "buildAbility": 2014,
+    "race": "ZERG",
+    "food": -3.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      2704,
+      1,
+      3662
+    ],
+    "techAliases": [],
+    "unitAlias": 494,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 784,
+    "pName": "UNIT_TYPE_784",
+    "name": "PortCity_Bridge_UnitE10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2674,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 668,
+    "pName": "UNIT_TYPE_668",
+    "name": "SnowRefinery_Terran_ExtendingBridgeNEShort8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2248,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 752,
+    "pName": "UNIT_TYPE_752",
+    "name": "PortCity_Bridge_UnitNW8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2610,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 26,
+    "pName": "TERRAN_GHOST_ACADEMY",
+    "name": "GhostAcademy",
+    "cost": {
+      "minerals": 150,
+      "vespene": 50,
+      "buildTime": 640.0
+    },
+    "buildAbility": 327,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      820,
+      710,
+      3671,
+      3659,
+      3660
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 21,
+    "requireAttached": false
+  },
+  {
+    "id": 102,
+    "pName": "ZERG_GREATER_SPIRE",
+    "name": "GreaterSpire",
+    "cost": {
+      "minerals": 350,
+      "vespene": 350,
+      "buildTime": 1600.0
+    },
+    "buildAbility": 1220,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3702,
+      3671,
+      3703
+    ],
+    "techAliases": [
+      92
+    ],
+    "unitAlias": 0,
+    "techRequirement": 101,
+    "requireAttached": false
+  },
+  {
+    "id": 35,
+    "pName": "TERRAN_VIKING_FIGHTER",
+    "name": "VikingFighter",
+    "cost": {
+      "minerals": 150,
+      "vespene": 75,
+      "buildTime": 672.0
+    },
+    "buildAbility": 624,
+    "race": "TERRAN",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      403,
+      3674
+    ],
+    "techAliases": [
+      1940
+    ],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 893,
+    "pName": "ZERG_OVERLORD_TRANSPORT",
+    "name": "OverlordTransport",
+    "cost": {
+      "minerals": 100,
+      "vespene": 0,
+      "buildTime": 266.6797
+    },
+    "buildAbility": 2708,
+    "race": "ZERG",
+    "food": 8.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3668,
+      3669,
+      1448,
+      3674,
+      1692,
+      1693
+    ],
+    "techAliases": [
+      106
+    ],
+    "unitAlias": 0,
+    "techRequirement": 100,
+    "requireAttached": false
+  },
+  {
+    "id": 87,
+    "pName": "ZERG_CREEP_TUMOR",
+    "name": "CreepTumor",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 240.0
+    },
+    "buildAbility": 1733,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 52,
+    "pName": "TERRAN_THOR",
+    "name": "Thor",
+    "cost": {
+      "minerals": 300,
+      "vespene": 200,
+      "buildTime": 960.0
+    },
+    "buildAbility": 594,
+    "race": "TERRAN",
+    "food": -6.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      2362
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 738,
+    "pName": "UNIT_TYPE_738",
+    "name": "AiurLightBridgeAbandonedNE10",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2570,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 775,
+    "pName": "UNIT_TYPE_775",
+    "name": "PortCity_Bridge_UnitS8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2656,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 138,
+    "pName": "ZERG_CREEP_TUMOR_QUEEN",
+    "name": "CreepTumorQueen",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 240.0
+    },
+    "buildAbility": 1694,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3659
+    ],
+    "techAliases": [
+      87
+    ],
+    "unitAlias": 87,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 541,
+    "pName": "UNIT_TYPE_541",
+    "name": "XelNaga_Caverns_Floating_BridgeNW10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2208,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 13,
+    "pName": "ZERG_CHANGELING_ZEALOT",
+    "name": "ChangelingZealot",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 8.0
+    },
+    "buildAbility": 183,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 12,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 91,
+    "pName": "ZERG_HYDRALISK_DEN",
+    "name": "HydraliskDen",
+    "cost": {
+      "minerals": 150,
+      "vespene": 100,
+      "buildTime": 640.0
+    },
+    "buildAbility": 1157,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      2112,
+      1282,
+      1283,
+      3671,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 100,
+    "requireAttached": false
+  },
+  {
+    "id": 81,
+    "pName": "PROTOSS_WARP_PRISM",
+    "name": "WarpPrism",
+    "cost": {
+      "minerals": 250,
+      "vespene": 0,
+      "buildTime": 800.0
+    },
+    "buildAbility": 976,
+    "race": "PROTOSS",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3668,
+      3669,
+      1528,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 1911,
+    "pName": "PROTOSS_OBSERVER_SIEGED",
+    "name": "ObserverSiegeMode",
+    "cost": {
+      "minerals": 25,
+      "vespene": 75,
+      "buildTime": 12.0
+    },
+    "buildAbility": 3741,
+    "race": "PROTOSS",
+    "food": -1.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 82,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 504,
+    "pName": "ZERG_LURKER_DEN_MP",
+    "name": "LurkerDenMP",
+    "cost": {
+      "minerals": 150,
+      "vespene": 150,
+      "buildTime": 1280.0
+    },
+    "buildAbility": 1163,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1282,
+      1283,
+      3671
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 91,
+    "requireAttached": false
+  },
+  {
+    "id": 760,
+    "pName": "UNIT_TYPE_760",
+    "name": "PortCity_Bridge_UnitNW10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2626,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 731,
+    "pName": "UNIT_TYPE_731",
+    "name": "DefilerMP",
+    "cost": {
+      "minerals": 50,
+      "vespene": 150,
+      "buildTime": 8.800781
+    },
+    "buildAbility": 2491,
+    "race": "ZERG",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 704,
+    "pName": "UNIT_TYPE_704",
+    "name": "AiurLightBridgeNW10",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2415,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 543,
+    "pName": "UNIT_TYPE_543",
+    "name": "XelNaga_Caverns_Floating_BridgeNE12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2212,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 771,
+    "pName": "UNIT_TYPE_771",
+    "name": "PortCity_Bridge_UnitSW12",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2648,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 79,
+    "pName": "PROTOSS_CARRIER",
+    "name": "Carrier",
+    "cost": {
+      "minerals": 350,
+      "vespene": 250,
+      "buildTime": 1440.0
+    },
+    "buildAbility": 948,
+    "race": "PROTOSS",
+    "food": -6.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      1042,
+      18,
+      3671,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 64,
+    "requireAttached": false
+  },
+  {
+    "id": 535,
+    "pName": "UNIT_TYPE_535",
+    "name": "XelNaga_Caverns_Floating_BridgeNE8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2196,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 67,
+    "pName": "PROTOSS_STARGATE",
+    "name": "Stargate",
+    "cost": {
+      "minerals": 150,
+      "vespene": 150,
+      "buildTime": 960.0
+    },
+    "buildAbility": 889,
+    "race": "PROTOSS",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      946,
+      948,
+      950,
+      3671,
+      3673,
+      954,
+      3659,
+      955
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 72,
+    "requireAttached": false
+  },
+  {
+    "id": 498,
+    "pName": "TERRAN_WIDOWMINE",
+    "name": "WidowMine",
+    "cost": {
+      "minerals": 75,
+      "vespene": 25,
+      "buildTime": 480.0
+    },
+    "buildAbility": 614,
+    "race": "TERRAN",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      3661
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 139,
+    "pName": "ZERG_SPINE_CRAWLER_UPROOTED",
+    "name": "SpineCrawlerUprooted",
+    "cost": {
+      "minerals": 150,
+      "vespene": 0,
+      "buildTime": 16.0
+    },
+    "buildAbility": 1725,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3680,
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 98,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 744,
+    "pName": "UNIT_TYPE_744",
+    "name": "AiurLightBridgeAbandonedNW10",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2582,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 777,
+    "pName": "UNIT_TYPE_777",
+    "name": "PortCity_Bridge_UnitE8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2660,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 120,
+    "pName": "ZERG_INFESTOR_TERRAN_BURROWED",
+    "name": "InfestorTerranBurrowed",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 24.291016
+    },
+    "buildAbility": 1394,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3662
+    ],
+    "techAliases": [],
+    "unitAlias": 7,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 132,
+    "pName": "TERRAN_ORBITAL_COMMAND",
+    "name": "OrbitalCommand",
+    "cost": {
+      "minerals": 550,
+      "vespene": 0,
+      "buildTime": 560.0
+    },
+    "buildAbility": 1516,
+    "race": "TERRAN",
+    "food": 15.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      3671,
+      3690,
+      171,
+      524,
+      399,
+      255,
+      3679
+    ],
+    "techAliases": [
+      18
+    ],
+    "unitAlias": 0,
+    "techRequirement": 21,
+    "requireAttached": false
+  },
+  {
+    "id": 56,
+    "pName": "TERRAN_RAVEN",
+    "name": "Raven",
+    "cost": {
+      "minerals": 100,
+      "vespene": 200,
+      "buildTime": 960.0
+    },
+    "buildAbility": 622,
+    "race": "TERRAN",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      144,
+      16,
+      1,
+      17,
+      3665,
+      18,
+      1764,
+      169,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 5,
+    "requireAttached": true
+  },
+  {
+    "id": 720,
+    "pName": "UNIT_TYPE_720",
+    "name": "ShakurasLightBridgeNW8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2459,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 754,
+    "pName": "UNIT_TYPE_754",
+    "name": "PortCity_Bridge_UnitSW8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2614,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 702,
+    "pName": "UNIT_TYPE_702",
+    "name": "AiurLightBridgeNW8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2411,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 764,
+    "pName": "UNIT_TYPE_764",
+    "name": "PortCity_Bridge_UnitNE12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2634,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 84,
+    "pName": "PROTOSS_PROBE",
+    "name": "Probe",
+    "cost": {
+      "minerals": 50,
+      "vespene": 0,
+      "buildTime": 272.0
+    },
+    "buildAbility": 1006,
+    "race": "PROTOSS",
+    "food": -1.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      3684,
+      880,
+      16,
+      881,
+      17,
+      3665,
+      882,
+      3666,
+      18,
+      883,
+      3667,
+      884,
+      885,
+      886,
+      887,
+      889,
+      3674,
+      890,
+      891,
+      892,
+      893,
+      894
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 714,
+    "pName": "UNIT_TYPE_714",
+    "name": "ShakurasLightBridgeNE8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2447,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 694,
+    "pName": "PROTOSS_DISRUPTOR",
+    "name": "Disruptor",
+    "cost": {
+      "minerals": 150,
+      "vespene": 150,
+      "buildTime": 800.0
+    },
+    "buildAbility": 994,
+    "race": "PROTOSS",
+    "food": -3.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      2346
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 70,
+    "requireAttached": false
+  },
+  {
+    "id": 74,
+    "pName": "PROTOSS_STALKER",
+    "name": "Stalker",
+    "cost": {
+      "minerals": 125,
+      "vespene": 50,
+      "buildTime": 672.0
+    },
+    "buildAbility": 917,
+    "race": "PROTOSS",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3687,
+      3673,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 72,
+    "requireAttached": false
+  },
+  {
+    "id": 740,
+    "pName": "UNIT_TYPE_740",
+    "name": "AiurLightBridgeAbandonedNE12",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2574,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 59,
+    "pName": "PROTOSS_NEXUS",
+    "name": "Nexus",
+    "cost": {
+      "minerals": 400,
+      "vespene": 0,
+      "buildTime": 1600.0
+    },
+    "buildAbility": 880,
+    "race": "PROTOSS",
+    "food": 15.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      261,
+      3671,
+      3690,
+      3659,
+      4107,
+      1853,
+      3757,
+      1006
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 57,
+    "pName": "TERRAN_BATTLECRUISER",
+    "name": "Battlecruiser",
+    "cost": {
+      "minerals": 400,
+      "vespene": 300,
+      "buildTime": 1440.0
+    },
+    "buildAbility": 623,
+    "race": "TERRAN",
+    "food": -6.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      401,
+      17,
+      3665,
+      18,
+      2358,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 49,
+    "pName": "TERRAN_REAPER",
+    "name": "Reaper",
+    "cost": {
+      "minerals": 50,
+      "vespene": 50,
+      "buildTime": 720.0
+    },
+    "buildAbility": 561,
+    "race": "TERRAN",
+    "food": -1.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      2588
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 117,
+    "pName": "ZERG_HYDRALISK_BURROWED",
+    "name": "HydraliskBurrowed",
+    "cost": {
+      "minerals": 100,
+      "vespene": 50,
+      "buildTime": 24.291016
+    },
+    "buildAbility": 1382,
+    "race": "ZERG",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3662
+    ],
+    "techAliases": [],
+    "unitAlias": 107,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 724,
+    "pName": "UNIT_TYPE_724",
+    "name": "ShakurasLightBridgeNW12",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2467,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 496,
+    "pName": "PROTOSS_TEMPEST",
+    "name": "Tempest",
+    "cost": {
+      "minerals": 250,
+      "vespene": 175,
+      "buildTime": 960.0
+    },
+    "buildAbility": 955,
+    "race": "PROTOSS",
+    "food": -5.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      2698,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 64,
+    "requireAttached": false
+  },
+  {
+    "id": 783,
+    "pName": "UNIT_TYPE_783",
+    "name": "PortCity_Bridge_UnitS10",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2672,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 129,
+    "pName": "ZERG_OVERSEER",
+    "name": "Overseer",
+    "cost": {
+      "minerals": 150,
+      "vespene": 50,
+      "buildTime": 266.6797
+    },
+    "buildAbility": 1448,
+    "race": "ZERG",
+    "food": 8.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      1825,
+      17,
+      3665,
+      18,
+      181,
+      3674
+    ],
+    "techAliases": [
+      106
+    ],
+    "unitAlias": 0,
+    "techRequirement": 100,
+    "requireAttached": false
+  },
+  {
+    "id": 82,
+    "pName": "PROTOSS_OBSERVER",
+    "name": "Observer",
+    "cost": {
+      "minerals": 25,
+      "vespene": 75,
+      "buildTime": 480.0
+    },
+    "buildAbility": 977,
+    "race": "PROTOSS",
+    "food": -1.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 696,
+    "pName": "UNIT_TYPE_696",
+    "name": "AiurLightBridgeNE8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2399,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 1912,
+    "pName": "ZERG_OVERSEER_SIEGED",
+    "name": "OverseerSiegeMode",
+    "cost": {
+      "minerals": 150,
+      "vespene": 50,
+      "buildTime": 12.0
+    },
+    "buildAbility": 3743,
+    "race": "ZERG",
+    "food": 8.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [
+      106
+    ],
+    "unitAlias": 129,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 133,
+    "pName": "PROTOSS_WARP_GATE",
+    "name": "WarpGate",
+    "cost": {
+      "minerals": 150,
+      "vespene": 0,
+      "buildTime": 160.0
+    },
+    "buildAbility": 1518,
+    "race": "PROTOSS",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1520,
+      1,
+      1413,
+      1414,
+      1416,
+      1417,
+      1418,
+      1419
+    ],
+    "techAliases": [
+      62
+    ],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 669,
+    "pName": "UNIT_TYPE_669",
+    "name": "SnowRefinery_Terran_ExtendingBridgeNWShort8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2250,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 131,
+    "pName": "ZERG_ULTRALISK_BURROWED",
+    "name": "UltraliskBurrowed",
+    "cost": {
+      "minerals": 300,
+      "vespene": 200,
+      "buildTime": 34.0
+    },
+    "buildAbility": 1512,
+    "race": "ZERG",
+    "food": -6.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3662
+    ],
+    "techAliases": [],
+    "unitAlias": 109,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 691,
+    "pName": "TERRAN_THOR_AP",
+    "name": "ThorAP",
+    "cost": {
+      "minerals": 300,
+      "vespene": 200,
+      "buildTime": 42.0
+    },
+    "buildAbility": 2362,
+    "race": "TERRAN",
+    "food": -6.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      3659,
+      2364
+    ],
+    "techAliases": [
+      52
+    ],
+    "unitAlias": 52,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 75,
+    "pName": "PROTOSS_HIGH_TEMPLAR",
+    "name": "HighTemplar",
+    "cost": {
+      "minerals": 50,
+      "vespene": 150,
+      "buildTime": 880.0
+    },
+    "buildAbility": 919,
+    "race": "PROTOSS",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3673,
+      3674,
+      140,
+      1036
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 68,
+    "requireAttached": false
+  },
+  {
+    "id": 721,
+    "pName": "UNIT_TYPE_721",
+    "name": "ShakurasLightBridgeNW10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2461,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 723,
+    "pName": "UNIT_TYPE_723",
+    "name": "ShakurasLightBridgeNW12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2465,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 130,
+    "pName": "TERRAN_PLANETARY_FORTRESS",
+    "name": "PlanetaryFortress",
+    "cost": {
+      "minerals": 550,
+      "vespene": 150,
+      "buildTime": 800.0
+    },
+    "buildAbility": 1450,
+    "race": "TERRAN",
+    "food": 15.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      3665,
+      3671,
+      3674,
+      3690,
+      524,
+      3663
+    ],
+    "techAliases": [
+      18
+    ],
+    "unitAlias": 0,
+    "techRequirement": 22,
+    "requireAttached": false
+  },
+  {
+    "id": 703,
+    "pName": "UNIT_TYPE_703",
+    "name": "AiurLightBridgeNW10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2413,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 544,
+    "pName": "UNIT_TYPE_544",
+    "name": "XelNaga_Caverns_Floating_BridgeNE12",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2214,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 98,
+    "pName": "ZERG_SPINE_CRAWLER",
+    "name": "SpineCrawler",
+    "cost": {
+      "minerals": 150,
+      "vespene": 0,
+      "buildTime": 800.0
+    },
+    "buildAbility": 1166,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      3681,
+      3665,
+      3674,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 89,
+    "requireAttached": false
+  },
+  {
+    "id": 6,
+    "pName": "TERRAN_REACTOR",
+    "name": "Reactor",
+    "cost": {
+      "minerals": 50,
+      "vespene": 50,
+      "buildTime": 2.0
+    },
+    "buildAbility": 1674,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 505,
+    "pName": "UNIT_TYPE_505",
+    "name": "ExtendingBridgeNEWide8Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2118,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 711,
+    "pName": "UNIT_TYPE_711",
+    "name": "AiurTempleBridgeNW10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2437,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 705,
+    "pName": "UNIT_TYPE_705",
+    "name": "AiurLightBridgeNW12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2417,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 536,
+    "pName": "UNIT_TYPE_536",
+    "name": "XelNaga_Caverns_Floating_BridgeNE8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2198,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 7,
+    "pName": "ZERG_INFESTOR_TERRAN",
+    "name": "InfestorTerran",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 78.0
+    },
+    "buildAbility": 40,
+    "race": "ZERG",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      3661
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 794,
+    "pName": "UNIT_TYPE_794",
+    "name": "PortCity_Bridge_UnitW12Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2694,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 516,
+    "pName": "UNIT_TYPE_516",
+    "name": "ExtendingBridgeNWWide12",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2140,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 688,
+    "pName": "ZERG_RAVAGER",
+    "name": "Ravager",
+    "cost": {
+      "minerals": 100,
+      "vespene": 100,
+      "buildTime": 196.0
+    },
+    "buildAbility": 2330,
+    "race": "ZERG",
+    "food": -3.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      2338,
+      18,
+      3674,
+      3661
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 97,
+    "requireAttached": false
+  },
+  {
+    "id": 765,
+    "pName": "UNIT_TYPE_765",
+    "name": "PortCity_Bridge_UnitNE12",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2636,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 503,
+    "pName": "ZERG_LURKER_MP_BURROWED",
+    "name": "LurkerMPBurrowed",
+    "cost": {
+      "minerals": 150,
+      "vespene": 150,
+      "buildTime": 42.0
+    },
+    "buildAbility": 2108,
+    "race": "ZERG",
+    "food": -3.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      3665,
+      3688,
+      3689,
+      3674,
+      3662
+    ],
+    "techAliases": [],
+    "unitAlias": 502,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 706,
+    "pName": "UNIT_TYPE_706",
+    "name": "AiurLightBridgeNW12",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2419,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 502,
+    "pName": "ZERG_LURKER_MP",
+    "name": "LurkerMP",
+    "cost": {
+      "minerals": 150,
+      "vespene": 150,
+      "buildTime": 553.3281
+    },
+    "buildAbility": 2104,
+    "race": "ZERG",
+    "food": -3.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674,
+      3661
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 504,
+    "requireAttached": false
+  },
+  {
+    "id": 495,
+    "pName": "PROTOSS_ORACLE",
+    "name": "Oracle",
+    "cost": {
+      "minerals": 150,
+      "vespene": 150,
+      "buildTime": 832.0
+    },
+    "buildAbility": 954,
+    "race": "PROTOSS",
+    "food": -3.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      2146,
+      18,
+      2375,
+      2376,
+      2505,
+      3674,
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 670,
+    "pName": "UNIT_TYPE_670",
+    "name": "SnowRefinery_Terran_ExtendingBridgeNWShort8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2252,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 746,
+    "pName": "UNIT_TYPE_746",
+    "name": "AiurLightBridgeAbandonedNW12",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2586,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 552,
+    "pName": "UNIT_TYPE_552",
+    "name": "XelNaga_Caverns_Floating_BridgeH10",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2230,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 29,
+    "pName": "TERRAN_ARMORY",
+    "name": "Armory",
+    "cost": {
+      "minerals": 150,
+      "vespene": 100,
+      "buildTime": 1040.0
+    },
+    "buildAbility": 331,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3699,
+      3700,
+      3701,
+      3671,
+      3659,
+      3660
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 27,
+    "requireAttached": false
+  },
+  {
+    "id": 773,
+    "pName": "UNIT_TYPE_773",
+    "name": "PortCity_Bridge_UnitN8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2652,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 500,
+    "pName": "TERRAN_WIDOWMINE_BURROWED",
+    "name": "WidowMineBurrowed",
+    "cost": {
+      "minerals": 75,
+      "vespene": 25,
+      "buildTime": 52.0
+    },
+    "buildAbility": 2095,
+    "race": "TERRAN",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      2099,
+      3662
+    ],
+    "techAliases": [
+      498
+    ],
+    "unitAlias": 498,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 732,
+    "pName": "PROTOSS_ORACLE_STASIS_TRAP",
+    "name": "OracleStasisTrap",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 80.0
+    },
+    "buildAbility": 2505,
+    "race": "PROTOSS",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      3659
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 83,
+    "pName": "PROTOSS_IMMORTAL",
+    "name": "Immortal",
+    "cost": {
+      "minerals": 275,
+      "vespene": 100,
+      "buildTime": 880.0
+    },
+    "buildAbility": 979,
+    "race": "PROTOSS",
+    "food": -4.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      2328,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 491,
+    "pName": "UNIT_TYPE_491",
+    "name": "NydusCanalAttacker",
+    "cost": {
+      "minerals": 200,
+      "vespene": 0,
+      "buildTime": 320.0
+    },
+    "buildAbility": 1769,
+    "race": "ZERG",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 755,
+    "pName": "UNIT_TYPE_755",
+    "name": "PortCity_Bridge_UnitSW8",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2616,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 127,
+    "pName": "ZERG_INFESTOR_BURROWED",
+    "name": "InfestorBurrowed",
+    "cost": {
+      "minerals": 100,
+      "vespene": 150,
+      "buildTime": 10.962891
+    },
+    "buildAbility": 1444,
+    "race": "ZERG",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      247,
+      249,
+      3674,
+      74,
+      3659,
+      3662
+    ],
+    "techAliases": [],
+    "unitAlias": 111,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 780,
+    "pName": "UNIT_TYPE_780",
+    "name": "PortCity_Bridge_UnitN10Out",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2666,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 514,
+    "pName": "UNIT_TYPE_514",
+    "name": "ExtendingBridgeNEWide12",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 48.0
+    },
+    "buildAbility": 2136,
+    "race": "TERRAN",
+    "food": 0.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 730,
+    "pName": "UNIT_TYPE_730",
+    "name": "DefilerMPBurrowed",
+    "cost": {
+      "minerals": 50,
+      "vespene": 150,
+      "buildTime": 24.291016
+    },
+    "buildAbility": 2489,
+    "race": "ZERG",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  },
+  {
+    "id": 727,
+    "pName": "UNIT_TYPE_727",
+    "name": "GuardianMP",
+    "cost": {
+      "minerals": 150,
+      "vespene": 200,
+      "buildTime": 640.0156
+    },
+    "buildAbility": 2479,
+    "race": "ZERG",
+    "food": -2.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 102,
+    "requireAttached": false
+  },
+  {
+    "id": 733,
+    "pName": "PROTOSS_DISRUPTOR_PHASED",
+    "name": "DisruptorPhased",
+    "cost": {
+      "minerals": 0,
+      "vespene": 0,
+      "buildTime": 0.0
+    },
+    "buildAbility": 2546,
+    "race": "PROTOSS",
+    "food": -3.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      16,
+      1,
+      17,
+      3665,
+      18,
+      3674
+    ],
+    "techAliases": [],
+    "unitAlias": 0,
+    "techRequirement": 0,
+    "requireAttached": false
+  }
+]

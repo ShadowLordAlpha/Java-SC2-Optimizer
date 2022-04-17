@@ -1,0 +1,2480 @@
+[
+  {
+    "id": 2340,
+    "pName": "BURROW_DOWN_RAVAGER",
+    "name": "BurrowRavagerDownBurrowDown Ravager",
+    "generalId": 3661
+  },
+  {
+    "id": 45,
+    "pName": "RESEARCH_PROTOSS_INTERCEPTOR_LAUNCH_SPEED_UPGRADE",
+    "name": "FleetBeaconResearchResearch ResearchInterceptorLaunchSpeedUpgrade",
+    "generalId": 0
+  },
+  {
+    "id": 2566,
+    "pName": "ABILITY_2566",
+    "name": "AiurLightBridgeAbandonedNE8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 767,
+    "pName": "ABILITY_767",
+    "name": "FactoryTechLabResearchResearch ResearchArmorPiercingRockets",
+    "generalId": 0
+  },
+  {
+    "id": 3701,
+    "pName": "RESEARCH_TERRAN_VEHICLE_WEAPONS",
+    "name": "ResearchTerranVehicleWeaponsResearch TerranVehicleWeapons",
+    "generalId": 0
+  },
+  {
+    "id": 454,
+    "pName": "BUILD_TECHLAB_FACTORY",
+    "name": "FactoryAddOnsBuild TechLab Factory",
+    "generalId": 3682
+  },
+  {
+    "id": 2652,
+    "pName": "ABILITY_2652",
+    "name": "PortCity_Bridge_UnitN8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 768,
+    "pName": "ABILITY_768",
+    "name": "FactoryTechLabResearchResearch CycloneRapidFireLaunchers",
+    "generalId": 0
+  },
+  {
+    "id": 2447,
+    "pName": "ABILITY_2447",
+    "name": "ShakurasLightBridgeNE8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 2108,
+    "pName": "BURROW_DOWN_LURKER",
+    "name": "BurrowLurkerMPDownBurrowDown Lurker",
+    "generalId": 3661
+  },
+  {
+    "id": 856,
+    "pName": "RESEARCH_TERRAN_VEHICLE_WEAPONS_LEVEL2",
+    "name": "ArmoryResearchResearch TerranVehicleWeaponsLevel2",
+    "generalId": 3701
+  },
+  {
+    "id": 2491,
+    "pName": "ABILITY_2491",
+    "name": "DefilerMPUnburrowMorph BurrowUp",
+    "generalId": 3662
+  },
+  {
+    "id": 799,
+    "pName": "RESEARCH_BANSHEE_HYPER_FLIGHT_ROTORS",
+    "name": "StarportTechLabResearchResearch BansheeHyperflightRotors",
+    "generalId": 0
+  },
+  {
+    "id": 1193,
+    "pName": "RESEARCH_ZERG_MISSILE_WEAPONS_LEVEL2",
+    "name": "evolutionchamberresearchResearch ZergMissileWeaponsLevel2",
+    "generalId": 3706
+  },
+  {
+    "id": 822,
+    "pName": "RESEARCH_TERRAN_GHOST_ENHANCED_SHOCKWAVES",
+    "name": "GhostAcademyResearchResearch ResearchEnhancedShockwaves",
+    "generalId": 0
+  },
+  {
+    "id": 2407,
+    "pName": "ABILITY_2407",
+    "name": "AiurLightBridgeNE12Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 1694,
+    "pName": "BUILD_CREEP_TUMOR_QUEEN",
+    "name": "QueenBuildBuild CreepTumor Queen",
+    "generalId": 3691
+  },
+  {
+    "id": 621,
+    "pName": "TRAIN_BANSHEE",
+    "name": "StarportTrainTrain Banshee",
+    "generalId": 0
+  },
+  {
+    "id": 882,
+    "pName": "BUILD_ASSIMILATOR",
+    "name": "ProtossBuildBuild Assimilator",
+    "generalId": 0
+  },
+  {
+    "id": 1167,
+    "pName": "BUILD_SPORE_CRAWLER",
+    "name": "ZergBuildBuild SporeCrawler",
+    "generalId": 0
+  },
+  {
+    "id": 3697,
+    "pName": "RESEARCH_TERRAN_INFANTRY_ARMOR",
+    "name": "ResearchTerranInfantryArmorResearch TerranInfantryArmor",
+    "generalId": 0
+  },
+  {
+    "id": 651,
+    "pName": "RESEARCH_TERRAN_STRUCTURE_ARMOR_UPGRADE",
+    "name": "EngineeringBayResearchResearch TerranStructureArmorUpgrade",
+    "generalId": 0
+  },
+  {
+    "id": 3681,
+    "pName": "MORPH_UPROOT",
+    "name": "UprootMorph Uproot",
+    "generalId": 0
+  },
+  {
+    "id": 1068,
+    "pName": "RESEARCH_PROTOSS_SHIELDS_LEVEL1",
+    "name": "ForgeResearchResearch ProtossShieldsLevel1",
+    "generalId": 3696
+  },
+  {
+    "id": 1163,
+    "pName": "ABILITY_1163",
+    "name": "ZergBuildBuild LurkerDen",
+    "generalId": 0
+  },
+  {
+    "id": 488,
+    "pName": "BUILD_REACTOR_STARPORT",
+    "name": "StarportAddOnsBuild Reactor Starport",
+    "generalId": 3683
+  },
+  {
+    "id": 885,
+    "pName": "BUILD_FLEET_BEACON",
+    "name": "ProtossBuildBuild FleetBeacon",
+    "generalId": 0
+  },
+  {
+    "id": 1518,
+    "pName": "MORPH_WARP_GATE",
+    "name": "UpgradeToWarpGateMorph WarpGate",
+    "generalId": 0
+  },
+  {
+    "id": 917,
+    "pName": "TRAIN_STALKER",
+    "name": "GatewayTrainTrain Stalker",
+    "generalId": 0
+  },
+  {
+    "id": 2465,
+    "pName": "ABILITY_2465",
+    "name": "ShakurasLightBridgeNW12OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 802,
+    "pName": "RESEARCH_TERRAN_RAPID_DEPLOYMENT",
+    "name": "StarportTechLabResearchResearch ResearchRapidDeployment",
+    "generalId": 0
+  },
+  {
+    "id": 48,
+    "pName": "RESEARCH_VOIDRAY_SPEED_UPGRADE",
+    "name": "FleetBeaconResearchResearch ResearchVoidRaySpeedUpgrade",
+    "generalId": 0
+  },
+  {
+    "id": 1482,
+    "pName": "RESEARCH_CENTRIFUGAL_HOOKS",
+    "name": "BanelingNestResearchResearch CentrifugalHooks",
+    "generalId": 0
+  },
+  {
+    "id": 2666,
+    "pName": "ABILITY_2666",
+    "name": "PortCity_Bridge_UnitN10OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 3709,
+    "pName": "RESEARCH_ADAPTIVE_TALONS",
+    "name": "LurkerDenResearchResearch AdaptiveTalons",
+    "generalId": 0
+  },
+  {
+    "id": 658,
+    "pName": "RESEARCH_TERRAN_INFANTRY_ARMOR_LEVEL3",
+    "name": "EngineeringBayResearchResearch TerranInfantryArmorLevel3",
+    "generalId": 3697
+  },
+  {
+    "id": 920,
+    "pName": "TRAIN_DARK_TEMPLAR",
+    "name": "GatewayTrainTrain DarkTemplar",
+    "generalId": 0
+  },
+  {
+    "id": 2690,
+    "pName": "ABILITY_2690",
+    "name": "PortCity_Bridge_UnitE12OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2214,
+    "pName": "ABILITY_2214",
+    "name": "XelNaga_Caverns_Floating_BridgeNE12Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 1534,
+    "pName": "RESEARCH_MEDIVAC_RAPID_REIGNITION_SYSTEM",
+    "name": "FusionCoreResearchResearch ResearchRapidReignitionSystem",
+    "generalId": 0
+  },
+  {
+    "id": 417,
+    "pName": "LIFT_COMMAND_CENTER",
+    "name": "CommandCenterLiftOffLift CommandCenter",
+    "generalId": 3679
+  },
+  {
+    "id": 1457,
+    "pName": "ABILITY_1457",
+    "name": "InfestationPitResearchResearch EvolveAmorphousArmorcloud",
+    "generalId": 0
+  },
+  {
+    "id": 2612,
+    "pName": "ABILITY_2612",
+    "name": "PortCity_Bridge_UnitNW8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 3702,
+    "pName": "RESEARCH_ZERG_FLYER_ARMOR",
+    "name": "ResearchZergFlyerArmorResearch ZergFlyerArmor",
+    "generalId": 0
+  },
+  {
+    "id": 2632,
+    "pName": "ABILITY_2632",
+    "name": "PortCity_Bridge_UnitSW10Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 858,
+    "pName": "RESEARCH_TERRAN_SHIP_PLATING_LEVEL1",
+    "name": "ArmoryResearchResearch TerranShipPlatingLevel1",
+    "generalId": 0
+  },
+  {
+    "id": 1597,
+    "pName": "ABILITY_1597",
+    "name": "TwilightCouncilResearchResearch ResearchPsionicAmplifiers",
+    "generalId": 0
+  },
+  {
+    "id": 2220,
+    "pName": "ABILITY_2220",
+    "name": "XelNaga_Caverns_Floating_BridgeH8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 797,
+    "pName": "RESEARCH_TERRAN_DURABLE_MATERIALS",
+    "name": "StarportTechLabResearchResearch ResearchDurableMaterials",
+    "generalId": 0
+  },
+  {
+    "id": 887,
+    "pName": "BUILD_PHOTON_CANNON",
+    "name": "ProtossBuildBuild PhotonCannon",
+    "generalId": 0
+  },
+  {
+    "id": 2688,
+    "pName": "ABILITY_2688",
+    "name": "PortCity_Bridge_UnitS12Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 1097,
+    "pName": "RESEARCH_EXTENDED_THERMAL_LANCE",
+    "name": "RoboticsBayResearchResearch ExtendedThermalLance",
+    "generalId": 0
+  },
+  {
+    "id": 2419,
+    "pName": "ABILITY_2419",
+    "name": "AiurLightBridgeNW12Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 806,
+    "pName": "ABILITY_806",
+    "name": "StarportTechLabResearchResearch RavenResearchEnhancedMunitions",
+    "generalId": 0
+  },
+  {
+    "id": 265,
+    "pName": "RESEARCH_CHITINOUS_PLATING",
+    "name": "UltraliskCavernResearchResearch ChitinousPlating",
+    "generalId": 0
+  },
+  {
+    "id": 1563,
+    "pName": "RESEARCH_PROTOSS_AIR_WEAPONS_LEVEL2",
+    "name": "CyberneticsCoreResearchResearch ProtossAirWeaponsLevel2",
+    "generalId": 3693
+  },
+  {
+    "id": 2196,
+    "pName": "ABILITY_2196",
+    "name": "XelNaga_Caverns_Floating_BridgeNE8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2642,
+    "pName": "ABILITY_2642",
+    "name": "PortCity_Bridge_UnitNW12OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 3683,
+    "pName": "BUILD_REACTOR",
+    "name": "Build TechReactorBuild Reactor",
+    "generalId": 0
+  },
+  {
+    "id": 1152,
+    "pName": "BUILD_HATCHERY",
+    "name": "ZergBuildBuild Hatchery",
+    "generalId": 0
+  },
+  {
+    "id": 1063,
+    "pName": "RESEARCH_PROTOSS_GROUND_WEAPONS_LEVEL2",
+    "name": "ForgeResearchResearch ProtossGroundWeaponsLevel2",
+    "generalId": 3695
+  },
+  {
+    "id": 2481,
+    "pName": "ABILITY_2481",
+    "name": "MorphToDevourerMPMorph MorphToDevourerMP",
+    "generalId": 0
+  },
+  {
+    "id": 1315,
+    "pName": "RESEARCH_ZERG_FLYER_ARMOR_LEVEL1",
+    "name": "SpireResearchResearch ZergFlyerArmorLevel1",
+    "generalId": 3702
+  },
+  {
+    "id": 591,
+    "pName": "TRAIN_SIEGE_TANK",
+    "name": "FactoryTrainTrain SiegeTank",
+    "generalId": 0
+  },
+  {
+    "id": 2620,
+    "pName": "ABILITY_2620",
+    "name": "PortCity_Bridge_UnitNE10Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 1596,
+    "pName": "ABILITY_1596",
+    "name": "TwilightCouncilResearchResearch ResearchAmplifiedShielding",
+    "generalId": 0
+  },
+  {
+    "id": 2405,
+    "pName": "ABILITY_2405",
+    "name": "AiurLightBridgeNE12OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2242,
+    "pName": "ABILITY_2242",
+    "name": "XelNaga_Caverns_Floating_BridgeV12Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 862,
+    "pName": "RESEARCH_TERRAN_SHIP_WEAPONS_LEVEL2",
+    "name": "ArmoryResearchResearch TerranShipWeaponsLevel2",
+    "generalId": 3699
+  },
+  {
+    "id": 485,
+    "pName": "LIFT_FACTORY",
+    "name": "FactoryLiftOffLift Factory",
+    "generalId": 3679
+  },
+  {
+    "id": 2570,
+    "pName": "ABILITY_2570",
+    "name": "AiurLightBridgeAbandonedNE10Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 1191,
+    "pName": "RESEARCH_ZERG_GROUND_ARMOR_LEVEL3",
+    "name": "evolutionchamberresearchResearch ZergGroundArmorLevel3",
+    "generalId": 3704
+  },
+  {
+    "id": 1126,
+    "pName": "RESEARCH_PSI_STORM",
+    "name": "TemplarArchivesResearchResearch PsiStorm",
+    "generalId": 0
+  },
+  {
+    "id": 1313,
+    "pName": "RESEARCH_ZERG_FLYER_ATTACK_LEVEL2",
+    "name": "SpireResearchResearch ZergFlyerAttackLevel2",
+    "generalId": 3703
+  },
+  {
+    "id": 652,
+    "pName": "RESEARCH_TERRAN_INFANTRY_WEAPONS_LEVEL1",
+    "name": "EngineeringBayResearchResearch TerranInfantryWeaponsLevel1",
+    "generalId": 3698
+  },
+  {
+    "id": 3694,
+    "pName": "RESEARCH_PROTOSS_GROUND_ARMOR",
+    "name": "ResearchProtossGroundArmorResearch ProtossGroundArmor",
+    "generalId": 0
+  },
+  {
+    "id": 1352,
+    "pName": "TRAIN_INFESTOR",
+    "name": "LarvaTrainTrain Infestor",
+    "generalId": 0
+  },
+  {
+    "id": 3691,
+    "pName": "BUILD_CREEP_TUMOR",
+    "name": "GeneralBuildCreepTumorBuild CreepTumor",
+    "generalId": 0
+  },
+  {
+    "id": 1342,
+    "pName": "TRAIN_DRONE",
+    "name": "LarvaTrainTrain Drone",
+    "generalId": 0
+  },
+  {
+    "id": 2413,
+    "pName": "ABILITY_2413",
+    "name": "AiurLightBridgeNW10OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2218,
+    "pName": "ABILITY_2218",
+    "name": "XelNaga_Caverns_Floating_BridgeNW12Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 2330,
+    "pName": "MORPH_RAVAGER",
+    "name": "MorphToRavagerMorph Ravager",
+    "generalId": 0
+  },
+  {
+    "id": 560,
+    "pName": "TRAIN_MARINE",
+    "name": "BarracksTrainTrain Marine",
+    "generalId": 0
+  },
+  {
+    "id": 403,
+    "pName": "MORPH_VIKING_ASSAULT_MODE",
+    "name": "AssaultModeMorph VikingAssaultMode",
+    "generalId": 0
+  },
+  {
+    "id": 620,
+    "pName": "TRAIN_MEDIVAC",
+    "name": "StarportTrainTrain Medivac",
+    "generalId": 0
+  },
+  {
+    "id": 1386,
+    "pName": "BURROW_DOWN_ROACH",
+    "name": "BurrowRoachDownBurrowDown Roach",
+    "generalId": 3661
+  },
+  {
+    "id": 2680,
+    "pName": "ABILITY_2680",
+    "name": "PortCity_Bridge_UnitW10Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 2246,
+    "pName": "ABILITY_2246",
+    "name": "SnowRefinery_Terran_ExtendingBridgeNEShort8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2662,
+    "pName": "ABILITY_2662",
+    "name": "PortCity_Bridge_UnitW8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 1571,
+    "pName": "RESEARCH_PROTOSS_HALLUCINATION",
+    "name": "CyberneticsCoreResearchResearch ResearchHallucination",
+    "generalId": 0
+  },
+  {
+    "id": 518,
+    "pName": "LIFT_STARPORT",
+    "name": "StarportLiftOffLift Starport",
+    "generalId": 3679
+  },
+  {
+    "id": 792,
+    "pName": "RESEARCH_TERRAN_MEDIVAC_ENERGY_UPGRADE",
+    "name": "StarportTechLabResearchResearch ResearchMedivacEnergyUpgrade",
+    "generalId": 0
+  },
+  {
+    "id": 596,
+    "pName": "TRAIN_HELLBAT",
+    "name": "FactoryTrainTrain Hellbat",
+    "generalId": 0
+  },
+  {
+    "id": 1187,
+    "pName": "RESEARCH_ZERG_MELEE_WEAPONS_LEVEL2",
+    "name": "evolutionchamberresearchResearch ZergMeleeWeaponsLevel2",
+    "generalId": 3705
+  },
+  {
+    "id": 1064,
+    "pName": "RESEARCH_PROTOSS_GROUND_WEAPONS_LEVEL3",
+    "name": "ForgeResearchResearch ProtossGroundWeaponsLevel3",
+    "generalId": 3695
+  },
+  {
+    "id": 1253,
+    "pName": "RESEARCH_ZERGLING_METABOLIC_BOOST",
+    "name": "SpawningPoolResearchResearch ZerglingMetabolicBoost",
+    "generalId": 0
+  },
+  {
+    "id": 1354,
+    "pName": "TRAIN_VIPER",
+    "name": "LarvaTrainTrain Viper",
+    "generalId": 0
+  },
+  {
+    "id": 1562,
+    "pName": "RESEARCH_PROTOSS_AIR_WEAPONS_LEVEL1",
+    "name": "CyberneticsCoreResearchResearch ProtossAirWeaponsLevel1",
+    "generalId": 3693
+  },
+  {
+    "id": 1224,
+    "pName": "RESEARCH_ZERG_LAIR_EVOLVE_VENTRAL_SACKS",
+    "name": "LairResearchResearch EvolveVentralSacks",
+    "generalId": 0
+  },
+  {
+    "id": 2132,
+    "pName": "ABILITY_2132",
+    "name": "ExtendingBridgeNWWide10Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 3693,
+    "pName": "RESEARCH_PROTOSS_AIR_WEAPONS",
+    "name": "ResearchProtossAirWeaponsResearch ProtossAirWeapons",
+    "generalId": 0
+  },
+  {
+    "id": 1566,
+    "pName": "RESEARCH_PROTOSS_AIR_ARMOR_LEVEL2",
+    "name": "CyberneticsCoreResearchResearch ProtossAirArmorLevel2",
+    "generalId": 3692
+  },
+  {
+    "id": 1455,
+    "pName": "RESEARCH_NEURAL_PARASITE",
+    "name": "InfestationPitResearchResearch NeuralParasite",
+    "generalId": 0
+  },
+  {
+    "id": 656,
+    "pName": "RESEARCH_TERRAN_INFANTRY_ARMOR_LEVEL1",
+    "name": "EngineeringBayResearchResearch TerranInfantryArmorLevel1",
+    "generalId": 3697
+  },
+  {
+    "id": 994,
+    "pName": "TRAIN_DISRUPTOR",
+    "name": "RoboticsFacilityTrainTrain Disruptor",
+    "generalId": 0
+  },
+  {
+    "id": 2626,
+    "pName": "ABILITY_2626",
+    "name": "PortCity_Bridge_UnitNW10OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2449,
+    "pName": "ABILITY_2449",
+    "name": "ShakurasLightBridgeNE10OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 803,
+    "pName": "RESEARCH_RAVEN_RECALIBRATED_EXPLOSIVES",
+    "name": "StarportTechLabResearchResearch RavenRecalibratedExplosives",
+    "generalId": 0
+  },
+  {
+    "id": 2140,
+    "pName": "ABILITY_2140",
+    "name": "ExtendingBridgeNWWide12Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 1725,
+    "pName": "MORPH_SPINE_CRAWLER_UPROOT",
+    "name": "SpineCrawlerUprootMorph SpineCrawlerUproot",
+    "generalId": 3681
+  },
+  {
+    "id": 422,
+    "pName": "BUILD_REACTOR_BARRACKS",
+    "name": "BarracksAddOnsBuild Reactor Barracks",
+    "generalId": 3683
+  },
+  {
+    "id": 1448,
+    "pName": "MORPH_OVERSEER",
+    "name": "MorphToOverseerMorph Overseer",
+    "generalId": 0
+  },
+  {
+    "id": 2586,
+    "pName": "ABILITY_2586",
+    "name": "AiurLightBridgeAbandonedNW12Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 1390,
+    "pName": "BURROW_DOWN_ZERGLING",
+    "name": "BurrowZerglingDownBurrowDown Zergling",
+    "generalId": 3661
+  },
+  {
+    "id": 3705,
+    "pName": "RESEARCH_ZERG_MELEE_WEAPONS",
+    "name": "ResearchZergMeleeWeaponsResearch ZergMeleeWeapons",
+    "generalId": 0
+  },
+  {
+    "id": 2574,
+    "pName": "ABILITY_2574",
+    "name": "AiurLightBridgeAbandonedNE12Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 110,
+    "pName": "ABILITY_110",
+    "name": "NexusTrainMothershipTrain Mothership",
+    "generalId": 0
+  },
+  {
+    "id": 1070,
+    "pName": "RESEARCH_PROTOSS_SHIELDS_LEVEL3",
+    "name": "ForgeResearchResearch ProtossShieldsLevel3",
+    "generalId": 3696
+  },
+  {
+    "id": 3699,
+    "pName": "RESEARCH_TERRAN_SHIP_WEAPONS",
+    "name": "ResearchTerranShipWeaponsResearch TerranShipWeapons",
+    "generalId": 0
+  },
+  {
+    "id": 1456,
+    "pName": "RESEARCH_ZERG_LOCUST_LIFETIME_INCREASE",
+    "name": "InfestationPitResearchResearch ResearchLocustLifetimeIncrease",
+    "generalId": 0
+  },
+  {
+    "id": 3698,
+    "pName": "RESEARCH_TERRAN_INFANTRY_WEAPONS",
+    "name": "ResearchTerranInfantryWeaponsResearch TerranInfantryWeapons",
+    "generalId": 0
+  },
+  {
+    "id": 561,
+    "pName": "TRAIN_REAPER",
+    "name": "BarracksTrainTrain Reaper",
+    "generalId": 0
+  },
+  {
+    "id": 1374,
+    "pName": "BURROW_DOWN_BANELING",
+    "name": "BurrowBanelingDownBurrowDown Baneling",
+    "generalId": 3661
+  },
+  {
+    "id": 2654,
+    "pName": "ABILITY_2654",
+    "name": "PortCity_Bridge_UnitS8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2479,
+    "pName": "ABILITY_2479",
+    "name": "MorphToGuardianMPMorph MorphToGuardianMP",
+    "generalId": 0
+  },
+  {
+    "id": 883,
+    "pName": "BUILD_GATEWAY",
+    "name": "ProtossBuildBuild Gateway",
+    "generalId": 0
+  },
+  {
+    "id": 2674,
+    "pName": "ABILITY_2674",
+    "name": "PortCity_Bridge_UnitE10OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 421,
+    "pName": "BUILD_TECHLAB_BARRACKS",
+    "name": "BarracksAddOnsBuild TechLab Barracks",
+    "generalId": 3682
+  },
+  {
+    "id": 326,
+    "pName": "BUILD_SENSOR_TOWER",
+    "name": "TerranBuildBuild SensorTower",
+    "generalId": 0
+  },
+  {
+    "id": 765,
+    "pName": "RESEARCH_TERRAN_LOCK_ON_RANGE_UPGRADE",
+    "name": "FactoryTechLabResearchResearch ResearchLockOnRangeUpgrade",
+    "generalId": 0
+  },
+  {
+    "id": 1066,
+    "pName": "RESEARCH_PROTOSS_GROUND_ARMOR_LEVEL2",
+    "name": "ForgeResearchResearch ProtossGroundArmorLevel2",
+    "generalId": 3694
+  },
+  {
+    "id": 3743,
+    "pName": "MORPH_OVERSIGHT_MODE",
+    "name": "OverseerMorphtoOverseerSiegeModeMorph OversightMode",
+    "generalId": 0
+  },
+  {
+    "id": 2411,
+    "pName": "ABILITY_2411",
+    "name": "AiurLightBridgeNW8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 2572,
+    "pName": "ABILITY_2572",
+    "name": "AiurLightBridgeAbandonedNE12OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 322,
+    "pName": "BUILD_ENGINEERING_BAY",
+    "name": "TerranBuildBuild EngineeringBay",
+    "generalId": 0
+  },
+  {
+    "id": 2362,
+    "pName": "MORPH_THOR_HIGH_IMPACT_MODE",
+    "name": "ThorAPModeMorph ThorHighImpactMode",
+    "generalId": 0
+  },
+  {
+    "id": 3704,
+    "pName": "RESEARCH_ZERG_GROUND_ARMOR",
+    "name": "ResearchZergGroundArmorResearch ZergGroundArmor",
+    "generalId": 0
+  },
+  {
+    "id": 2457,
+    "pName": "ABILITY_2457",
+    "name": "ShakurasLightBridgeNW8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 1533,
+    "pName": "RESEARCH_LIBERATOR_BALLISTIC_RANGE",
+    "name": "FusionCoreResearchResearch ResearchBallisticRange",
+    "generalId": 0
+  },
+  {
+    "id": 1372,
+    "pName": "MORPH_BROODLORD",
+    "name": "MorphToBroodLordMorph BroodLord",
+    "generalId": 0
+  },
+  {
+    "id": 524,
+    "pName": "TRAIN_SCV",
+    "name": "CommandCenterTrainTrain SCV",
+    "generalId": 0
+  },
+  {
+    "id": 2118,
+    "pName": "ABILITY_2118",
+    "name": "ExtendingBridgeNEWide8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 3679,
+    "pName": "LIFT",
+    "name": "LiftLift",
+    "generalId": 0
+  },
+  {
+    "id": 2128,
+    "pName": "ABILITY_2128",
+    "name": "ExtendingBridgeNEWide10Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 3692,
+    "pName": "RESEARCH_PROTOSS_AIR_ARMOR",
+    "name": "ResearchProtossAirArmorResearch ProtossAirArmor",
+    "generalId": 0
+  },
+  {
+    "id": 263,
+    "pName": "ABILITY_263",
+    "name": "UltraliskCavernResearchResearch AnabolicSynthesis",
+    "generalId": 0
+  },
+  {
+    "id": 2716,
+    "pName": "ABILITY_2716",
+    "name": "PurifyMorphPylonMorph MothershipCoreWeapon",
+    "generalId": 0
+  },
+  {
+    "id": 319,
+    "pName": "BUILD_SUPPLY_DEPOT",
+    "name": "TerranBuildBuild SupplyDepot",
+    "generalId": 0
+  },
+  {
+    "id": 2616,
+    "pName": "ABILITY_2616",
+    "name": "PortCity_Bridge_UnitSW8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 1666,
+    "pName": "ABILITY_1666",
+    "name": "TechLabMorphTechLabMorph_0",
+    "generalId": 0
+  },
+  {
+    "id": 2136,
+    "pName": "ABILITY_2136",
+    "name": "ExtendingBridgeNEWide12Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 1094,
+    "pName": "RESEARCH_GRAVITIC_DRIVE",
+    "name": "RoboticsBayResearchResearch GraviticDrive",
+    "generalId": 0
+  },
+  {
+    "id": 318,
+    "pName": "BUILD_COMMAND_CENTER",
+    "name": "TerranBuildBuild CommandCenter",
+    "generalId": 0
+  },
+  {
+    "id": 2216,
+    "pName": "ABILITY_2216",
+    "name": "XelNaga_Caverns_Floating_BridgeNW12OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 1512,
+    "pName": "ABILITY_1512",
+    "name": "BurrowUltraliskDownBurrowDown Ultralisk",
+    "generalId": 3661
+  },
+  {
+    "id": 2676,
+    "pName": "ABILITY_2676",
+    "name": "PortCity_Bridge_UnitE10Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 2200,
+    "pName": "ABILITY_2200",
+    "name": "XelNaga_Caverns_Floating_BridgeNW8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2708,
+    "pName": "MORPH_OVERLORD_TRANSPORT",
+    "name": "MorphToTransportOverlordMorph OverlordTransport",
+    "generalId": 0
+  },
+  {
+    "id": 1154,
+    "pName": "BUILD_EXTRACTOR",
+    "name": "ZergBuildBuild Extractor",
+    "generalId": 0
+  },
+  {
+    "id": 1317,
+    "pName": "RESEARCH_ZERG_FLYER_ARMOR_LEVEL3",
+    "name": "SpireResearchResearch ZergFlyerArmorLevel3",
+    "generalId": 3702
+  },
+  {
+    "id": 2636,
+    "pName": "ABILITY_2636",
+    "name": "PortCity_Bridge_UnitNE12Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 2130,
+    "pName": "ABILITY_2130",
+    "name": "ExtendingBridgeNWWide10OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 946,
+    "pName": "TRAIN_PHOENIX",
+    "name": "StargateTrainTrain Phoenix",
+    "generalId": 0
+  },
+  {
+    "id": 2640,
+    "pName": "ABILITY_2640",
+    "name": "PortCity_Bridge_UnitSE12Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 216,
+    "pName": "RESEARCH_GLIAL_REGENERATION",
+    "name": "RoachWarrenResearchResearch GlialRegeneration",
+    "generalId": 0
+  },
+  {
+    "id": 1165,
+    "pName": "BUILD_ROACH_WARREN",
+    "name": "ZergBuildBuild RoachWarren",
+    "generalId": 0
+  },
+  {
+    "id": 2463,
+    "pName": "ABILITY_2463",
+    "name": "ShakurasLightBridgeNW10Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 2489,
+    "pName": "ABILITY_2489",
+    "name": "DefilerMPBurrowMorph BurrowDown",
+    "generalId": 3661
+  },
+  {
+    "id": 1444,
+    "pName": "BURROW_DOWN_INFESTOR",
+    "name": "BurrowInfestorDownBurrowDown Infestor",
+    "generalId": 3661
+  },
+  {
+    "id": 978,
+    "pName": "TRAIN_COLOSSUS",
+    "name": "RoboticsFacilityTrainTrain Colossus",
+    "generalId": 0
+  },
+  {
+    "id": 329,
+    "pName": "BUILD_STARPORT",
+    "name": "TerranBuildBuild Starport",
+    "generalId": 0
+  },
+  {
+    "id": 2234,
+    "pName": "ABILITY_2234",
+    "name": "XelNaga_Caverns_Floating_BridgeV10Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 922,
+    "pName": "TRAIN_ADEPT",
+    "name": "GatewayTrainTrain Adept",
+    "generalId": 0
+  },
+  {
+    "id": 1006,
+    "pName": "TRAIN_PROBE",
+    "name": "NexusTrainTrain Probe",
+    "generalId": 0
+  },
+  {
+    "id": 884,
+    "pName": "BUILD_FORGE",
+    "name": "ProtossBuildBuild Forge",
+    "generalId": 0
+  },
+  {
+    "id": 3682,
+    "pName": "BUILD_TECHLAB",
+    "name": "Build TechLabBuild TechLab",
+    "generalId": 0
+  },
+  {
+    "id": 331,
+    "pName": "BUILD_ARMORY",
+    "name": "TerranBuildBuild Armory",
+    "generalId": 0
+  },
+  {
+    "id": 2720,
+    "pName": "RESEARCH_SHADOW_STRIKE",
+    "name": "DarkShrineResearchResearch ShadowStrike",
+    "generalId": 0
+  },
+  {
+    "id": 1433,
+    "pName": "BURROW_DOWN_QUEEN",
+    "name": "BurrowQueenDownBurrowDown Queen",
+    "generalId": 3661
+  },
+  {
+    "id": 655,
+    "pName": "RESEARCH_NEOSTEEL_FRAME",
+    "name": "EngineeringBayResearchResearch NeosteelFrame",
+    "generalId": 0
+  },
+  {
+    "id": 2459,
+    "pName": "ABILITY_2459",
+    "name": "ShakurasLightBridgeNW8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 2696,
+    "pName": "ABILITY_2696",
+    "name": "PortCity_Bridge_UnitW12Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 1348,
+    "pName": "TRAIN_ULTRALISK",
+    "name": "LarvaTrainTrain Ultralisk",
+    "generalId": 0
+  },
+  {
+    "id": 2618,
+    "pName": "ABILITY_2618",
+    "name": "PortCity_Bridge_UnitNE10OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 954,
+    "pName": "TRAIN_ORACLE",
+    "name": "StargateTrainTrain Oracle",
+    "generalId": 0
+  },
+  {
+    "id": 732,
+    "pName": "RESEARCH_CONCUSSIVE_SHELLS",
+    "name": "BarracksTechLabResearchResearch ConcussiveShells",
+    "generalId": 0
+  },
+  {
+    "id": 1345,
+    "pName": "TRAIN_HYDRALISK",
+    "name": "LarvaTrainTrain Hydralisk",
+    "generalId": 0
+  },
+  {
+    "id": 1093,
+    "pName": "RESEARCH_GRAVITIC_BOOSTER",
+    "name": "RoboticsBayResearchResearch GraviticBooster",
+    "generalId": 0
+  },
+  {
+    "id": 852,
+    "pName": "RESEARCH_TERRAN_VEHICLE_PLATING_LEVEL1",
+    "name": "ArmoryResearchResearch TerranVehiclePlatingLevel1",
+    "generalId": 0
+  },
+  {
+    "id": 859,
+    "pName": "RESEARCH_TERRAN_SHIP_PLATING_LEVEL2",
+    "name": "ArmoryResearchResearch TerranShipPlatingLevel2",
+    "generalId": 0
+  },
+  {
+    "id": 2202,
+    "pName": "ABILITY_2202",
+    "name": "XelNaga_Caverns_Floating_BridgeNW8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 880,
+    "pName": "BUILD_NEXUS",
+    "name": "ProtossBuildBuild Nexus",
+    "generalId": 0
+  },
+  {
+    "id": 2638,
+    "pName": "ABILITY_2638",
+    "name": "PortCity_Bridge_UnitSE12OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2634,
+    "pName": "ABILITY_2634",
+    "name": "PortCity_Bridge_UnitNE12OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2650,
+    "pName": "ABILITY_2650",
+    "name": "PortCity_Bridge_UnitN8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 1632,
+    "pName": "TRAIN_QUEEN",
+    "name": "TrainQueenTrain Queen",
+    "generalId": 0
+  },
+  {
+    "id": 1216,
+    "pName": "MORPH_LAIR",
+    "name": "UpgradeToLairMorph Lair",
+    "generalId": 0
+  },
+  {
+    "id": 2206,
+    "pName": "ABILITY_2206",
+    "name": "XelNaga_Caverns_Floating_BridgeNE10Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 1062,
+    "pName": "RESEARCH_PROTOSS_GROUND_WEAPONS_LEVEL1",
+    "name": "ForgeResearchResearch ProtossGroundWeaponsLevel1",
+    "generalId": 3695
+  },
+  {
+    "id": 487,
+    "pName": "BUILD_TECHLAB_STARPORT",
+    "name": "StarportAddOnsBuild TechLab Starport",
+    "generalId": 3682
+  },
+  {
+    "id": 763,
+    "pName": "ABILITY_763",
+    "name": "FactoryTechLabResearchResearch ResearchTransformationServos",
+    "generalId": 0
+  },
+  {
+    "id": 2672,
+    "pName": "ABILITY_2672",
+    "name": "PortCity_Bridge_UnitS10Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 2212,
+    "pName": "ABILITY_2212",
+    "name": "XelNaga_Caverns_Floating_BridgeNE12OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 1727,
+    "pName": "MORPH_SPORE_CRAWLER_UPROOT",
+    "name": "SporeCrawlerUprootMorph SporeCrawlerUproot",
+    "generalId": 3681
+  },
+  {
+    "id": 47,
+    "pName": "RESEARCH_PROTOSS_TEMPEST_RANGE_UPGRADE",
+    "name": "FleetBeaconResearchResearch TempestRangeUpgrade",
+    "generalId": 0
+  },
+  {
+    "id": 1351,
+    "pName": "TRAIN_ROACH",
+    "name": "LarvaTrainTrain Roach",
+    "generalId": 0
+  },
+  {
+    "id": 2122,
+    "pName": "ABILITY_2122",
+    "name": "ExtendingBridgeNWWide8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2602,
+    "pName": "ABILITY_2602",
+    "name": "PortCity_Bridge_UnitNE8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 1162,
+    "pName": "BUILD_BANELING_NEST",
+    "name": "ZergBuildBuild BanelingNest",
+    "generalId": 0
+  },
+  {
+    "id": 1161,
+    "pName": "BUILD_NYDUS_NETWORK",
+    "name": "ZergBuildBuild NydusNetwork",
+    "generalId": 0
+  },
+  {
+    "id": 861,
+    "pName": "RESEARCH_TERRAN_SHIP_WEAPONS_LEVEL1",
+    "name": "ArmoryResearchResearch TerranShipWeaponsLevel1",
+    "generalId": 3699
+  },
+  {
+    "id": 1283,
+    "pName": "RESEARCH_MUSCULAR_AUGMENTS",
+    "name": "HydraliskDenResearchResearch MuscularAugments",
+    "generalId": 0
+  },
+  {
+    "id": 2461,
+    "pName": "ABILITY_2461",
+    "name": "ShakurasLightBridgeNW10OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 1454,
+    "pName": "RESEARCH_PATHOGEN_GLANDS",
+    "name": "InfestationPitResearchResearch PathogenGlands",
+    "generalId": 0
+  },
+  {
+    "id": 1160,
+    "pName": "BUILD_INFESTATION_PIT",
+    "name": "ZergBuildBuild InfestationPit",
+    "generalId": 0
+  },
+  {
+    "id": 2505,
+    "pName": "BUILD_STASIS_TRAP",
+    "name": "OracleStasisTrapBuildBuild StasisTrap",
+    "generalId": 0
+  },
+  {
+    "id": 1190,
+    "pName": "RESEARCH_ZERG_GROUND_ARMOR_LEVEL2",
+    "name": "evolutionchamberresearchResearch ZergGroundArmorLevel2",
+    "generalId": 3704
+  },
+  {
+    "id": 623,
+    "pName": "TRAIN_BATTLECRUISER",
+    "name": "StarportTrainTrain Battlecruiser",
+    "generalId": 0
+  },
+  {
+    "id": 1564,
+    "pName": "RESEARCH_PROTOSS_AIR_WEAPONS_LEVEL3",
+    "name": "CyberneticsCoreResearchResearch ProtossAirWeaponsLevel3",
+    "generalId": 3693
+  },
+  {
+    "id": 1314,
+    "pName": "RESEARCH_ZERG_FLYER_ATTACK_LEVEL3",
+    "name": "SpireResearchResearch ZergFlyerAttackLevel3",
+    "generalId": 3703
+  },
+  {
+    "id": 2451,
+    "pName": "ABILITY_2451",
+    "name": "ShakurasLightBridgeNE10Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 2467,
+    "pName": "ABILITY_2467",
+    "name": "ShakurasLightBridgeNW12Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 921,
+    "pName": "TRAIN_SENTRY",
+    "name": "GatewayTrainTrain Sentry",
+    "generalId": 0
+  },
+  {
+    "id": 730,
+    "pName": "RESEARCH_STIMPACK",
+    "name": "BarracksTechLabResearchResearch Stimpack",
+    "generalId": 0
+  },
+  {
+    "id": 2628,
+    "pName": "ABILITY_2628",
+    "name": "PortCity_Bridge_UnitNW10Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 1516,
+    "pName": "MORPH_ORBITAL_COMMAND",
+    "name": "UpgradeToOrbitalMorph OrbitalCommand",
+    "generalId": 0
+  },
+  {
+    "id": 653,
+    "pName": "RESEARCH_TERRAN_INFANTRY_WEAPONS_LEVEL2",
+    "name": "EngineeringBayResearchResearch TerranInfantryWeaponsLevel2",
+    "generalId": 3698
+  },
+  {
+    "id": 1532,
+    "pName": "RESEARCH_BATTLECRUISER_WEAPON_REFIT",
+    "name": "FusionCoreResearchResearch BattlecruiserWeaponRefit",
+    "generalId": 0
+  },
+  {
+    "id": 821,
+    "pName": "RESEARCH_TERRAN_GHOST_ENERGY_UPGRADE",
+    "name": "GhostAcademyResearchResearch ResearchGhostEnergyUpgrade",
+    "generalId": 0
+  },
+  {
+    "id": 977,
+    "pName": "TRAIN_OBSERVER",
+    "name": "RoboticsFacilityTrainTrain Observer",
+    "generalId": 0
+  },
+  {
+    "id": 891,
+    "pName": "BUILD_DARK_SHRINE",
+    "name": "ProtossBuildBuild DarkShrine",
+    "generalId": 0
+  },
+  {
+    "id": 895,
+    "pName": "ABILITY_895",
+    "name": "ProtossBuildBuild ShieldBattery",
+    "generalId": 0
+  },
+  {
+    "id": 80,
+    "pName": "TRAIN_BANELING",
+    "name": "MorphZerglingToBanelingTrain Baneling",
+    "generalId": 0
+  },
+  {
+    "id": 2648,
+    "pName": "ABILITY_2648",
+    "name": "PortCity_Bridge_UnitSW12Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 790,
+    "pName": "RESEARCH_BANSHEE_CLOAKING_FIELD",
+    "name": "StarportTechLabResearchResearch BansheeCloakingField",
+    "generalId": 0
+  },
+  {
+    "id": 1166,
+    "pName": "BUILD_SPINE_CRAWLER",
+    "name": "ZergBuildBuild SpineCrawler",
+    "generalId": 0
+  },
+  {
+    "id": 1662,
+    "pName": "ABILITY_1662",
+    "name": "BurrowCreepTumorDownMorph BurrowDown",
+    "generalId": 3661
+  },
+  {
+    "id": 3741,
+    "pName": "MORPH_SURVEILLANCE_MODE",
+    "name": "ObserverMorphtoObserverSiegeMorph SurveillanceMode",
+    "generalId": 0
+  },
+  {
+    "id": 614,
+    "pName": "TRAIN_WIDOWMINE",
+    "name": "FactoryTrainTrain WidowMine",
+    "generalId": 0
+  },
+  {
+    "id": 1099,
+    "pName": "RESEARCH_PROTOSS_IMMORTAL_REVIVE",
+    "name": "RoboticsBayResearchResearch ResearchImmortalRevive",
+    "generalId": 0
+  },
+  {
+    "id": 2630,
+    "pName": "ABILITY_2630",
+    "name": "PortCity_Bridge_UnitSW10OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2606,
+    "pName": "ABILITY_2606",
+    "name": "PortCity_Bridge_UnitSE8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2614,
+    "pName": "ABILITY_2614",
+    "name": "PortCity_Bridge_UnitSW8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2397,
+    "pName": "ABILITY_2397",
+    "name": "AiurLightBridgeNE8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 562,
+    "pName": "TRAIN_GHOST",
+    "name": "BarracksTrainTrain Ghost",
+    "generalId": 0
+  },
+  {
+    "id": 3696,
+    "pName": "RESEARCH_PROTOSS_SHIELDS",
+    "name": "ResearchProtossShieldsResearch ProtossShields",
+    "generalId": 0
+  },
+  {
+    "id": 2409,
+    "pName": "ABILITY_2409",
+    "name": "AiurLightBridgeNW8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2608,
+    "pName": "ABILITY_2608",
+    "name": "PortCity_Bridge_UnitSE8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 1568,
+    "pName": "RESEARCH_WARP_GATE",
+    "name": "CyberneticsCoreResearchResearch WarpGate",
+    "generalId": 0
+  },
+  {
+    "id": 2210,
+    "pName": "ABILITY_2210",
+    "name": "XelNaga_Caverns_Floating_BridgeNW10Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 1186,
+    "pName": "RESEARCH_ZERG_MELEE_WEAPONS_LEVEL1",
+    "name": "evolutionchamberresearchResearch ZergMeleeWeaponsLevel1",
+    "generalId": 3705
+  },
+  {
+    "id": 889,
+    "pName": "BUILD_STARGATE",
+    "name": "ProtossBuildBuild Stargate",
+    "generalId": 0
+  },
+  {
+    "id": 2134,
+    "pName": "ABILITY_2134",
+    "name": "ExtendingBridgeNEWide12OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 1522,
+    "pName": "LIFT_ORBITAL_COMMAND",
+    "name": "OrbitalLiftOffLift OrbitalCommand",
+    "generalId": 3679
+  },
+  {
+    "id": 2656,
+    "pName": "ABILITY_2656",
+    "name": "PortCity_Bridge_UnitS8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 1567,
+    "pName": "RESEARCH_PROTOSS_AIR_ARMOR_LEVEL3",
+    "name": "CyberneticsCoreResearchResearch ProtossAirArmorLevel3",
+    "generalId": 3692
+  },
+  {
+    "id": 2692,
+    "pName": "ABILITY_2692",
+    "name": "PortCity_Bridge_UnitE12Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 455,
+    "pName": "BUILD_REACTOR_FACTORY",
+    "name": "FactoryAddOnsBuild Reactor Factory",
+    "generalId": 3683
+  },
+  {
+    "id": 2646,
+    "pName": "ABILITY_2646",
+    "name": "PortCity_Bridge_UnitSW12OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 796,
+    "pName": "RESEARCH_TERRAN_SEEKER_MISSILE",
+    "name": "StarportTechLabResearchResearch ResearchSeekerMissile",
+    "generalId": 0
+  },
+  {
+    "id": 40,
+    "pName": "ABILITY_40",
+    "name": "MorphToInfestedTerranMorph InfestedTerrans",
+    "generalId": 0
+  },
+  {
+    "id": 320,
+    "pName": "BUILD_REFINERY",
+    "name": "TerranBuildBuild Refinery",
+    "generalId": 0
+  },
+  {
+    "id": 624,
+    "pName": "TRAIN_VIKING_FIGHTER",
+    "name": "StarportTrainTrain VikingFighter",
+    "generalId": 0
+  },
+  {
+    "id": 893,
+    "pName": "BUILD_ROBOTICS_FACILITY",
+    "name": "ProtossBuildBuild RoboticsFacility",
+    "generalId": 0
+  },
+  {
+    "id": 2399,
+    "pName": "ABILITY_2399",
+    "name": "AiurLightBridgeNE8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 1194,
+    "pName": "RESEARCH_ZERG_MISSILE_WEAPONS_LEVEL3",
+    "name": "evolutionchamberresearchResearch ZergMissileWeaponsLevel3",
+    "generalId": 3706
+  },
+  {
+    "id": 2222,
+    "pName": "ABILITY_2222",
+    "name": "XelNaga_Caverns_Floating_BridgeH8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 2684,
+    "pName": "ABILITY_2684",
+    "name": "PortCity_Bridge_UnitN12Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 1768,
+    "pName": "BUILD_NYDUS_WORM",
+    "name": "BuildNydusCanalBuild NydusWorm",
+    "generalId": 0
+  },
+  {
+    "id": 1378,
+    "pName": "BURROW_DOWN_DRONE",
+    "name": "BurrowDroneDownBurrowDown Drone",
+    "generalId": 3661
+  },
+  {
+    "id": 49,
+    "pName": "RESEARCH_TEMPEST_GROUND_ATTACK_UPGRADE",
+    "name": "FleetBeaconResearchResearch TempestResearchGroundAttackUpgrade",
+    "generalId": 0
+  },
+  {
+    "id": 594,
+    "pName": "TRAIN_THOR",
+    "name": "FactoryTrainTrain Thor",
+    "generalId": 0
+  },
+  {
+    "id": 1069,
+    "pName": "RESEARCH_PROTOSS_SHIELDS_LEVEL2",
+    "name": "ForgeResearchResearch ProtossShieldsLevel2",
+    "generalId": 3696
+  },
+  {
+    "id": 820,
+    "pName": "RESEARCH_PERSONAL_CLOAKING",
+    "name": "GhostAcademyResearchResearch PersonalCloaking",
+    "generalId": 0
+  },
+  {
+    "id": 2208,
+    "pName": "ABILITY_2208",
+    "name": "XelNaga_Caverns_Floating_BridgeNW10OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2455,
+    "pName": "ABILITY_2455",
+    "name": "ShakurasLightBridgeNE12Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 2622,
+    "pName": "ABILITY_2622",
+    "name": "PortCity_Bridge_UnitSE10OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 1220,
+    "pName": "MORPH_GREATER_SPIRE",
+    "name": "UpgradeToGreaterSpireMorph GreaterSpire",
+    "generalId": 0
+  },
+  {
+    "id": 1344,
+    "pName": "TRAIN_OVERLORD",
+    "name": "LarvaTrainTrain Overlord",
+    "generalId": 0
+  },
+  {
+    "id": 2228,
+    "pName": "ABILITY_2228",
+    "name": "XelNaga_Caverns_Floating_BridgeH10OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 916,
+    "pName": "TRAIN_ZEALOT",
+    "name": "GatewayTrainTrain Zealot",
+    "generalId": 0
+  },
+  {
+    "id": 325,
+    "pName": "ABILITY_325",
+    "name": "TerranBuildBuild Refinery",
+    "generalId": 0
+  },
+  {
+    "id": 2252,
+    "pName": "ABILITY_2252",
+    "name": "SnowRefinery_Terran_ExtendingBridgeNWShort8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 2610,
+    "pName": "ABILITY_2610",
+    "name": "PortCity_Bridge_UnitNW8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 1065,
+    "pName": "RESEARCH_PROTOSS_GROUND_ARMOR_LEVEL1",
+    "name": "ForgeResearchResearch ProtossGroundArmorLevel1",
+    "generalId": 3694
+  },
+  {
+    "id": 2095,
+    "pName": "BURROW_DOWN_WIDOWMINE",
+    "name": "WidowMineBurrowBurrowDown WidowMine",
+    "generalId": 3661
+  },
+  {
+    "id": 881,
+    "pName": "BUILD_PYLON",
+    "name": "ProtossBuildBuild Pylon",
+    "generalId": 0
+  },
+  {
+    "id": 657,
+    "pName": "RESEARCH_TERRAN_INFANTRY_ARMOR_LEVEL2",
+    "name": "EngineeringBayResearchResearch TerranInfantryArmorLevel2",
+    "generalId": 3697
+  },
+  {
+    "id": 1594,
+    "pName": "RESEARCH_ADEPT_RESONATING_GLAIVES",
+    "name": "TwilightCouncilResearchResearch AdeptResonatingGlaives",
+    "generalId": 0
+  },
+  {
+    "id": 388,
+    "pName": "MORPH_SIEGE_MODE",
+    "name": "SiegeModeMorph SiegeMode",
+    "generalId": 0
+  },
+  {
+    "id": 2204,
+    "pName": "ABILITY_2204",
+    "name": "XelNaga_Caverns_Floating_BridgeNE10OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 327,
+    "pName": "BUILD_GHOST_ACADEMY",
+    "name": "TerranBuildBuild GhostAcademy",
+    "generalId": 0
+  },
+  {
+    "id": 857,
+    "pName": "RESEARCH_TERRAN_VEHICLE_WEAPONS_LEVEL3",
+    "name": "ArmoryResearchResearch TerranVehicleWeaponsLevel3",
+    "generalId": 3701
+  },
+  {
+    "id": 1592,
+    "pName": "RESEARCH_CHARGE",
+    "name": "TwilightCouncilResearchResearch Charge",
+    "generalId": 0
+  },
+  {
+    "id": 2668,
+    "pName": "ABILITY_2668",
+    "name": "PortCity_Bridge_UnitN10Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 854,
+    "pName": "RESEARCH_TERRAN_VEHICLE_PLATING_LEVEL3",
+    "name": "ArmoryResearchResearch TerranVehiclePlatingLevel3",
+    "generalId": 0
+  },
+  {
+    "id": 2453,
+    "pName": "ABILITY_2453",
+    "name": "ShakurasLightBridgeNE12OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2576,
+    "pName": "ABILITY_2576",
+    "name": "AiurLightBridgeAbandonedNW8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 3706,
+    "pName": "RESEARCH_ZERG_MISSILE_WEAPONS",
+    "name": "ResearchZergMissileWeaponsResearch ZergMissileWeapons",
+    "generalId": 0
+  },
+  {
+    "id": 1356,
+    "pName": "TRAIN_SWARMHOST",
+    "name": "LarvaTrainTrain SwarmHost",
+    "generalId": 0
+  },
+  {
+    "id": 2240,
+    "pName": "ABILITY_2240",
+    "name": "XelNaga_Caverns_Floating_BridgeV12OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 3695,
+    "pName": "RESEARCH_PROTOSS_GROUND_WEAPONS",
+    "name": "ResearchProtossGroundWeaponsResearch ProtossGroundWeapons",
+    "generalId": 0
+  },
+  {
+    "id": 1450,
+    "pName": "MORPH_PLANETARY_FORTRESS",
+    "name": "UpgradeToPlanetaryFortressMorph PlanetaryFortress",
+    "generalId": 0
+  },
+  {
+    "id": 1282,
+    "pName": "RESEARCH_GROOVED_SPINES",
+    "name": "HydraliskDenResearchResearch GroovedSpines",
+    "generalId": 0
+  },
+  {
+    "id": 1733,
+    "pName": "BUILD_CREEP_TUMOR_TUMOR",
+    "name": "CreepTumorBuildBuild CreepTumor Tumor",
+    "generalId": 3691
+  },
+  {
+    "id": 766,
+    "pName": "RESEARCH_TERRAN_TRANSFORMATION_SERVOS",
+    "name": "FactoryTechLabResearchResearch SmartServos",
+    "generalId": 0
+  },
+  {
+    "id": 1155,
+    "pName": "BUILD_SPAWNING_POOL",
+    "name": "ZergBuildBuild SpawningPool",
+    "generalId": 0
+  },
+  {
+    "id": 563,
+    "pName": "TRAIN_MARAUDER",
+    "name": "BarracksTrainTrain Marauder",
+    "generalId": 0
+  },
+  {
+    "id": 2644,
+    "pName": "ABILITY_2644",
+    "name": "PortCity_Bridge_UnitNW12Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 597,
+    "pName": "TRAIN_CYCLONE",
+    "name": "FactoryTrainTrain Cyclone",
+    "generalId": 0
+  },
+  {
+    "id": 452,
+    "pName": "LIFT_BARRACKS",
+    "name": "BarracksLiftOffLift Barracks",
+    "generalId": 3679
+  },
+  {
+    "id": 2230,
+    "pName": "ABILITY_2230",
+    "name": "XelNaga_Caverns_Floating_BridgeH10Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 2226,
+    "pName": "ABILITY_2226",
+    "name": "XelNaga_Caverns_Floating_BridgeV8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 1353,
+    "pName": "TRAIN_CORRUPTOR",
+    "name": "LarvaTrainTrain Corruptor",
+    "generalId": 0
+  },
+  {
+    "id": 3661,
+    "pName": "BURROW_DOWN",
+    "name": "BurrowDownBurrowDown",
+    "generalId": 0
+  },
+  {
+    "id": 626,
+    "pName": "TRAIN_LIBERATOR",
+    "name": "StarportTrainTrain Liberator",
+    "generalId": 0
+  },
+  {
+    "id": 890,
+    "pName": "BUILD_TEMPLAR_ARCHIVE",
+    "name": "ProtossBuildBuild TemplarArchive",
+    "generalId": 0
+  },
+  {
+    "id": 2250,
+    "pName": "ABILITY_2250",
+    "name": "SnowRefinery_Terran_ExtendingBridgeNWShort8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2415,
+    "pName": "ABILITY_2415",
+    "name": "AiurLightBridgeNW10Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 919,
+    "pName": "TRAIN_HIGH_TEMPLAR",
+    "name": "GatewayTrainTrain HighTemplar",
+    "generalId": 0
+  },
+  {
+    "id": 1316,
+    "pName": "RESEARCH_ZERG_FLYER_ARMOR_LEVEL2",
+    "name": "SpireResearchResearch ZergFlyerArmorLevel2",
+    "generalId": 3702
+  },
+  {
+    "id": 1593,
+    "pName": "RESEARCH_BLINK",
+    "name": "TwilightCouncilResearchResearch Blink",
+    "generalId": 0
+  },
+  {
+    "id": 863,
+    "pName": "RESEARCH_TERRAN_SHIP_WEAPONS_LEVEL3",
+    "name": "ArmoryResearchResearch TerranShipWeaponsLevel3",
+    "generalId": 3699
+  },
+  {
+    "id": 892,
+    "pName": "BUILD_ROBOTICS_BAY",
+    "name": "ProtossBuildBuild RoboticsBay",
+    "generalId": 0
+  },
+  {
+    "id": 1312,
+    "pName": "RESEARCH_ZERG_FLYER_ATTACK_LEVEL1",
+    "name": "SpireResearchResearch ZergFlyerAttackLevel1",
+    "generalId": 3703
+  },
+  {
+    "id": 2224,
+    "pName": "ABILITY_2224",
+    "name": "XelNaga_Caverns_Floating_BridgeV8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 1528,
+    "pName": "MORPH_WARP_PRISM_PHASING_MODE",
+    "name": "PhasingModeMorph WarpPrismPhasingMode",
+    "generalId": 0
+  },
+  {
+    "id": 2554,
+    "pName": "ABILITY_2554",
+    "name": "LiberatorMorphtoAGMorph LiberatorAGMode",
+    "generalId": 0
+  },
+  {
+    "id": 2198,
+    "pName": "ABILITY_2198",
+    "name": "XelNaga_Caverns_Floating_BridgeNE8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 3710,
+    "pName": "ABILITY_3710",
+    "name": "LurkerDenResearchResearch ResearchLurkerRange",
+    "generalId": 0
+  },
+  {
+    "id": 2604,
+    "pName": "ABILITY_2604",
+    "name": "PortCity_Bridge_UnitNE8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 894,
+    "pName": "BUILD_CYBERNETICS_CORE",
+    "name": "ProtossBuildBuild CyberneticsCore",
+    "generalId": 0
+  },
+  {
+    "id": 2578,
+    "pName": "ABILITY_2578",
+    "name": "AiurLightBridgeAbandonedNW8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 323,
+    "pName": "BUILD_MISSILE_TURRET",
+    "name": "TerranBuildBuild MissileTurret",
+    "generalId": 0
+  },
+  {
+    "id": 1157,
+    "pName": "BUILD_HYDRALISK_DEN",
+    "name": "ZergBuildBuild HydraliskDen",
+    "generalId": 0
+  },
+  {
+    "id": 1343,
+    "pName": "TRAIN_ZERGLING",
+    "name": "LarvaTrainTrain Zergling",
+    "generalId": 0
+  },
+  {
+    "id": 622,
+    "pName": "TRAIN_RAVEN",
+    "name": "StarportTrainTrain Raven",
+    "generalId": 0
+  },
+  {
+    "id": 217,
+    "pName": "RESEARCH_TUNNELING_CLAWS",
+    "name": "RoachWarrenResearchResearch TunnelingClaws",
+    "generalId": 0
+  },
+  {
+    "id": 1159,
+    "pName": "BUILD_ULTRALISK_CAVERN",
+    "name": "ZergBuildBuild UltraliskCavern",
+    "generalId": 0
+  },
+  {
+    "id": 2417,
+    "pName": "ABILITY_2417",
+    "name": "AiurLightBridgeNW12OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2248,
+    "pName": "ABILITY_2248",
+    "name": "SnowRefinery_Terran_ExtendingBridgeNEShort8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 3703,
+    "pName": "RESEARCH_ZERG_FLYER_ATTACK",
+    "name": "ResearchZergFlyerAttackResearch ZergFlyerAttack",
+    "generalId": 0
+  },
+  {
+    "id": 2445,
+    "pName": "ABILITY_2445",
+    "name": "ShakurasLightBridgeNE8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2682,
+    "pName": "ABILITY_2682",
+    "name": "PortCity_Bridge_UnitN12OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2014,
+    "pName": "BURROW_DOWN_SWARMHOST",
+    "name": "MorphToSwarmHostBurrowedMPBurrowDown SwarmHost",
+    "generalId": 3661
+  },
+  {
+    "id": 950,
+    "pName": "TRAIN_VOIDRAY",
+    "name": "StargateTrainTrain VoidRay",
+    "generalId": 0
+  },
+  {
+    "id": 2124,
+    "pName": "ABILITY_2124",
+    "name": "ExtendingBridgeNWWide8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 2670,
+    "pName": "ABILITY_2670",
+    "name": "PortCity_Bridge_UnitS10OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 324,
+    "pName": "BUILD_BUNKER",
+    "name": "TerranBuildBuild Bunker",
+    "generalId": 0
+  },
+  {
+    "id": 979,
+    "pName": "TRAIN_IMMORTAL",
+    "name": "RoboticsFacilityTrainTrain Immortal",
+    "generalId": 0
+  },
+  {
+    "id": 948,
+    "pName": "TRAIN_CARRIER",
+    "name": "StargateTrainTrain Carrier",
+    "generalId": 0
+  },
+  {
+    "id": 2126,
+    "pName": "ABILITY_2126",
+    "name": "ExtendingBridgeNEWide10OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 853,
+    "pName": "RESEARCH_TERRAN_VEHICLE_PLATING_LEVEL2",
+    "name": "ArmoryResearchResearch TerranVehiclePlatingLevel2",
+    "generalId": 0
+  },
+  {
+    "id": 800,
+    "pName": "RESEARCH_TERRAN_LIBERATOR_AG_MODE",
+    "name": "StarportTechLabResearchResearch ResearchLiberatorAGMode",
+    "generalId": 0
+  },
+  {
+    "id": 860,
+    "pName": "RESEARCH_TERRAN_SHIP_PLATING_LEVEL3",
+    "name": "ArmoryResearchResearch TerranShipPlatingLevel3",
+    "generalId": 0
+  },
+  {
+    "id": 218,
+    "pName": "RESEARCH_ZERG_ROACH_SUPPLY",
+    "name": "RoachWarrenResearchResearch RoachSupply",
+    "generalId": 0
+  },
+  {
+    "id": 1188,
+    "pName": "RESEARCH_ZERG_MELEE_WEAPONS_LEVEL3",
+    "name": "evolutionchamberresearchResearch ZergMeleeWeaponsLevel3",
+    "generalId": 3705
+  },
+  {
+    "id": 761,
+    "pName": "RESEARCH_INFERNAL_PREIGNITER",
+    "name": "FactoryTechLabResearchResearch InfernalPreigniter",
+    "generalId": 0
+  },
+  {
+    "id": 1223,
+    "pName": "RESEARCH_PNEUMATIZED_CARAPACE",
+    "name": "LairResearchResearch PneumatizedCarapace",
+    "generalId": 0
+  },
+  {
+    "id": 2660,
+    "pName": "ABILITY_2660",
+    "name": "PortCity_Bridge_UnitE8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 855,
+    "pName": "RESEARCH_TERRAN_VEHICLE_WEAPONS_LEVEL1",
+    "name": "ArmoryResearchResearch TerranVehicleWeaponsLevel1",
+    "generalId": 3701
+  },
+  {
+    "id": 2568,
+    "pName": "ABILITY_2568",
+    "name": "AiurLightBridgeAbandonedNE10OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2584,
+    "pName": "ABILITY_2584",
+    "name": "AiurLightBridgeAbandonedNW12OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 886,
+    "pName": "BUILD_TWILIGHT_COUNCIL",
+    "name": "ProtossBuildBuild TwilightCouncil",
+    "generalId": 0
+  },
+  {
+    "id": 793,
+    "pName": "RESEARCH_RAVEN_CORVID_REACTOR",
+    "name": "StarportTechLabResearchResearch RavenCorvidReactor",
+    "generalId": 0
+  },
+  {
+    "id": 769,
+    "pName": "RESEARCH_MAGFIELD_LAUNCHERS",
+    "name": "FactoryTechLabResearchResearch CycloneLockOnDamage",
+    "generalId": 0
+  },
+  {
+    "id": 2120,
+    "pName": "ABILITY_2120",
+    "name": "ExtendingBridgeNEWide8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 2580,
+    "pName": "ABILITY_2580",
+    "name": "AiurLightBridgeAbandonedNW10OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 556,
+    "pName": "MORPH_SUPPLY_DEPOT_LOWER",
+    "name": "SupplyDepotLowerMorph SupplyDepot Lower",
+    "generalId": 0
+  },
+  {
+    "id": 1346,
+    "pName": "TRAIN_MUTALISK",
+    "name": "LarvaTrainTrain Mutalisk",
+    "generalId": 0
+  },
+  {
+    "id": 1192,
+    "pName": "RESEARCH_ZERG_MISSILE_WEAPONS_LEVEL1",
+    "name": "evolutionchamberresearchResearch ZergMissileWeaponsLevel1",
+    "generalId": 3706
+  },
+  {
+    "id": 2401,
+    "pName": "ABILITY_2401",
+    "name": "AiurLightBridgeNE10OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 1595,
+    "pName": "ABILITY_1595",
+    "name": "TwilightCouncilResearchResearch ResearchPsionicSurge",
+    "generalId": 0
+  },
+  {
+    "id": 1382,
+    "pName": "BURROW_DOWN_HYDRALISK",
+    "name": "BurrowHydraliskDownBurrowDown Hydralisk",
+    "generalId": 3661
+  },
+  {
+    "id": 955,
+    "pName": "TRAIN_TEMPEST",
+    "name": "StargateTrainTrain Tempest",
+    "generalId": 0
+  },
+  {
+    "id": 2686,
+    "pName": "ABILITY_2686",
+    "name": "PortCity_Bridge_UnitS12OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 1252,
+    "pName": "RESEARCH_ZERGLING_ADRENAL_GLANDS",
+    "name": "SpawningPoolResearchResearch ZerglingAdrenalGlands",
+    "generalId": 0
+  },
+  {
+    "id": 1394,
+    "pName": "ABILITY_1394",
+    "name": "BurrowInfestorTerranDownBurrowDown InfestorTerran",
+    "generalId": 3661
+  },
+  {
+    "id": 1218,
+    "pName": "MORPH_HIVE",
+    "name": "UpgradeToHiveMorph Hive",
+    "generalId": 0
+  },
+  {
+    "id": 976,
+    "pName": "TRAIN_WARP_PRISM",
+    "name": "RoboticsFacilityTrainTrain WarpPrism",
+    "generalId": 0
+  },
+  {
+    "id": 1189,
+    "pName": "RESEARCH_ZERG_GROUND_ARMOR_LEVEL1",
+    "name": "evolutionchamberresearchResearch ZergGroundArmorLevel1",
+    "generalId": 3704
+  },
+  {
+    "id": 731,
+    "pName": "RESEARCH_COMBAT_SHIELD",
+    "name": "BarracksTechLabResearchResearch CombatShield",
+    "generalId": 0
+  },
+  {
+    "id": 1565,
+    "pName": "RESEARCH_PROTOSS_AIR_ARMOR_LEVEL1",
+    "name": "CyberneticsCoreResearchResearch ProtossAirArmorLevel1",
+    "generalId": 3692
+  },
+  {
+    "id": 1195,
+    "pName": "ABILITY_1195",
+    "name": "evolutionchamberresearchResearch EvolvePropulsivePeristalsis",
+    "generalId": 0
+  },
+  {
+    "id": 1769,
+    "pName": "ABILITY_1769",
+    "name": "BuildNydusCanalBuild SummonNydusCanalAttacker",
+    "generalId": 0
+  },
+  {
+    "id": 595,
+    "pName": "TRAIN_HELLION",
+    "name": "FactoryTrainTrain Hellion",
+    "generalId": 0
+  },
+  {
+    "id": 654,
+    "pName": "RESEARCH_TERRAN_INFANTRY_WEAPONS_LEVEL3",
+    "name": "EngineeringBayResearchResearch TerranInfantryWeaponsLevel3",
+    "generalId": 3698
+  },
+  {
+    "id": 1674,
+    "pName": "ABILITY_1674",
+    "name": "ReactorMorphReactorMorph_0",
+    "generalId": 0
+  },
+  {
+    "id": 3662,
+    "pName": "BURROW_UP",
+    "name": "BurrowUpBurrowUp",
+    "generalId": 0
+  },
+  {
+    "id": 2694,
+    "pName": "ABILITY_2694",
+    "name": "PortCity_Bridge_UnitW12OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2664,
+    "pName": "ABILITY_2664",
+    "name": "PortCity_Bridge_UnitW8Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 764,
+    "pName": "RESEARCH_DRILLING_CLAWS",
+    "name": "FactoryTechLabResearchResearch DrillingClaws",
+    "generalId": 0
+  },
+  {
+    "id": 2582,
+    "pName": "ABILITY_2582",
+    "name": "AiurLightBridgeAbandonedNW10Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 650,
+    "pName": "RESEARCH_HISEC_AUTOTRACKING",
+    "name": "EngineeringBayResearchResearch HiSecAutoTracking",
+    "generalId": 0
+  },
+  {
+    "id": 2403,
+    "pName": "ABILITY_2403",
+    "name": "AiurLightBridgeNE10Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 2238,
+    "pName": "ABILITY_2238",
+    "name": "XelNaga_Caverns_Floating_BridgeH12Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 1837,
+    "pName": "ABILITY_1837",
+    "name": "MorphToGhostNovaMorph Move",
+    "generalId": 0
+  },
+  {
+    "id": 328,
+    "pName": "BUILD_FACTORY",
+    "name": "TerranBuildBuild Factory",
+    "generalId": 0
+  },
+  {
+    "id": 2678,
+    "pName": "ABILITY_2678",
+    "name": "PortCity_Bridge_UnitW10OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2658,
+    "pName": "ABILITY_2658",
+    "name": "PortCity_Bridge_UnitE8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 1067,
+    "pName": "RESEARCH_PROTOSS_GROUND_ARMOR_LEVEL3",
+    "name": "ForgeResearchResearch ProtossGroundArmorLevel3",
+    "generalId": 3694
+  },
+  {
+    "id": 1158,
+    "pName": "BUILD_SPIRE",
+    "name": "ZergBuildBuild Spire",
+    "generalId": 0
+  },
+  {
+    "id": 2236,
+    "pName": "ABILITY_2236",
+    "name": "XelNaga_Caverns_Floating_BridgeH12OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2564,
+    "pName": "ABILITY_2564",
+    "name": "AiurLightBridgeAbandonedNE8OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 2624,
+    "pName": "ABILITY_2624",
+    "name": "PortCity_Bridge_UnitSE10Morph BridgeRetract",
+    "generalId": 0
+  },
+  {
+    "id": 2232,
+    "pName": "ABILITY_2232",
+    "name": "XelNaga_Caverns_Floating_BridgeV10OutMorph BridgeExtend",
+    "generalId": 0
+  },
+  {
+    "id": 46,
+    "pName": "RESEARCH_PHOENIX_ANION_PULSE_CRYSTALS",
+    "name": "FleetBeaconResearchResearch PhoenixAnionPulseCrystals",
+    "generalId": 0
+  },
+  {
+    "id": 1156,
+    "pName": "BUILD_EVOLUTION_CHAMBER",
+    "name": "ZergBuildBuild EvolutionChamber",
+    "generalId": 0
+  },
+  {
+    "id": 321,
+    "pName": "BUILD_BARRACKS",
+    "name": "TerranBuildBuild Barracks",
+    "generalId": 0
+  },
+  {
+    "id": 2385,
+    "pName": "ABILITY_2385",
+    "name": "LocustMPMorphToAirMorph LocustMPFlyingSwoop",
+    "generalId": 0
+  },
+  {
+    "id": 1225,
+    "pName": "RESEARCH_BURROW",
+    "name": "LairResearchResearch Burrow",
+    "generalId": 0
+  },
+  {
+    "id": 333,
+    "pName": "BUILD_FUSION_CORE",
+    "name": "TerranBuildBuild FusionCore",
+    "generalId": 0
+  },
+  {
+    "id": 2138,
+    "pName": "ABILITY_2138",
+    "name": "ExtendingBridgeNWWide12OutMorph BridgeExtend",
+    "generalId": 0
+  }
+]
