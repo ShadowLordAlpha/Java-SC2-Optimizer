@@ -1,6 +1,9 @@
 package com.shadowcs.optimizer.genetics;
 
+import com.google.gson.Gson;
+import com.shadowcs.optimizer.build.BuildOrderGene;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,6 +12,7 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Data
+@Slf4j
 public class GeneticAlgorithm<E> {
 
     /**
@@ -36,11 +40,13 @@ public class GeneticAlgorithm<E> {
      */
     private int sameSolution;
 
+    private int genes;
+
 
     private double uniformRate = 0.5;
     private double mutationRate = 0.028;
     private int tournamentSize = 5;
-    private int elitism = 1;
+    private int elitism = 2;
 
     private boolean shouldContinue(double fitness, int generation, int same) {
         if(solutionFitness > 0 && fitness >= solutionFitness) {
@@ -58,13 +64,13 @@ public class GeneticAlgorithm<E> {
 
         // Generate initial population
         List<Chromosome<E>> population = new ArrayList<>(populationSize);
+        this.genes = genes;
 
         for(int i = 0; i < populationSize; i++) {
             population.add(new Chromosome<>(genes, genetics()));
         }
 
         Chromosome<E> mostFit = null;
-        double fitness = Double.NEGATIVE_INFINITY;
         int generation = 0;
         int same = 0;
         do {
@@ -76,43 +82,49 @@ public class GeneticAlgorithm<E> {
             generation++;
 
             // calculate fitness for each Chromosome in a population
-            population.parallelStream().forEach(chromo -> chromo.fitness(fitness().calculate(chromo)));
+            //log.info("Calculating Data");
+            population.forEach(chromo -> {
+                if(Double.isNaN(chromo.fitness())) {
+                    //log.info("calculating {} ", new Gson().toJson(chromo));
+                    chromo.fitness(fitness().calculate(chromo));
+                }
+            });
+            //log.info("Sorting Data");
             population.sort(Comparator.comparingDouble(Chromosome::fitness));
             Collections.reverse(population);
 
-            if(fitness < population.get(0).fitness()) {
-                fitness = population.get(0).fitness();
-                if (!population.get(0).equals(mostFit)) {
-                    mostFit = population.get(0);
-                    same = 0;
-                }
+            if(mostFit == null || mostFit.fitness() < population.get(0).fitness()) {
+                mostFit = population.get(0);
+                same = 0;
             }
+            log.info("Algorithm Running on Generation: {} with fitness {}", generation, mostFit.fitness());
+        } while(shouldContinue(mostFit.fitness(), generation, same));
 
-        } while(shouldContinue(fitness, generation, same));
-
-        System.out.println("Algorithm Finished on Generation: " + generation);
+        log.info("Algorithm Finished on Generation: {} with fitness {}", generation, mostFit.fitness());
 
         return mostFit;
     }
 
     private List<Chromosome<E>> evolvePopulation(List<Chromosome<E>> population) {
 
-        List<Chromosome<E>> duplicate = new ArrayList<>(population);
         List<Chromosome<E>> newPopulation = new ArrayList<>(population.size());
 
-        int size = population.size() - elitism;
-        /*double totalPoints = 0;
-        for(var pop: population) {
-            totalPoints += pop.fitness();
-        }*/
+        int size = population.size();
 
+        for(int i = 0; i < elitism; i++) {
+            // Make a copy of ourselves to add to the list...
+            // This needs to be a copy as we mutate and do things to the original ones
+            var copy = new Chromosome<>(population.get(i));
+            newPopulation.add(population.remove(i));
+            population.add(i, copy);
+        }
 
+        List<Chromosome<E>> duplicate = new ArrayList<>(population);
+
+        // Duplicate so we can mutate them
         for(int i = 0; i < elitism; i++) {
             newPopulation.add(population.get(i));
         }
-
-        // Duplicate so we can mutate them
-        newPopulation.addAll(newPopulation);
 
         // This actually helps a lot with tournament selection
         Collections.shuffle(duplicate);
@@ -143,16 +155,27 @@ public class GeneticAlgorithm<E> {
         }
 
         // This should leave us elitism number for new random generations
+        newPopulation.stream().forEach((chrom) -> {
+            boolean elite = false;
+            for(int i = 0; i < elitism; i++) {
+                if(chrom == newPopulation.get(i)) {
+                    elite = true;
+                    break;
 
-        newPopulation.parallelStream().skip(elitism).forEach(this::mutate);
+                }
+            }
 
-        newPopulation.parallelStream().skip(elitism).forEach(chrom -> chrom.validate(genetics()));
+            if(!elite) {
+                this.mutate(chrom);
+                genetics.validate(chrom);
+            }
+        });
 
         return newPopulation;
     }
 
     private Chromosome<E> crossover(Chromosome<E> indiv1, Chromosome<E> indiv2) {
-        Chromosome<E> newSol = new Chromosome<>(indiv1.geneList().size());
+        Chromosome<E> newSol = new Chromosome<>(genes);
 
         float chanc = ThreadLocalRandom.current().nextFloat();
 

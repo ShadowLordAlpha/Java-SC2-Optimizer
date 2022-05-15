@@ -1,10 +1,7 @@
 package com.shadowcs.optimizer.sc2data.generator;
 
 import com.github.ocraft.s2client.bot.S2Agent;
-import com.github.ocraft.s2client.protocol.data.Abilities;
-import com.github.ocraft.s2client.protocol.data.Ability;
-import com.github.ocraft.s2client.protocol.data.UnitType;
-import com.github.ocraft.s2client.protocol.data.Units;
+import com.github.ocraft.s2client.protocol.data.*;
 import com.github.ocraft.s2client.protocol.game.Race;
 import com.google.gson.GsonBuilder;
 import com.shadowcs.optimizer.sc2data.models.AbilityS2Data;
@@ -23,27 +20,38 @@ import java.util.concurrent.ConcurrentHashMap;
 @UtilityClass
 public class CollectData {
 
-    public void collectAbilityBuildData(Set<UnitS2Data> unData, Set<UpgradeS2Data> uData, S2Agent agent) {
+    public Set<AbilityS2Data> collectAbilityBuildData(Set<UnitS2Data> unData, S2Agent agent) {
         Set<Integer> usedAbility = new HashSet<>();
-        unData.forEach(unit -> usedAbility.add(unit.buildAbility()));
-        uData.forEach(unit -> usedAbility.add(unit.buildAbility()));
+        unData.forEach(unit -> {
+            usedAbility.add(unit.buildAbility());
+            usedAbility.addAll(unit.abilities());
+        });
 
         Set<AbilityS2Data> abilityS2Data = new HashSet<>();
         var map = new ConcurrentHashMap<>(agent.observation().getAbilityData(true));
+
+        // Not sure if this is needed but should be fine to leave in
         map.values().forEach(unit -> {
-            if(unit.getRemapsToAbility().isPresent() && unit.getRemapsToAbility().get() != Abilities.INVALID && usedAbility.contains(unit.getAbility().getAbilityId())) {
-                usedAbility.add(unit.getRemapsToAbility().get().getAbilityId());
+            if(unit.getRemapsToAbility().isPresent() && unit.getRemapsToAbility().get() != Abilities.INVALID) {
+                if(usedAbility.contains(unit.getAbility().getAbilityId())) {
+                    usedAbility.add(unit.getRemapsToAbility().get().getAbilityId());
+                } else if(usedAbility.contains(unit.getRemapsToAbility().get().getAbilityId())) {
+                    usedAbility.add(unit.getAbility().getAbilityId());
+                }
             }
         });
 
         map.values().forEach(value -> {
 
-            if(value.isAvailable() && usedAbility.contains(value.getAbility().getAbilityId())) {
+            if(value.isAvailable() && !value.getAbility().getTargets().isEmpty() && usedAbility.contains(value.getAbility().getAbilityId())) {
                 var temp = new AbilityS2Data();
                 temp.id(value.getAbility().getAbilityId());
                 temp.pName(value.getAbility().toString());
                 temp.name((value.getLinkName() + "" + value.getFriendlyName().orElse(value.getButtonName().orElse(""))).trim());
                 temp.generalId(value.getRemapsToAbility().orElse(Abilities.INVALID).getAbilityId());
+                for(Target target: value.getAbility().getTargets()) {
+                    temp.target().add(target.name());
+                }
 
                 abilityS2Data.add(temp);
             }
@@ -51,6 +59,8 @@ public class CollectData {
 
         String unitData = new GsonBuilder().setPrettyPrinting().create().toJson(abilityS2Data);
         writeToFile(unitData, "./data/optimizer/" + agent.control().proto().getBaseBuild() + "/ability_data.json");
+
+        return abilityS2Data;
     }
 
     public Set<UpgradeS2Data> collectUpgradeBuildData(S2Agent agent) {
@@ -78,13 +88,23 @@ public class CollectData {
 
     public Set<UnitS2Data> collectUnitBuildData(S2Agent agent) {
 
+        Set<Integer> aliasUnits = new HashSet<>();
         Set<UnitS2Data> unitTypeData = new HashSet<>();
         var map = new ConcurrentHashMap<>(agent.observation().getUnitTypeData(true));
+        map.values().forEach(value -> {
+            if(value.isAvailable()
+                    && value.getRace().orElse(Race.NO_RACE) != Race.NO_RACE
+                    && !value.getTechAliases().isEmpty()) {
+                value.getTechAliases().forEach(ut -> aliasUnits.add(ut.getUnitTypeId()));
+            }
+        });
+
         map.values().forEach(value -> {
             // We only currently care about these units, though we will probably want to know about all of them eventually
             if(value.isAvailable()
                     && value.getRace().orElse(Race.NO_RACE) != Race.NO_RACE
-                    && value.getAbility().orElse(Abilities.INVALID) != Abilities.INVALID) {
+                    && value.getAbility().orElse(Abilities.INVALID) != Abilities.INVALID
+                    && (!value.getUnitType().getAbilities().isEmpty() || aliasUnits.contains(value.getUnitType().getUnitTypeId()))) {
                 var temp = new UnitS2Data();
                 temp.id(value.getUnitType().getUnitTypeId());
                 temp.pName(value.getUnitType().toString());

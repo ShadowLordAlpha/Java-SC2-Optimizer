@@ -11,17 +11,6 @@
     "buildAbility": 862
   },
   {
-    "id": 65,
-    "pName": "ZERGLING_ATTACK_SPEED",
-    "name": "zerglingattackspeed",
-    "cost": {
-      "minerals": 200,
-      "vespene": 200,
-      "buildTime": 2080.0
-    },
-    "buildAbility": 1252
-  },
-  {
     "id": 82,
     "pName": "PROTOSS_AIR_ARMORS_LEVEL2",
     "name": "ProtossAirArmorsLevel2",
@@ -31,6 +20,17 @@
       "buildTime": 3440.0
     },
     "buildAbility": 1566
+  },
+  {
+    "id": 65,
+    "pName": "ZERGLING_ATTACK_SPEED",
+    "name": "zerglingattackspeed",
+    "cost": {
+      "minerals": 200,
+      "vespene": 200,
+      "buildTime": 2080.0
+    },
+    "buildAbility": 1252
   },
   {
     "id": 49,
@@ -231,17 +231,6 @@
     "buildAbility": 860
   },
   {
-    "id": 115,
-    "pName": "TERRAN_VEHICLE_AND_SHIP_WEAPONS_LEVEL3",
-    "name": "TerranVehicleAndShipWeaponsLevel3",
-    "cost": {
-      "minerals": 250,
-      "vespene": 250,
-      "buildTime": 3520.0
-    },
-    "buildAbility": 2296
-  },
-  {
     "id": 298,
     "pName": "UPGRADE_298",
     "name": "MicrobialShroud",
@@ -251,6 +240,17 @@
       "buildTime": 1760.0
     },
     "buildAbility": 1457
+  },
+  {
+    "id": 115,
+    "pName": "TERRAN_VEHICLE_AND_SHIP_WEAPONS_LEVEL3",
+    "name": "TerranVehicleAndShipWeaponsLevel3",
+    "cost": {
+      "minerals": 250,
+      "vespene": 250,
+      "buildTime": 3520.0
+    },
+    "buildAbility": 2296
   },
   {
     "id": 114,
@@ -264,17 +264,6 @@
     "buildAbility": 2295
   },
   {
-    "id": 78,
-    "pName": "PROTOSS_AIR_WEAPONS_LEVEL1",
-    "name": "ProtossAirWeaponsLevel1",
-    "cost": {
-      "minerals": 100,
-      "vespene": 100,
-      "buildTime": 2880.0
-    },
-    "buildAbility": 1562
-  },
-  {
     "id": 56,
     "pName": "ZERG_GROUND_ARMORS_LEVEL1",
     "name": "ZergGroundArmorsLevel1",
@@ -286,15 +275,15 @@
     "buildAbility": 1189
   },
   {
-    "id": 293,
-    "pName": "DIGGING_CLAWS",
-    "name": "DiggingClaws",
+    "id": 78,
+    "pName": "PROTOSS_AIR_WEAPONS_LEVEL1",
+    "name": "ProtossAirWeaponsLevel1",
     "cost": {
-      "minerals": 150,
-      "vespene": 150,
-      "buildTime": 1280.0
+      "minerals": 100,
+      "vespene": 100,
+      "buildTime": 2880.0
     },
-    "buildAbility": 3709
+    "buildAbility": 1562
   },
   {
     "id": 71,
@@ -306,6 +295,17 @@
       "buildTime": 2560.0
     },
     "buildAbility": 1315
+  },
+  {
+    "id": 293,
+    "pName": "DIGGING_CLAWS",
+    "name": "DiggingClaws",
+    "cost": {
+      "minerals": 150,
+      "vespene": 150,
+      "buildTime": 1280.0
+    },
+    "buildAbility": 3709
   },
   {
     "id": 57,
@@ -374,17 +374,6 @@
     "buildAbility": 1316
   },
   {
-    "id": 102,
-    "pName": "LOCUST_LIFETIME_INCREASE",
-    "name": "LocustLifetimeIncrease",
-    "cost": {
-      "minerals": 200,
-      "vespene": 200,
-      "buildTime": 1920.0
-    },
-    "buildAbility": 1456
-  },
-  {
     "id": 121,
     "pName": "IMMORTAL_REVIVE",
     "name": "ImmortalRevive",
@@ -394,6 +383,17 @@
       "buildTime": 1280.0
     },
     "buildAbility": 1099
+  },
+  {
+    "id": 102,
+    "pName": "LOCUST_LIFETIME_INCREASE",
+    "name": "LocustLifetimeIncrease",
+    "cost": {
+      "minerals": 200,
+      "vespene": 200,
+      "buildTime": 1920.0
+    },
+    "buildAbility": 1456
   },
   {
     "id": 130,
@@ -506,15 +506,15 @@
     "buildAbility": 764
   },
   {
-    "id": 46,
-    "pName": "PROTOSS_SHIELDS_LEVEL2",
-    "name": "ProtossShieldsLevel2",
+    "id": 64,
+    "pName": "BURROW",
+    "name": "Burrow",
     "cost": {
-      "minerals": 225,
-      "vespene": 225,
-      "buildTime": 3440.0
+      "minerals": 100,
+      "vespene": 100,
+      "buildTime": 1600.0
     },
-    "buildAbility": 1069
+    "buildAbility": 1225
   },
   {
     "id": 137,
@@ -528,6 +528,17 @@
     "buildAbility": 802
   },
   {
+    "id": 46,
+    "pName": "PROTOSS_SHIELDS_LEVEL2",
+    "name": "ProtossShieldsLevel2",
+    "cost": {
+      "minerals": 225,
+      "vespene": 225,
+      "buildTime": 3440.0
+    },
+    "buildAbility": 1069
+  },
+  {
     "id": 24,
     "pName": "DURABLE_MATERIALS",
     "name": "DurableMaterials",
@@ -537,17 +548,6 @@
       "buildTime": 1760.0
     },
     "buildAbility": 797
-  },
-  {
-    "id": 64,
-    "pName": "BURROW",
-    "name": "Burrow",
-    "cost": {
-      "minerals": 100,
-      "vespene": 100,
-      "buildTime": 1600.0
-    },
-    "buildAbility": 1225
   },
   {
     "id": 43,
@@ -583,17 +583,6 @@
     "buildAbility": 653
   },
   {
-    "id": 42,
-    "pName": "PROTOSS_GROUND_ARMORS_LEVEL1",
-    "name": "ProtossGroundArmorsLevel1",
-    "cost": {
-      "minerals": 100,
-      "vespene": 100,
-      "buildTime": 2880.0
-    },
-    "buildAbility": 1065
-  },
-  {
     "id": 70,
     "pName": "ZERG_FLYER_WEAPONS_LEVEL3",
     "name": "ZergFlyerWeaponsLevel3",
@@ -614,6 +603,17 @@
       "buildTime": 1760.0
     },
     "buildAbility": 763
+  },
+  {
+    "id": 42,
+    "pName": "PROTOSS_GROUND_ARMORS_LEVEL1",
+    "name": "ProtossGroundArmorsLevel1",
+    "cost": {
+      "minerals": 100,
+      "vespene": 100,
+      "buildTime": 2880.0
+    },
+    "buildAbility": 1065
   },
   {
     "id": 63,
@@ -748,17 +748,6 @@
     "buildAbility": 731
   },
   {
-    "id": 100,
-    "pName": "TEMPEST_RANGE_UPGRADE",
-    "name": "TempestRangeUpgrade",
-    "cost": {
-      "minerals": 200,
-      "vespene": 200,
-      "buildTime": 1760.0
-    },
-    "buildAbility": 47
-  },
-  {
     "id": 87,
     "pName": "BLINK_TECH",
     "name": "BlinkTech",
@@ -768,6 +757,17 @@
       "buildTime": 2720.0
     },
     "buildAbility": 1593
+  },
+  {
+    "id": 100,
+    "pName": "TEMPEST_RANGE_UPGRADE",
+    "name": "TempestRangeUpgrade",
+    "cost": {
+      "minerals": 200,
+      "vespene": 200,
+      "buildTime": 1760.0
+    },
+    "buildAbility": 47
   },
   {
     "id": 45,
@@ -869,17 +869,6 @@
     "buildAbility": 806
   },
   {
-    "id": 7,
-    "pName": "TERRAN_INFANTRY_WEAPONS_LEVEL1",
-    "name": "TerranInfantryWeaponsLevel1",
-    "cost": {
-      "minerals": 100,
-      "vespene": 100,
-      "buildTime": 2560.0
-    },
-    "buildAbility": 652
-  },
-  {
     "id": 32,
     "pName": "TERRAN_VEHICLE_WEAPONS_LEVEL3",
     "name": "TerranVehicleWeaponsLevel3",
@@ -889,6 +878,17 @@
       "buildTime": 3520.0
     },
     "buildAbility": 857
+  },
+  {
+    "id": 7,
+    "pName": "TERRAN_INFANTRY_WEAPONS_LEVEL1",
+    "name": "TerranInfantryWeaponsLevel1",
+    "cost": {
+      "minerals": 100,
+      "vespene": 100,
+      "buildTime": 2560.0
+    },
+    "buildAbility": 652
   },
   {
     "id": 86,
@@ -913,17 +913,6 @@
     "buildAbility": 766
   },
   {
-    "id": 13,
-    "pName": "TERRAN_INFANTRY_ARMORS_LEVEL3",
-    "name": "TerranInfantryArmorsLevel3",
-    "cost": {
-      "minerals": 250,
-      "vespene": 250,
-      "buildTime": 3520.0
-    },
-    "buildAbility": 658
-  },
-  {
     "id": 54,
     "pName": "ZERG_MELEE_WEAPONS_LEVEL2",
     "name": "ZergMeleeWeaponsLevel2",
@@ -933,6 +922,17 @@
       "buildTime": 3040.0
     },
     "buildAbility": 1187
+  },
+  {
+    "id": 13,
+    "pName": "TERRAN_INFANTRY_ARMORS_LEVEL3",
+    "name": "TerranInfantryArmorsLevel3",
+    "cost": {
+      "minerals": 250,
+      "vespene": 250,
+      "buildTime": 3520.0
+    },
+    "buildAbility": 658
   },
   {
     "id": 2,
@@ -1243,17 +1243,6 @@
     "buildAbility": 769
   },
   {
-    "id": 136,
-    "pName": "BANSHEE_SPEED",
-    "name": "BansheeSpeed",
-    "cost": {
-      "minerals": 150,
-      "vespene": 150,
-      "buildTime": 2720.0
-    },
-    "buildAbility": 799
-  },
-  {
     "id": 22,
     "pName": "RAVEN_CORVID_REACTOR",
     "name": "RavenCorvidReactor",
@@ -1263,6 +1252,17 @@
       "buildTime": 1760.0
     },
     "buildAbility": 793
+  },
+  {
+    "id": 136,
+    "pName": "BANSHEE_SPEED",
+    "name": "BansheeSpeed",
+    "cost": {
+      "minerals": 150,
+      "vespene": 150,
+      "buildTime": 2720.0
+    },
+    "buildAbility": 799
   },
   {
     "id": 41,

@@ -55,15 +55,14 @@ public class Collector {
             System.out.println(control().proto().getBaseBuild());
             System.out.println(control().proto().getDataVersion());
 
-            var uData = CollectData.collectUpgradeBuildData(this);
             var unData = CollectData.collectUnitBuildData(this);
-
-            CollectData.collectAbilityBuildData(unData, uData, this);
-
+            var aData = CollectData.collectAbilityBuildData(unData,  this);
+            var uData = CollectData.collectUpgradeBuildData(this);
 
             debug().debugShowMap();
             debug().debugGodMode();
             debug().debugIgnoreFood();
+            debug().debugEndGame(true);
             //for(var data: unitTypeData) {
                 //debug().debugCreateUnit(Units.from(data.id()), observation().getGameInfo().findCenterOfMap(), observation().getPlayerId(), 1);
             //}
