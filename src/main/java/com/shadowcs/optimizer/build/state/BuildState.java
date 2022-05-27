@@ -1,13 +1,13 @@
-package com.shadowcs.optimizer.build;
+package com.shadowcs.optimizer.build.state;
 
-import com.github.benmanes.caffeine.cache.Caffeine;
-import com.github.benmanes.caffeine.cache.LoadingCache;
 import com.github.ocraft.s2client.protocol.data.UnitType;
 import com.github.ocraft.s2client.protocol.data.Units;
+import com.shadowcs.optimizer.build.genetics.info.BuildUnitInfo;
 import com.shadowcs.optimizer.pojo.Pair;
 import lombok.Data;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -21,7 +21,7 @@ public class BuildState {
      * Use a cache to get a list of BuildUnitInfo specifically related to that base unit. This is used to increase our
      * access speed of the data. The list is used as we need to keep track of addons for a select few units
      */
-    private final LoadingCache<UnitType, List<BuildUnitInfo>> unitInfoMap = Caffeine.newBuilder().build(key -> new ArrayList<>());
+    private final HashMap<UnitType, List<BuildUnitInfo>> unitInfoMap = new HashMap<>();
 
     /**
      * The resources we have available to us.
@@ -53,6 +53,9 @@ public class BuildState {
     public BuildState addUnit(UnitType type, UnitType addon, int delta) {
 
         if(delta != 0) {
+            if(!unitInfoMap.containsKey(type)) {
+                unitInfoMap.put(type, new ArrayList<>());
+            }
             var typeList = unitInfoMap.get(type);
             if(!typeList.isEmpty()) {
                 for (var buildInfo : typeList) {

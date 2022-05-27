@@ -4,6 +4,7 @@ import com.github.ocraft.s2client.protocol.data.UnitAttribute;
 import com.github.ocraft.s2client.protocol.data.UnitType;
 import com.github.ocraft.s2client.protocol.game.Race;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Set;
 
@@ -11,6 +12,7 @@ import java.util.Set;
  * TODO: This is currently only what we need for a build optimized, we will need more info for a combat analyzer
  */
 @Data
+@EqualsAndHashCode(cacheStrategy= EqualsAndHashCode.CacheStrategy.LAZY)
 public class UnitS2Data {
     private int id; // Our Unit ID
     private String pName;

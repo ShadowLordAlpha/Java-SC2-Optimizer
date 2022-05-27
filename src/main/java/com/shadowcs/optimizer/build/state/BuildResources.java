@@ -1,4 +1,4 @@
-package com.shadowcs.optimizer.build;
+package com.shadowcs.optimizer.build.state;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

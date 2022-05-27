@@ -1,4 +1,4 @@
-package com.shadowcs.optimizer.build;
+package com.shadowcs.optimizer.build.genetics.info;
 
 import com.github.ocraft.s2client.protocol.data.UnitType;
 import com.github.ocraft.s2client.protocol.data.Units;

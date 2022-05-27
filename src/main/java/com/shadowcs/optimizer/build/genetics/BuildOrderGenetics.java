@@ -1,13 +1,14 @@
 package com.shadowcs.optimizer.build.genetics;
 
+import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import com.github.benmanes.caffeine.cache.LoadingCache;
 import com.github.ocraft.s2client.protocol.data.Units;
 import com.google.common.util.concurrent.AtomicDouble;
-import com.shadowcs.optimizer.build.BuildOrderGene;
-import com.shadowcs.optimizer.build.BuildState;
+import com.shadowcs.optimizer.build.state.BuildState;
 import com.shadowcs.optimizer.genetics.Chromosome;
 import com.shadowcs.optimizer.genetics.Genetics;
+import com.shadowcs.optimizer.pojo.LoadingHashMap;
 import com.shadowcs.optimizer.pojo.Pair;
 import com.shadowcs.optimizer.sc2data.models.AbilityS2Data;
 import com.shadowcs.optimizer.sc2data.models.UnitS2Data;
@@ -17,93 +18,114 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 @Data
 @Slf4j
 public class BuildOrderGenetics implements Genetics<BuildOrderGene> {
 
+    private static final Pattern pattern = Pattern.compile(Pattern.quote("morph"), Pattern.CASE_INSENSITIVE);
     private final BuildState state;
-    private final LoadingCache<Integer, UnitS2Data> unitS2DataMap;
-    private final LoadingCache<Integer, UnitS2Data> abilityToUnitS2DataMap;
-    private final LoadingCache<Integer, UpgradeS2Data> upgradeS2Data;
-    private final LoadingCache<Integer, AbilityS2Data> abilityS2Data;
-    private final LoadingCache<Pair<Integer, Integer>, BuildOrderGene> abilityToOrder; // = Caffeine.newBuilder().build(key -> new BuildOrderGene().ability(abilityS2Data.get(key)));
+    private final Map<Integer, UnitS2Data> unitS2DataMap;
+    private final Map<Integer, UnitS2Data> abilityToUnitS2DataMap;
+    private final Map<Integer, UpgradeS2Data> upgradeS2Data;
+    private final Map<Integer, AbilityS2Data> abilityS2Data;
+    private final LoadingHashMap<Pair<Integer, Integer>, BuildOrderGene> abilityToOrder; // = Caffeine.newBuilder().build(key -> new BuildOrderGene().ability(abilityS2Data.get(key)));
 
-    public BuildOrderGenetics(BuildState state, Set<UnitS2Data> units, Set<UpgradeS2Data> upgrades, Set<AbilityS2Data> abilities) {
+    public BuildOrderGenetics(BuildState state, Map<Integer, UnitS2Data> unitS2DataMap, Map<Integer, UnitS2Data> abilityToUnitS2DataMap, Set<UpgradeS2Data> upgrades, Set<AbilityS2Data> abilities) {
         this.state = state;
 
-        unitS2DataMap = Caffeine.newBuilder().build(key -> units.stream().filter(w -> w.id() == key).findFirst().orElse(null));
-        abilityToUnitS2DataMap = Caffeine.newBuilder().build(key -> units.stream().filter(w -> w.buildAbility() == key).findFirst().orElse(null));
+        this.unitS2DataMap = unitS2DataMap;
+        this.abilityToUnitS2DataMap = abilityToUnitS2DataMap;
 
-        upgradeS2Data = Caffeine.newBuilder().build(key -> upgrades.stream().filter(w -> w.id() == key).findFirst().orElse(null));
-        abilityS2Data = Caffeine.newBuilder().build(key -> abilities.stream().filter(w -> w.id() == key).findFirst().orElse(null));
+        upgradeS2Data = new HashMap<>();
+        upgradeS2Data.putAll(upgrades.stream().collect(Collectors.toMap(UpgradeS2Data::id, x -> x)));
 
-        abilityToOrder = Caffeine.newBuilder().build(key -> new BuildOrderGene(unitS2DataMap.get(key.first()), abilityS2Data.get(key.second()), false));
+        abilityS2Data = new HashMap<>();
+        abilityS2Data.putAll(abilities.stream().collect(Collectors.toMap(AbilityS2Data::id, x -> x)));
+
+        abilityToOrder = new LoadingHashMap<>(key -> new BuildOrderGene(unitS2DataMap.get(key.first()), abilityS2Data.get(key.second()), false));
     }
 
+    /**
+     * This should be fast enough as it "shouldn't" run nearly as often or as much as the 64+ times that validate runs,
+     * with this one we also already assume that the previous commands are correct removing a lot of the need for
+     * validation of commands.
+     *
+     * @param chromo
+     * @param index
+     * @return
+     */
     @Override
     public Set<BuildOrderGene> available(Chromosome<BuildOrderGene> chromo, int index) {
 
         Set<BuildOrderGene> genes = new HashSet<>();
         Set<Integer> tenologyUnit = new HashSet<>();
         tenologyUnit.add(0); // no tech needed
-        AtomicDouble food = new AtomicDouble(0);
+
+        double food = 0;
 
         // Unit ID, Count
-        LoadingCache<Integer, Integer> unitCount = Caffeine.newBuilder().build(key -> 0);
+        LoadingHashMap<Integer, Integer> unitCount = new LoadingHashMap<>(key -> 0);
 
         // These are the units we started with, we can't calculate what tech we have yet
-        state.unitInfoMap().asMap().keySet().forEach(key -> {
-            int count = unitCount.get(key.getUnitTypeId()) + 1;
-            unitCount.put(key.getUnitTypeId(), count);
+        for(var entry: state.unitInfoMap().entrySet()) {
+            var entryUID = entry.getKey().getUnitTypeId();
+            int count = unitCount.get(entryUID) + 1;
+            unitCount.put(entryUID, count);
 
-            UnitS2Data math = unitS2DataMap.get(key.getUnitTypeId());
-            food.addAndGet(math.food());
-        });
+            UnitS2Data math = unitS2DataMap.get(entryUID);
+            food += math.food() * count;
+        }
 
         // These are the commands we need to follow, because all of these should already be confirmed we can assume they
         // are correct. We need to take one command less than the index we are going to
-        chromo.geneList().stream().limit(index).forEach(key -> {
+        for(int i = 0; i < index; i++) {
+            var key = chromo.geneList().get(i);
             if (key != null && key.ability() != null) {
                 UnitS2Data created = abilityToUnitS2DataMap.get(key.ability().id());
                 UnitS2Data caster = key.caster();
                 AbilityS2Data ability = key.ability();
 
-                if (Pattern.compile(Pattern.quote("morph"), Pattern.CASE_INSENSITIVE).matcher(ability.name()).find() || caster.id() == Units.ZERG_DRONE.getUnitTypeId()) {
+                if (/*pattern.matcher(ability.name()).find()*/ability.name().contains("Morph") || caster.id() == Units.ZERG_DRONE.getUnitTypeId()) {
                     // Morphed units always use up whatever was morphed
                     int count = unitCount.get(caster.id()) - 1;
                     unitCount.put(caster.id(), count);
-                    food.addAndGet(-caster.food());
+                    food -= caster.food();
                 }
 
                 int count = unitCount.get(created.id()) + 1;
                 unitCount.put(created.id(), count);
-                food.addAndGet(created.food());
+                food += created.food();
             }
-        });
+        }
 
         // Setup tech stuff
-        Set<Integer> keySet = unitCount.asMap().keySet();
-        keySet.forEach(key -> {
+        Set<Integer> keySet = unitCount.keySet();
+        keySet.removeIf(key -> {
             if(unitCount.get(key) > 0) {
                 UnitS2Data tech = unitS2DataMap.get(key);
                 tenologyUnit.add(tech.id());
                 tenologyUnit.addAll(tech.techAliases());
+                return false;
             } else {
-                keySet.remove(key);
+                return true;
             }
         });
 
         // TODO: take addons into consideration as well, to make sure we don't make more then we can actually make...
+        // TODO food max
 
+        double finalFood = food;
         keySet.forEach(key -> {
             for(Integer ability: unitS2DataMap.get(key).abilities()) {
 
                 UnitS2Data data = abilityToUnitS2DataMap.get(ability);
                 if (data != null && tenologyUnit.contains(abilityToUnitS2DataMap.get(ability).techRequirement())) {
                     // Check that we have the food needed to make the thing
-                    if (data.food() >= 0 || food.get() >= -data.food()) {
+                    if (data.food() >= 0 || finalFood >= -data.food()) {
                         Pair<Integer, Integer> aKey = new Pair<>(key, ability);
                         genes.add(abilityToOrder.get(aKey));
                     }
@@ -116,65 +138,84 @@ public class BuildOrderGenetics implements Genetics<BuildOrderGene> {
 
     @Override
     public void validate(Chromosome<BuildOrderGene> chromo) {
-        Set<BuildOrderGene> genes = new HashSet<>();
-        Set<Integer> tenologyUnit = new HashSet<>();
-        tenologyUnit.add(0); // no tech needed
-        AtomicDouble food = new AtomicDouble(0);
+
+        LoadingHashMap<BuildOrderGene, AtomicInteger> genes = new LoadingHashMap<>(key -> new AtomicInteger(0));
+        LoadingHashMap<Integer, AtomicInteger> tenologyUnit = new LoadingHashMap<>(key -> new AtomicInteger(0));
 
         // Unit ID, Count
-        LoadingCache<Integer, Integer> unitCount = Caffeine.newBuilder().build(key -> 0);
+        LoadingHashMap<Integer, Integer> unitCount = new LoadingHashMap<>(key -> 0);
+
+        double food = 0;
 
         // These are the units we started with, we can't calculate what tech we have yet
-        state.unitInfoMap().asMap().keySet().forEach(key -> {
-            int count = unitCount.get(key.getUnitTypeId()) + 1;
-            unitCount.put(key.getUnitTypeId(), count);
+        for(var entrySet: state.unitInfoMap().entrySet()) {
+            int entryUID = entrySet.getKey().getUnitTypeId();
+            int count = unitCount.get(entrySet.getKey().getUnitTypeId());
+            for(var cTemp: entrySet.getValue()) {
+                count += cTemp.units();
+            }
 
-            UnitS2Data math = unitS2DataMap.get(key.getUnitTypeId());
-            food.addAndGet(math.food());
-        });
+            unitCount.put(entryUID, count);
 
-        Set<Integer> keySet = unitCount.asMap().keySet();
+            var unit = unitS2DataMap.get(entryUID);
+
+            final int finalCount = count;
+            tenologyUnit.get(unit.id()).addAndGet(finalCount);
+            unit.techAliases().forEach(tech -> tenologyUnit.get(tech).addAndGet(finalCount));
+
+            for (Integer ability : unit.abilities()) {
+                // We only want cancel or build type abilities
+                UnitS2Data data = abilityToUnitS2DataMap.get(ability);
+                if (data != null) {
+                    Pair<Integer, Integer> aKey = new Pair<>(unit.id(), ability);
+                    genes.get(abilityToOrder.get(aKey)).addAndGet(count);
+                }
+            }
+
+            food += unit.food() * count;
+        }
+
+        //long start = System.nanoTime();
 
         // We need to loop through each gene in the list
-        boolean morphe = true;
         for(int i = 0; i < chromo.geneList().size(); i++) {
-
-            // What tech do we have available, we may be able to calculate but we will need to use a map instead
-            if(morphe) {
-                tenologyUnit.clear();
-                tenologyUnit.add(0);
-                Set<Integer> keys = new HashSet<>();
-                keySet.forEach(key -> {
-                    if (unitCount.get(key) > 0) {
-                        keys.add(key);
-                        UnitS2Data tech = unitS2DataMap.get(key);
-                        tenologyUnit.add(tech.id());
-                        tenologyUnit.addAll(tech.techAliases());
-                    }
-                });
-
-                // Get our actions that are currently valid, we need the full tech list though so this has to happen after
-                genes.clear();
-                keys.forEach(key -> {
-                    for (Integer ability : unitS2DataMap.get(key).abilities()) {
-                        // We only want cancel or build type abilities
-                        UnitS2Data data = abilityToUnitS2DataMap.get(ability);
-                        if (data != null && tenologyUnit.contains(data.techRequirement())) {
-                            // Check that we have the food needed to make the thing
-                            if (data.food() >= 0 || food.get() >= -data.food()) {
-                                Pair<Integer, Integer> aKey = new Pair<>(key, ability);
-                                genes.add(abilityToOrder.get(aKey));
-                            }
-                        }
-                    }
-                });
-            }
-            morphe = false;
 
             // Is this command valid? if not replace it with one of the others that is at random
             BuildOrderGene key = chromo.geneList().get(i);
-            if(key == null || key.ability() == null || !genes.contains(key)) {
-                key = new ArrayList<>(genes).get(ThreadLocalRandom.current().nextInt(genes.size()));
+
+            boolean ramoize = false;
+            // Check if the command is valid
+            if(key == null || key.ability() == null || !genes.containsKey(key)) {
+                ramoize = true;
+            } else {
+                // The gene is in our list, now make sure its valid...
+                UnitS2Data data = abilityToUnitS2DataMap.get(key.ability().id());
+                if(genes.get(key).get() > 0 && data != null && (data.food() >= 0 || food >= Math.abs(data.food())) && (data.techRequirement() == 0 || tenologyUnit.get(data.techRequirement()).get() > 0)) {
+                    // TODO: invert???
+                } else {
+                    ramoize = true;
+                }
+            }
+
+            // We need to pick a valid gene
+            if(ramoize) {
+                // Get the current valid genes
+                Set<BuildOrderGene> validGenes = new HashSet<>();
+
+                for(BuildOrderGene gene: genes.keySet()) {
+                    UnitS2Data data = abilityToUnitS2DataMap.get(gene.ability().id());
+                    if(genes.get(gene).get() > 0 && data != null && (data.food() >= 0 || food >= Math.abs(data.food())) && (data.techRequirement() == 0 || tenologyUnit.get(data.techRequirement()).get() > 0)) {
+                        validGenes.add(gene);
+                    }
+                }
+
+                //log.info("new Gene stuff...");
+                int index = ThreadLocalRandom.current().nextInt(validGenes.size());
+                var itt = validGenes.iterator();
+                for(int idx = 0; idx < index; idx++) {
+                    itt.next();
+                }
+                key = itt.next();
                 chromo.geneList().set(i, key);
             }
 
@@ -182,42 +223,41 @@ public class BuildOrderGenetics implements Genetics<BuildOrderGene> {
             UnitS2Data caster = key.caster();
             AbilityS2Data ability = key.ability();
 
-            if(Pattern.compile(Pattern.quote("morph"), Pattern.CASE_INSENSITIVE).matcher(ability.name()).find() || caster.id() == Units.ZERG_DRONE.getUnitTypeId()) {
+            if(ability.name().contains("Morph") || caster.id() == Units.ZERG_DRONE.getUnitTypeId()) {
                 // Morphed units always use up whatever was morphed
                 int count = unitCount.get(caster.id()) - 1;
                 unitCount.put(caster.id(), count);
-                food.addAndGet(- caster.food());
+                food -= caster.food();
 
-                if(count <= 0) {
-                    // If this is set to true we need to recalculate most everything, luckily we don't need to do it much
-                    morphe = true;
+                // Remove a count of what we are doing
+                tenologyUnit.get(caster.id()).decrementAndGet();
+                caster.techAliases().forEach(techk -> tenologyUnit.get(techk).decrementAndGet());
+
+                for (Integer abilityId : caster.abilities()) {
+                    Pair<Integer, Integer> aKey = new Pair<>(caster.id(), abilityId);
+                    genes.get(abilityToOrder.get(aKey)).decrementAndGet();
                 }
             }
 
             int count = unitCount.get(created.id()) + 1;
             unitCount.put(created.id(), count);
-            food.addAndGet(created.food());
+            food += created.food();
 
-            // We can bypass this if we are just going to recalculate everything anyway
-            if(!morphe) {
-                // Add our new unit to the tech map
-                UnitS2Data tech = unitS2DataMap.get(created.id());
-                tenologyUnit.add(tech.id());
-                tenologyUnit.addAll(tech.techAliases());
+            UnitS2Data tech = unitS2DataMap.get(created.id());
 
-                // Add our new units abilities to this map as well
-                for (Integer abilityCheck : unitS2DataMap.get(tech.id()).abilities()) {
-                    // We only want cancel or build type abilities
-                    UnitS2Data data = abilityToUnitS2DataMap.get(abilityCheck);
-                    if (data != null && tenologyUnit.contains(abilityToUnitS2DataMap.get(abilityCheck).techRequirement())) {
-                        // Check that we have the food needed to make the thing
-                        if (data.food() >= 0 || food.get() >= -data.food()) {
-                            Pair<Integer, Integer> aKey = new Pair<>(tech.id(), abilityCheck);
-                            genes.add(abilityToOrder.get(aKey));
-                        }
-                    }
-                }
+            tenologyUnit.get(tech.id()).incrementAndGet();
+            tech.techAliases().forEach(techk -> tenologyUnit.get(techk).incrementAndGet());
+
+            for (Integer abilityId : created.abilities()) {
+                Pair<Integer, Integer> aKey = new Pair<>(created.id(), abilityId);
+                genes.get(abilityToOrder.get(aKey)).incrementAndGet();
             }
+
+            //long start2 = System.nanoTime();
+            //log.info("Loop times Area {} ", start2 - start);
         }
+
+        //long start4 = System.nanoTime();
+        //log.info("Finding Area Total {}", start4 - start);
     }
 }

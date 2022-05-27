@@ -1,7 +1,5 @@
 package com.shadowcs.optimizer.genetics;
 
-import com.google.gson.Gson;
-import com.shadowcs.optimizer.build.BuildOrderGene;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
@@ -74,21 +72,23 @@ public class GeneticAlgorithm<E> {
         int generation = 0;
         int same = 0;
         do {
+            long startEvo = System.currentTimeMillis();
             if(generation > 0) {
                 population = evolvePopulation(population);
             }
+            long endEvo = System.currentTimeMillis();
 
             same++;
             generation++;
 
             // calculate fitness for each Chromosome in a population
-            //log.info("Calculating Data");
+            long start = System.currentTimeMillis();
             population.forEach(chromo -> {
                 if(Double.isNaN(chromo.fitness())) {
-                    //log.info("calculating {} ", new Gson().toJson(chromo));
                     chromo.fitness(fitness().calculate(chromo));
                 }
             });
+            long end = System.currentTimeMillis();
             //log.info("Sorting Data");
             population.sort(Comparator.comparingDouble(Chromosome::fitness));
             Collections.reverse(population);
@@ -97,7 +97,7 @@ public class GeneticAlgorithm<E> {
                 mostFit = population.get(0);
                 same = 0;
             }
-            log.info("Algorithm Running on Generation: {} with fitness {}", generation, mostFit.fitness());
+            log.trace("Algorithm Running on Generation: {} with fitness {} {} {}", generation, mostFit.fitness(), endEvo - startEvo, end - start);
         } while(shouldContinue(mostFit.fitness(), generation, same));
 
         log.info("Algorithm Finished on Generation: {} with fitness {}", generation, mostFit.fitness());
@@ -155,21 +155,15 @@ public class GeneticAlgorithm<E> {
         }
 
         // This should leave us elitism number for new random generations
-        newPopulation.stream().forEach((chrom) -> {
-            boolean elite = false;
-            for(int i = 0; i < elitism; i++) {
-                if(chrom == newPopulation.get(i)) {
-                    elite = true;
-                    break;
+        for(int i = 0; i < newPopulation.size(); i++) {
+            var chrom = newPopulation.get(i);
 
-                }
-            }
-
-            if(!elite) {
+            if(i >= elitism) {
                 this.mutate(chrom);
                 genetics.validate(chrom);
+
             }
-        });
+        }
 
         return newPopulation;
     }

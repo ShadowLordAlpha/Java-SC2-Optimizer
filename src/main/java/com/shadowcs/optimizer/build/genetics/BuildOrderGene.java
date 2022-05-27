@@ -1,13 +1,15 @@
-package com.shadowcs.optimizer.build;
+package com.shadowcs.optimizer.build.genetics;
 
 import com.shadowcs.optimizer.sc2data.models.AbilityS2Data;
 import com.shadowcs.optimizer.sc2data.models.UnitS2Data;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * A Build order Gene represents one action taken during a build order
  */
 @Data
+@EqualsAndHashCode(cacheStrategy= EqualsAndHashCode.CacheStrategy.LAZY)
 public class BuildOrderGene {
 
     /**

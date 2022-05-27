@@ -1,11 +1,9 @@
 package com.shadowcs.optimizer.build;
 
-import com.github.ocraft.s2client.protocol.data.Abilities;
 import com.github.ocraft.s2client.protocol.data.Units;
 import com.google.gson.Gson;
-import com.shadowcs.optimizer.genetics.GeneticAlgorithm;
+import com.shadowcs.optimizer.build.state.BuildState;
 import com.shadowcs.optimizer.pojo.Pair;
-import com.shadowcs.optimizer.sc2data.S2DataUtil;
 
 public class Test {
 
