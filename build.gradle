@@ -13,10 +13,16 @@ dependencies {
     // Not the best SC2 API but its the only one for Java so its what we are going to use
     implementation 'com.github.ocraft:ocraft-s2client-bot:0.4.9'
 
-    implementation 'com.github.ben-manes.caffeine:caffeine:3.0.6'
+    // Object pool
+    // implementation 'com.github.chrisvest:stormpot:3.2'
+
+    // implementation 'io.jenetics:jenetics:7.1.0'
+
+    // Fast caching stuff for java
+    implementation 'com.github.ben-manes.caffeine:caffeine:3.1.1'
     // Optional extensions
-    implementation 'com.github.ben-manes.caffeine:guava:3.0.6'
-    implementation 'com.github.ben-manes.caffeine:jcache:3.0.6'
+    implementation 'com.github.ben-manes.caffeine:guava:3.1.1'
+    implementation 'com.github.ben-manes.caffeine:jcache:3.1.1'
 
     // SLF4J logging
     implementation (group: 'org.slf4j', name: 'slf4j-api', version: '2.0.0-alpha7')
@@ -24,8 +30,8 @@ dependencies {
     testImplementation (group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.0-alpha7')
 
     // Lombok Annotations
-    compileOnly 'org.projectlombok:lombok:1.18.22'
-    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
     // GSON de/serialization
     implementation 'com.google.code.gson:gson:2.9.0'

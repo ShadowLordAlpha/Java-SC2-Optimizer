@@ -1,16 +1,16 @@
 package com.shadowcs.optimizer.build.genetics.info;
 
-import com.shadowcs.optimizer.pojo.Pair;
+import com.shadowcs.optimizer.pojo.IntPair;
 import lombok.Data;
 
 @Data
 public class BaseInfo {
 
-    private static final Pair<Integer, Integer> maxSlots = new Pair<>(16, 8);
-    private static final Pair<Integer, Integer> threeSlots = new Pair<>(12, 6);
-    private static final Pair<Integer, Integer> twoSlots = new Pair<>(8, 4);
-    private static final Pair<Integer, Integer> oneSlots = new Pair<>(2, 1);
-    private static final Pair<Integer, Integer> empty = new Pair<>(0, 0);
+    private static final IntPair maxSlots = new IntPair(16, 8);
+    private static final IntPair threeSlots = new IntPair(12, 6);
+    private static final IntPair twoSlots = new IntPair(8, 4);
+    private static final IntPair oneSlots = new IntPair(2, 1);
+    private static final IntPair empty = new IntPair(0, 0);
 
     private boolean richMinerals;
     private boolean richVespene;
@@ -38,10 +38,14 @@ public class BaseInfo {
         remainingMinerals = Math.max(0.0f, remainingMinerals - amount);
     }
 
+    public void gatherVespene1(float amount) {
+        remainingVespene1 = Math.max(0.0f, remainingVespene1 - amount);
+    }
+
     /**
      * Returns (high yield, low yield) mineral slots on this expansion.
      */
-    public Pair<Integer, Integer> mineralSlots() {
+    public IntPair mineralSlots() {
         if(richMinerals) {
             // Max is 8100 for a gold expansion with 6 patches
             if (remainingMinerals > 4000) return threeSlots;

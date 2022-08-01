@@ -27,7 +27,7 @@ public class Collector {
         S2Coordinator s2Coordinator = S2Coordinator.setup()
                 .loadSettings(args)
                 .setMultithreaded(true)
-                .setUseGeneralizedAbilityId(true)
+                //.setUseGeneralizedAbilityId(true)
                 //.setFeatureLayers(builder.build())
                 //.setRawAffectsSelection(true)
                 .setShowBurrowed(true)

@@ -4,7 +4,6 @@ import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Data
@@ -15,28 +14,21 @@ public class Chromosome<E> {
     private String extra;
 
     public Chromosome(int size) {
-        geneList = new ArrayList<>(size);
+        geneList = new ArrayList<>(size); // Dumb...
         for(int i = 0; i < size; i++) {
             geneList.add(null);
         }
-
     }
 
     public Chromosome(int size, Genetics<E> genetics) {
-        geneList = new ArrayList<>(size);
-        for(int i = 0; i < size; i++) {
-            geneList.add(null);
-        }
+        this(size);
         genetics.validate(this);
-        /*for(int i = 0; i < size; i++) {
-            List<E> validGenes = new ArrayList<>(genetics.available(this, i));
-            geneList().add(validGenes.get(ThreadLocalRandom.current().nextInt(validGenes.size())));
-        }*/
     }
 
     public Chromosome(Chromosome<E> eChromosome) {
         geneList = new ArrayList<>(eChromosome.geneList());
         fitness = eChromosome.fitness();
+        extra = eChromosome.extra();
     }
 
     public void mutate(int i, Genetics<E> genetics) {

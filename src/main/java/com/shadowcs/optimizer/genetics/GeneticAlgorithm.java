@@ -7,11 +7,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Data
 @Slf4j
 public class GeneticAlgorithm<E> {
+
+    private ExecutorService threadPool;
 
     /**
      * The equation we will use to evaluate each possible solution to see if it matches or is what we are looking for
@@ -41,10 +45,17 @@ public class GeneticAlgorithm<E> {
     private int genes;
 
 
-    private double uniformRate = 0.5;
-    private double mutationRate = 0.028;
+    private double uniformRate = 0.5; // Crossover rate
+    //private double uniformRate = 0.85;
+    //private double mutationRate = 0.028;
+    private double mutationRate = 0.075; // mutation rate
     private int tournamentSize = 5;
     private int elitism = 2;
+
+
+
+
+
 
     private boolean shouldContinue(double fitness, int generation, int same) {
         if(solutionFitness > 0 && fitness >= solutionFitness) {
@@ -68,36 +79,58 @@ public class GeneticAlgorithm<E> {
             population.add(new Chromosome<>(genes, genetics()));
         }
 
-        Chromosome<E> mostFit = null;
+        Chromosome<E> mostFit = population.get(0);
         int generation = 0;
         int same = 0;
         do {
-            long startEvo = System.currentTimeMillis();
+            //long startEvo = System.currentTimeMillis();
             if(generation > 0) {
                 population = evolvePopulation(population);
             }
-            long endEvo = System.currentTimeMillis();
+            //long endEvo = System.currentTimeMillis();
 
             same++;
             generation++;
 
             // calculate fitness for each Chromosome in a population
-            long start = System.currentTimeMillis();
+            //long startF = System.currentTimeMillis();
+            Semaphore sema = new Semaphore(-population.size());
             population.forEach(chromo -> {
                 if(Double.isNaN(chromo.fitness())) {
-                    chromo.fitness(fitness().calculate(chromo));
+                    threadPool.submit(() -> {
+                        chromo.fitness(fitness().calculate(chromo));
+                        sema.release();
+                    });
+                } else {
+                    sema.release();
                 }
             });
-            long end = System.currentTimeMillis();
-            //log.info("Sorting Data");
-            population.sort(Comparator.comparingDouble(Chromosome::fitness));
-            Collections.reverse(population);
+            sema.release();
+            sema.acquireUninterruptibly();
+            //long endF = System.currentTimeMillis();
+            //log.info("Timeings Fit {}", endF - startF);
 
-            if(mostFit == null || mostFit.fitness() < population.get(0).fitness()) {
+            population.sort((d1, d2) -> {
+                if (d1.fitness() < d2.fitness())
+                    return 1;           // Neither val is NaN, thisVal is smaller, so we don't want it and return +
+                if (d1.fitness() > d2.fitness())
+                    return -1;            // Neither val is NaN, thisVal is larger, so we want it and return -
+
+                // Cannot use doubleToRawLongBits because of possibility of NaNs.
+                long thisBits    = Double.doubleToLongBits(d1.fitness());
+                long anotherBits = Double.doubleToLongBits(d2.fitness());
+
+                // Just use long compare...
+                return (Long.compare(anotherBits, thisBits));
+            });
+            //population.sort(Comparator.comparingDouble(Chromosome::fitness));
+            //Collections.reverse(population);
+
+            if(mostFit.fitness() < population.get(0).fitness()) {
                 mostFit = population.get(0);
                 same = 0;
             }
-            log.trace("Algorithm Running on Generation: {} with fitness {} {} {}", generation, mostFit.fitness(), endEvo - startEvo, end - start);
+            //log.info("Algorithm Running on Generation: {} with fitness {}", generation, mostFit.fitness());
         } while(shouldContinue(mostFit.fitness(), generation, same));
 
         log.info("Algorithm Finished on Generation: {} with fitness {}", generation, mostFit.fitness());
@@ -106,6 +139,8 @@ public class GeneticAlgorithm<E> {
     }
 
     private List<Chromosome<E>> evolvePopulation(List<Chromosome<E>> population) {
+
+        //long startE = System.currentTimeMillis();
 
         List<Chromosome<E>> newPopulation = new ArrayList<>(population.size());
 
@@ -133,37 +168,53 @@ public class GeneticAlgorithm<E> {
         for (int i = elitism * 2; i < size; i++) {
 
             float value = ThreadLocalRandom.current().nextFloat();
+
+            Chromosome<E> indiv1;
+            Chromosome<E> indiv2;
+
             if (value <= 0.5) {
                 // Fitest in subset
-                Chromosome<E> indiv1 = tournamentSelection(duplicate);
-                Chromosome<E> indiv2 = tournamentSelection(duplicate);
-                Chromosome<E> newIndiv = crossover(indiv1, indiv2);
-                newPopulation.add(newIndiv);
+                indiv1 = tournamentSelection(duplicate);
+                indiv2 = tournamentSelection(duplicate);
             } else if(value <= 0.90) {
                 // random
-                Chromosome<E> indiv1 = randomSelection(duplicate);
-                Chromosome<E> indiv2 = randomSelection(duplicate);
-                Chromosome<E> newIndiv = crossover(indiv1, indiv2);
-                newPopulation.add(newIndiv);
+                indiv1 = randomSelection(duplicate);
+                indiv2 = randomSelection(duplicate);
             } else {
                 // Cross two most fit
-                Chromosome<E> indiv1 = population.get(ThreadLocalRandom.current().nextInt(elitism, elitism * 2));
-                Chromosome<E> indiv2 = population.get(ThreadLocalRandom.current().nextInt(elitism, elitism * 2));
-                Chromosome<E> newIndiv = crossover(indiv1, indiv2);
-                newPopulation.add(newIndiv);
+                indiv1 = population.get(ThreadLocalRandom.current().nextInt(elitism, elitism * 2));
+                indiv2 = population.get(ThreadLocalRandom.current().nextInt(elitism, elitism * 2));
+
             }
+
+            Chromosome<E> newIndiv = crossover(indiv1, indiv2);
+            this.mutate(newIndiv);
+
+            newPopulation.add(newIndiv);
         }
+
+        //long endE = System.currentTimeMillis();
+        //log.info("Timeings Evo {}", endE - startE);
+
+        //long startT = System.currentTimeMillis();
 
         // This should leave us elitism number for new random generations
+        Semaphore sema = new Semaphore(-newPopulation.size());
         for(int i = 0; i < newPopulation.size(); i++) {
-            var chrom = newPopulation.get(i);
-
-            if(i >= elitism) {
-                this.mutate(chrom);
-                genetics.validate(chrom);
-
-            }
+            int finalI = i;
+            threadPool.submit(() -> {
+                var chrom = newPopulation.get(finalI);
+                if(finalI >= elitism) {
+                    genetics.validate(chrom);
+                }
+                sema.release();
+            });
         }
+        sema.release();
+        sema.acquireUninterruptibly();
+
+        //long endT = System.currentTimeMillis();
+        //log.info("Timeings Val {}", endT - startT);
 
         return newPopulation;
     }
@@ -201,6 +252,7 @@ public class GeneticAlgorithm<E> {
         for (int i = 0; i < indiv.geneList().size(); i++) {
             if (ThreadLocalRandom.current().nextFloat() <= mutationRate) {
                 indiv.mutate(i, genetics());
+                break;
             }
         }
     }

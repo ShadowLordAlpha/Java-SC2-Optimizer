@@ -12,9 +12,9 @@ import java.util.Set;
  * TODO: This is currently only what we need for a build optimized, we will need more info for a combat analyzer
  */
 @Data
-@EqualsAndHashCode(cacheStrategy= EqualsAndHashCode.CacheStrategy.LAZY)
+@EqualsAndHashCode(cacheStrategy= EqualsAndHashCode.CacheStrategy.LAZY, onlyExplicitlyIncluded = true)
 public class UnitS2Data {
-    private int id; // Our Unit ID
+    @EqualsAndHashCode.Include private int id; // Our Unit ID
     private String pName;
     private String name;
     private CostS2Data cost; // The cost to build this unit (morph units are odd)

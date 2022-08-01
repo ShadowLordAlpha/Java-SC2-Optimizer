@@ -117,7 +117,26 @@ public class CollectData {
 
                 var abilities = new HashSet<Integer>();
                 for(Ability ability: value.getUnitType().getAbilities()) {
-                    abilities.add(ability.getAbilityId());
+                    // De-Generalize addon abilities... its already a pain without them getting generalized...
+                    if(ability == Abilities.BUILD_TECHLAB) {
+                        if(value.getUnitType() == Units.TERRAN_BARRACKS) {
+                            abilities.add(Abilities.BUILD_TECHLAB_BARRACKS.getAbilityId());
+                        } else if(value.getUnitType() == Units.TERRAN_FACTORY) {
+                            abilities.add(Abilities.BUILD_TECHLAB_FACTORY.getAbilityId());
+                        } else if(value.getUnitType() == Units.TERRAN_STARPORT) {
+                            abilities.add(Abilities.BUILD_TECHLAB_STARPORT.getAbilityId());
+                        }
+                    } else if(ability == Abilities.BUILD_REACTOR) {
+                        if(value.getUnitType() == Units.TERRAN_BARRACKS) {
+                            abilities.add(Abilities.BUILD_REACTOR_BARRACKS.getAbilityId());
+                        } else if(value.getUnitType() == Units.TERRAN_FACTORY) {
+                            abilities.add(Abilities.BUILD_REACTOR_FACTORY.getAbilityId());
+                        } else if(value.getUnitType() == Units.TERRAN_STARPORT) {
+                            abilities.add(Abilities.BUILD_REACTOR_STARPORT.getAbilityId());
+                        }
+                    } else {
+                        abilities.add(ability.getAbilityId());
+                    }
                 }
                 temp.abilities(abilities);
 
@@ -127,7 +146,10 @@ public class CollectData {
                 }
                 temp.techAliases(techs);
                 temp.unitAlias(value.getUnitAlias().orElse(Units.INVALID).getUnitTypeId());
-                temp.techRequirement(value.getTechRequirement().orElse(Units.INVALID).getUnitTypeId());
+
+                var techUnit = value.getTechRequirement().orElse(Units.INVALID);
+                temp.techRequirement(techUnit.getUnitTypeId());
+
                 temp.requireAttached(value.isRequireAttached());
 
                 unitTypeData.add(temp);

@@ -2,6 +2,7 @@ package com.shadowcs.optimizer.build.state;
 
 import com.github.ocraft.s2client.protocol.data.UnitType;
 import com.github.ocraft.s2client.protocol.data.Units;
+import com.shadowcs.optimizer.build.genetics.BuildConstants;
 import com.shadowcs.optimizer.build.genetics.info.BuildUnitInfo;
 import com.shadowcs.optimizer.pojo.Pair;
 import lombok.Data;
@@ -21,7 +22,7 @@ public class BuildState {
      * Use a cache to get a list of BuildUnitInfo specifically related to that base unit. This is used to increase our
      * access speed of the data. The list is used as we need to keep track of addons for a select few units
      */
-    private final HashMap<UnitType, List<BuildUnitInfo>> unitInfoMap = new HashMap<>();
+    private final HashMap<UnitType, BuildUnitInfo> unitInfoMap = new HashMap<>();
 
     /**
      * The resources we have available to us.
@@ -40,46 +41,31 @@ public class BuildState {
      * @return
      */
     public BuildState addUnit(UnitType type, int delta) {
-        return addUnit(type, Units.INVALID, delta);
-    }
 
-    /**
-     *
-     * @param type
-     * @param addon
-     * @param delta
-     * @return
-     */
-    public BuildState addUnit(UnitType type, UnitType addon, int delta) {
+        // Check if this is an addon and if that addon is a techlab
+        boolean addon = BuildConstants.isAddon(type);
+        boolean techlab = BuildConstants.isTechlab(type);
 
-        if(delta != 0) {
-            if(!unitInfoMap.containsKey(type)) {
-                unitInfoMap.put(type, new ArrayList<>());
-            }
-            var typeList = unitInfoMap.get(type);
-            if(!typeList.isEmpty()) {
-                for (var buildInfo : typeList) {
-                    // We already know that the type is the same, now we need to check the addon
-                    if (addon.equals(buildInfo.addon())) {
-                        int unitCount = buildInfo.units() + delta;
-                        if (unitCount < 0) {
-                            throw new RuntimeException("Cannot remove more units then we have (negative units)!");
-                        } else if(unitCount == 0) {
-                            // FIXME: probably a concurrent modification exception here.
-                            typeList.remove(buildInfo);
-                        } else {
-                            buildInfo.units(unitCount);
-                        }
-                    }
+        int techCount = 0;
+        int reacCount = 0;
+
+        // if we are an addon what is the actual unit we are adding this for
+        if(addon) {
+            UnitType temp = BuildConstants.isAddonFor(type);
+            if(temp != null) {
+                type = temp;
+
+                // Addons cannot have addons so we only need to do this if we find that it is an "addon"
+                if(techlab) {
+                    techCount = delta;
+                } else {
+                    reacCount = delta;
                 }
-            } else {
-                if(delta < 0) {
-                    throw new RuntimeException("Cannot create negative units!");
-                }
-
-                typeList.add(new BuildUnitInfo(type, addon).units(delta));
             }
         }
+
+        var info = unitInfoMap.computeIfAbsent(type, BuildUnitInfo::new);
+        info.units(info.units() + delta).addonTechlab(info.addonTechlab() + techCount).addonReactor(info.addonReactor() + reacCount);
 
         return this;
     }

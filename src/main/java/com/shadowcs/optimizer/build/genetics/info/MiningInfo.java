@@ -2,14 +2,12 @@ package com.shadowcs.optimizer.build.genetics.info;
 
 import com.github.ocraft.s2client.protocol.data.Units;
 import com.shadowcs.optimizer.build.genetics.BuildConstants;
+import com.shadowcs.optimizer.pojo.IntPair;
 import com.shadowcs.optimizer.pojo.LoadingHashMap;
-import com.shadowcs.optimizer.pojo.Pair;
 import lombok.Data;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 
 @Data
 public class MiningInfo {
@@ -34,15 +32,14 @@ public class MiningInfo {
 
         float totalWeight = 0;
         for (BaseInfo base : baseInfos) {
-            Pair<Integer, Integer> slots = base.mineralSlots();
-            float weight = slots.first() * 1.5f + slots.second();
-            totalWeight += weight;
+            IntPair slots = base.mineralSlots();
+            totalWeight += slots.first() * 1.5f + slots.second();
         }
 
         float normalizationFactor = 1.0f / (totalWeight + 0.0001f);
         float deltaMineralsPerWeight = mineralsPerFrame * dt * normalizationFactor;
         for (BaseInfo base : baseInfos) {
-            Pair<Integer, Integer>  slots = base.mineralSlots();
+            IntPair slots = base.mineralSlots();
             float weight = slots.first() * 1.5f + slots.second();
             base.mineMinerals(deltaMineralsPerWeight * weight);
         }
@@ -87,18 +84,26 @@ public class MiningInfo {
 
         if(!unitDetection) {
             unitDetection = true;
-            for (int i = 0; i < BuildConstants.townHall.size(); i++) {
-                townList.add(units.get(BuildConstants.townHall.get(i)));
+            for (var temp: BuildConstants.townHall) {
+                if(units.containsKey(temp)) {
+                    townList.add(units.getIfPresent(temp));
+                }
             }
 
-            muleList.add(units.get(Units.TERRAN_MULE.getUnitTypeId()));
-
-            for (int i = 0; i < BuildConstants.basicHarvester.size(); i++) {
-                harvistList.add(units.get(BuildConstants.basicHarvester.get(i)));
+            if(units.containsKey(Units.TERRAN_MULE.getUnitTypeId())) {
+                muleList.add(units.getIfPresent(Units.TERRAN_MULE.getUnitTypeId()));
             }
 
-            for (int i = 0; i < BuildConstants.vespeneHarvester.size(); i++) {
-                vespeneList.add(units.get(BuildConstants.vespeneHarvester.get(i)));
+            for (var temp: BuildConstants.basicHarvester) {
+                if(units.containsKey(temp)) {
+                    harvistList.add(units.getIfPresent(temp));
+                }
+            }
+
+            for (var temp: BuildConstants.vespeneHarvester) {
+                if(units.containsKey(temp)) {
+                    vespeneList.add(units.getIfPresent(temp));
+                }
             }
         }
 
@@ -107,20 +112,20 @@ public class MiningInfo {
         int bases = 0;
         int geysers = 0;
 
-        for(int i = 0; i < harvistList.size(); i++) {
-            harvesters += harvistList.get(i).availableUnits();
+        for(BuildUnitInfo value: harvistList) {
+            harvesters += value.availableUnits();
         }
 
-        for(int i = 0; i < townList.size(); i++) {
-            bases += townList.get(i).units();
+        for(BuildUnitInfo info: townList) {
+            bases += info.units();
         }
 
-        for(int i = 0; i < muleList.size(); i++) {
-            mules += muleList.get(i).availableUnits();
+        for(BuildUnitInfo unitInfo: muleList) {
+            mules += unitInfo.availableUnits();
         }
 
-        for(int i = 0; i < vespeneList.size(); i++) {
-            geysers += vespeneList.get(i).units();
+        for(BuildUnitInfo buildUnitInfo: vespeneList) {
+            geysers += buildUnitInfo.units();
         }
 
         int highYieldMineralHarvestingSlots = 0;
@@ -139,6 +144,7 @@ public class MiningInfo {
             }
         }
 
+        //System.out.printf("%d %d %d\n", harvesters, geysers * 3, Math.min((int) (harvesters * BuildConstants.half), geysers * 3));
         int vespeneMining = Math.min((int) (harvesters * BuildConstants.half), geysers * 3);
         int mineralMining = harvesters - vespeneMining;
 

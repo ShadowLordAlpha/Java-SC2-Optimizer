@@ -12,6 +12,7 @@ public class Test {
         // Start with what units
         BuildState state = new BuildState(
                 new Pair<>(Units.TERRAN_COMMAND_CENTER, 1),
+                new Pair<>(Units.TERRAN_REFINERY, 1),
                 new Pair<>(Units.TERRAN_SCV, 12)
         );
 
@@ -24,11 +25,13 @@ public class Test {
                 //new Pair<>(Units.TERRAN_COMMAND_CENTER, 2),
                 //new Pair<>(Units.TERRAN_BARRACKS, 1),
                 //new Pair<>(Units.TERRAN_STARPORT, 1),
+                new Pair<>(Units.TERRAN_GHOST, 1),
                 new Pair<>(Units.TERRAN_MARINE, 10),
                 new Pair<>(Units.TERRAN_SCV, 20)
                 //new Pair<>(Units.TERRAN_FACTORY, 1)
         );
 
         System.out.println(new Gson().toJson(buildOrder));
+        System.exit(0);
     }
 }

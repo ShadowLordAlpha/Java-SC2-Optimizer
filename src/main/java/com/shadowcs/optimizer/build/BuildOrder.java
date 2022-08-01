@@ -1,7 +1,5 @@
 package com.shadowcs.optimizer.build;
 
-import com.github.benmanes.caffeine.cache.Cache;
-import com.github.benmanes.caffeine.cache.Caffeine;
 import com.github.ocraft.s2client.protocol.data.UnitType;
 import com.shadowcs.optimizer.build.genetics.BuildOrderFitness;
 import com.shadowcs.optimizer.build.genetics.BuildOrderGene;
@@ -17,6 +15,7 @@ import lombok.Data;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 @Data
@@ -48,13 +47,14 @@ public class BuildOrder {
         abilityToUnitS2DataMap.putAll(units.stream().collect(Collectors.toMap(UnitS2Data::buildAbility, x -> x)));
 
         BuildOrderGenetics bog = new BuildOrderGenetics(state, unitS2DataMap, abilityToUnitS2DataMap, S2DataUtil.loadUpgradeData(), S2DataUtil.loadAbilityData());
-        BuildOrderFitness bof = new BuildOrderFitness(state, unitS2DataMap, abilityToUnitS2DataMap, output);
+        BuildOrderFitness bof = new BuildOrderFitness(state, unitS2DataMap, output);
 
         GeneticAlgorithm<BuildOrderGene> algo = new GeneticAlgorithm<>();
+        algo.threadPool(Executors.newCachedThreadPool());
         algo.genetics(bog);
         algo.fitness(bof);
-        algo.maxGenerations(100000);
-        algo.sameSolution(100);
+        algo.maxGenerations(5000);
+        //algo.sameSolution(100);
 
         Chromosome<BuildOrderGene> solution = algo.runAlgorithm(100, 64);
 

@@ -1,7 +1,5 @@
 package com.shadowcs.optimizer.build.genetics;
 
-import com.github.benmanes.caffeine.cache.Caffeine;
-import com.github.benmanes.caffeine.cache.LoadingCache;
 import com.github.ocraft.s2client.protocol.data.UnitType;
 import com.github.ocraft.s2client.protocol.data.Units;
 import com.google.common.util.concurrent.AtomicDouble;
@@ -18,8 +16,12 @@ import com.shadowcs.optimizer.sc2data.models.UnitS2Data;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Predicate;
 
 @Data
 @Slf4j
@@ -27,15 +29,13 @@ public class BuildOrderFitness implements Fitness<BuildOrderGene> {
 
     private final BuildState state;
     private final Map<Integer, UnitS2Data> unitS2DataMap;
-    private final Map<Integer, UnitS2Data> abilityToUnitS2DataMap;
     private final Pair<UnitType, Integer>[] output;
 
-    public BuildOrderFitness(BuildState state, Map<Integer, UnitS2Data> unitS2DataMap, Map<Integer, UnitS2Data> abilityToUnitS2DataMap, Pair<UnitType, Integer>[] output) {
+    public BuildOrderFitness(BuildState state, Map<Integer, UnitS2Data> unitS2DataMap, Pair<UnitType, Integer>[] output) {
         this.state = state;
         this.output = output;
 
         this.unitS2DataMap = unitS2DataMap;
-        this.abilityToUnitS2DataMap = abilityToUnitS2DataMap;
     }
 
     @Override
@@ -47,13 +47,7 @@ public class BuildOrderFitness implements Fitness<BuildOrderGene> {
             baseInfos.add(new BaseInfo());
         }
 
-        LoadingHashMap<Integer, BuildUnitInfo> idToBuildUnit = new LoadingHashMap<>((key) -> {
-            if(BuildConstants.isAddonFor(Units.from(key)) != null) {
-                UnitType type = BuildConstants.isAddonFor(Units.from(key));
-                return new BuildUnitInfo(type, Units.from(key));
-            }
-            return new BuildUnitInfo(Units.from(key), Units.INVALID);
-        });
+        LoadingHashMap<Integer, BuildUnitInfo> idToBuildUnit = new LoadingHashMap<>((key) -> new BuildUnitInfo(Units.from(key)));
 
         Map<Integer, AtomicInteger> techCache = new LoadingHashMap<>((key) -> new AtomicInteger(0));
 
@@ -62,25 +56,19 @@ public class BuildOrderFitness implements Fitness<BuildOrderGene> {
 
         // Make a deep copy of the units list... its dumb but probably for the best
         state.unitInfoMap().forEach((key, value) -> {
-            value.forEach(bui -> {
-                BuildUnitInfo boi = new BuildUnitInfo(bui.type(), bui.addon()).units(bui.units());
+            BuildUnitInfo boi = new BuildUnitInfo(value.type()).units(value.units()).addonReactor(value.addonReactor()).addonTechlab(value.addonTechlab());
 
-                var unit = unitS2DataMap.get(bui.type().getUnitTypeId());
+            var unit = unitS2DataMap.get(value.type().getUnitTypeId());
 
-                food.addAndGet(unit.food() * bui.units());
-                if(unit.food() < 0) {
-                    foodUsed.addAndGet(Math.abs(unit.food()) * bui.units());
-                }
+            food.addAndGet(unit.food() * value.units());
+            if(unit.food() < 0) {
+                foodUsed.addAndGet(-unit.food() * value.units());
+            }
 
-                techCache.get(unit.id()).incrementAndGet();
-                unit.techAliases().forEach(tech -> techCache.get(tech).incrementAndGet());
+            techCache.get(unit.id()).incrementAndGet();
+            unit.techAliases().forEach(tech -> techCache.get(tech).incrementAndGet());
 
-                if(bui.addon() != Units.INVALID) {
-                    idToBuildUnit.put(bui.addon().getUnitTypeId(), boi);
-                } else {
-                    idToBuildUnit.put(bui.type().getUnitTypeId(), boi);
-                }
-            });
+            idToBuildUnit.put(value.type().getUnitTypeId(), boi);
         });
 
         // This calculation is to get to the final result as fast as possible with no regard for econ. Others can take
@@ -91,6 +79,7 @@ public class BuildOrderFitness implements Fitness<BuildOrderGene> {
         // Each loop is one or more steps, we use remove so this lets us remove without affecting the chromosome
         List<BuildOrderGene> buildList = new ArrayList<>(chromo.geneList());
         if(buildList.contains(null)) {
+            log.info("Null found... failing");
             return -Double.MAX_VALUE;
         }
 
@@ -124,7 +113,7 @@ public class BuildOrderFitness implements Fitness<BuildOrderGene> {
                 compleatedSteps++;
 
                 // Check for the unit and add it to our lists
-                UnitS2Data unit = abilityToUnitS2DataMap.get(bog.ability().id());
+                UnitS2Data unit = bog.unitCreated();
                 if(unit != null) {
 
                     // Properly add food data to our list
@@ -156,17 +145,18 @@ public class BuildOrderFitness implements Fitness<BuildOrderGene> {
 
                 // We are done with the caster, so we can now mark them as not busy
                 UnitS2Data caster = bog.caster();
-                if(BuildConstants.isAddonFor(Units.from(unit.techRequirement())) != null) {
-                    BuildUnitInfo boi = idToBuildUnit.get(unit.techRequirement());
-                    boi.busy(boi.busy() - 1);
-                } else if(caster != null && caster.id() != Units.ZERG_DRONE.getUnitTypeId() && caster.id() != Units.PROTOSS_PROBE.getUnitTypeId()) {
-                    BuildUnitInfo boi = idToBuildUnit.get(caster.id());
+                int casterId = getCasterId(idToBuildUnit, unit, caster, BuildUnitInfo::inUse);
+
+                if(casterId != Units.ZERG_DRONE.getUnitTypeId() && casterId != Units.PROTOSS_PROBE.getUnitTypeId()) {
+                    BuildUnitInfo boi = idToBuildUnit.get(casterId);
                     boi.busy(boi.busy() - 1);
                 }
 
                 // Update our speed calculations for mining
                 // TODO: we may want to skip over this for more things
-                speed.calculateMiningSpeed(idToBuildUnit, baseInfos);
+                if(BuildConstants.basicHarvester.contains(bog.unitCreated().id()) || BuildConstants.townHall.contains(bog.unitCreated().id()) || BuildConstants.vespeneHarvester.contains(bog.unitCreated().id()) || bog.unitCreated().id() == Units.TERRAN_MULE.getUnitTypeId() || BuildConstants.basicHarvester.contains(caster.id())) {
+                    speed.calculateMiningSpeed(idToBuildUnit, baseInfos);
+                }
                 //System.out.println(caster.name());
 
                 // Check if we are done and have all needed units and other data (we only need to do this after we make a unit or other object)
@@ -186,27 +176,9 @@ public class BuildOrderFitness implements Fitness<BuildOrderGene> {
             }
 
             // Get the next unit to build in the order
-            UnitS2Data unit = abilityToUnitS2DataMap.get(buildList.get(0).ability().id());
+            UnitS2Data unit = buildList.get(0).unitCreated();
             var caster = buildList.get(0).caster();
-            int casterId = caster.id();
-
-            if(unit.requireAttached()) {
-                casterId = unit.techRequirement();
-            } else if(casterId == Units.TERRAN_STARPORT.getUnitTypeId() && idToBuildUnit.get(Units.TERRAN_STARPORT_REACTOR.getUnitTypeId()).availableUnits() > 0) {
-                casterId = Units.TERRAN_STARPORT_REACTOR.getUnitTypeId();
-            } else if(casterId == Units.TERRAN_BARRACKS.getUnitTypeId() && idToBuildUnit.get(Units.TERRAN_BARRACKS_REACTOR.getUnitTypeId()).availableUnits() > 0) {
-                casterId = Units.TERRAN_BARRACKS_REACTOR.getUnitTypeId();
-            } else if(casterId == Units.TERRAN_FACTORY.getUnitTypeId() && idToBuildUnit.get(Units.TERRAN_FACTORY_REACTOR.getUnitTypeId()).availableUnits() > 0) {
-                casterId = Units.TERRAN_FACTORY_REACTOR.getUnitTypeId();
-            } else if(idToBuildUnit.get(casterId).availableUnits() <= 0) {
-                if (casterId == Units.TERRAN_STARPORT.getUnitTypeId() && idToBuildUnit.get(Units.TERRAN_STARPORT_TECHLAB.getUnitTypeId()).availableUnits() > 0) {
-                    casterId = Units.TERRAN_STARPORT_TECHLAB.getUnitTypeId();
-                } else if (casterId == Units.TERRAN_BARRACKS.getUnitTypeId() && idToBuildUnit.get(Units.TERRAN_BARRACKS_TECHLAB.getUnitTypeId()).availableUnits() > 0) {
-                    casterId = Units.TERRAN_BARRACKS_TECHLAB.getUnitTypeId();
-                } else if (casterId == Units.TERRAN_FACTORY.getUnitTypeId() && idToBuildUnit.get(Units.TERRAN_FACTORY_TECHLAB.getUnitTypeId()).availableUnits() > 0) {
-                    casterId = Units.TERRAN_FACTORY_TECHLAB.getUnitTypeId();
-                }
-            }
+            int casterId = getCasterId(idToBuildUnit, unit, caster, (checkUnit) -> checkUnit.availableUnits() > 0);
 
             var builder = idToBuildUnit.get(casterId);
 
@@ -234,7 +206,9 @@ public class BuildOrderFitness implements Fitness<BuildOrderGene> {
                 nextEventStep.sort(Comparator.comparingInt(Pair::first));
 
                 // We are using up something, so calculate the speed
-                speed.calculateMiningSpeed(idToBuildUnit, baseInfos);
+                if(BuildConstants.basicHarvester.contains(builder.type().getUnitTypeId())) {
+                    speed.calculateMiningSpeed(idToBuildUnit, baseInfos);
+                }
 
                 // The next step should probably be when the next event is done
                 // nextStep = (int) Math.ceil(nextEventStep.get(0).first());
@@ -264,9 +238,14 @@ public class BuildOrderFitness implements Fitness<BuildOrderGene> {
             } else {
                 // We have nothing we can do... and as we are not yet done we can just return a massive negative number
                 log.info("Impossible... something is wrong with the order");
+                log.info("Impossible... {} {} {} {} {} {}", builder.type(), builder.units(), builder.addonTechlab(), builder.addonReactor(), builder.availableUnits(), unit.name());
                 log.info("Impossible... {} {} {} {} {}", frames <= 0 , foodUsed.get() <= 200 , (unit.food() >= 0 || food.get() >= Math.abs(unit.food())) , (unit.techRequirement() == 0 || techCache.get(unit.techRequirement()).get() > 0) , builder.availableUnits() > 0);
+                log.info("Impossible... builders {}/{}", builder.availableUnits(), builder.units());
                 log.info("Impossible... {} {} {} {}", compleatedSteps, foodUsed.get(), unit.food(), food.get());
-                log.info("Impossible... {}", new Gson().toJson(chromo.geneList()));
+                for(int i = 0; i < compleatedSteps +1; i++) {
+                    log.info("Impossible... u {} - {}", i, chromo.geneList().get(i).unitCreated().name());
+                }
+                // log.info("Impossible... {}", new Gson().toJson(chromo.geneList()));
                 return -Double.MAX_VALUE;
             }
             lastFrame = currentFrame;
@@ -306,6 +285,40 @@ public class BuildOrderFitness implements Fitness<BuildOrderGene> {
 
         chromo.extra("" + compleatedSteps);
 
+        //log.info("got to the end {} {} {} {}", maxFrame, currentFrame, bonusducks, (maxFrame - currentFrame) + bonusducks);
         return (maxFrame - currentFrame) + bonusducks;
+    }
+
+    private int getCasterId(LoadingHashMap<Integer, BuildUnitInfo> idToBuildUnit, UnitS2Data unit, UnitS2Data caster, Predicate<BuildUnitInfo> validate) {
+        int casterId = caster.id();
+
+        if(unit.requireAttached()) {
+            // We need a specific addon to make this unit, also we need to get the non generalized version
+            if(caster.id() == Units.TERRAN_BARRACKS.getUnitTypeId()) {
+                casterId = Units.TERRAN_BARRACKS_TECHLAB.getUnitTypeId();
+            } else if(caster.id() == Units.TERRAN_FACTORY.getUnitTypeId()) {
+                casterId = Units.TERRAN_FACTORY_TECHLAB.getUnitTypeId();
+            } else if(caster.id() == Units.TERRAN_STARPORT.getUnitTypeId()) {
+                casterId = Units.TERRAN_STARPORT_TECHLAB.getUnitTypeId();
+            } else {
+                casterId = unit.techRequirement();
+            }
+        } else if(casterId == Units.TERRAN_STARPORT.getUnitTypeId() && validate.test(idToBuildUnit.get(Units.TERRAN_STARPORT_REACTOR.getUnitTypeId()))) {
+            casterId = Units.TERRAN_STARPORT_REACTOR.getUnitTypeId();
+        } else if(casterId == Units.TERRAN_BARRACKS.getUnitTypeId() && validate.test(idToBuildUnit.get(Units.TERRAN_BARRACKS_REACTOR.getUnitTypeId()))) {
+            casterId = Units.TERRAN_BARRACKS_REACTOR.getUnitTypeId();
+        } else if(casterId == Units.TERRAN_FACTORY.getUnitTypeId() && validate.test(idToBuildUnit.get(Units.TERRAN_FACTORY_REACTOR.getUnitTypeId()))) {
+            casterId = Units.TERRAN_FACTORY_REACTOR.getUnitTypeId();
+        } else if(validate.test(idToBuildUnit.get(casterId))) {
+            if (casterId == Units.TERRAN_STARPORT.getUnitTypeId() && validate.test(idToBuildUnit.get(Units.TERRAN_STARPORT_TECHLAB.getUnitTypeId()))) {
+                casterId = Units.TERRAN_STARPORT_TECHLAB.getUnitTypeId();
+            } else if (casterId == Units.TERRAN_BARRACKS.getUnitTypeId() && validate.test(idToBuildUnit.get(Units.TERRAN_BARRACKS_TECHLAB.getUnitTypeId()))) {
+                casterId = Units.TERRAN_BARRACKS_TECHLAB.getUnitTypeId();
+            } else if (casterId == Units.TERRAN_FACTORY.getUnitTypeId() && validate.test(idToBuildUnit.get(Units.TERRAN_FACTORY_TECHLAB.getUnitTypeId()))) {
+                casterId = Units.TERRAN_FACTORY_TECHLAB.getUnitTypeId();
+            }
+        }
+
+        return casterId;
     }
 }

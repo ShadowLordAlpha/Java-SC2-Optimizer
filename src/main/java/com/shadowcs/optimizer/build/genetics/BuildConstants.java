@@ -5,7 +5,9 @@ import com.github.ocraft.s2client.protocol.data.Units;
 import lombok.experimental.UtilityClass;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @UtilityClass
 public class BuildConstants {
@@ -50,8 +52,20 @@ public class BuildConstants {
             Units.TERRAN_REFINERY.getUnitTypeId(), Units.TERRAN_REFINERY_RICH.getUnitTypeId(),
             Units.PROTOSS_ASSIMILATOR.getUnitTypeId(), Units.PROTOSS_ASSIMILATOR_RICH.getUnitTypeId()));
 
+    public static final Set<Integer> addon = new HashSet<>(List.of(Units.TERRAN_BARRACKS_TECHLAB.getUnitTypeId(), Units.TERRAN_BARRACKS_REACTOR.getUnitTypeId(), Units.TERRAN_REACTOR.getUnitTypeId(),
+            Units.TERRAN_FACTORY_TECHLAB.getUnitTypeId(), Units.TERRAN_FACTORY_REACTOR.getUnitTypeId(), Units.TERRAN_TECHLAB.getUnitTypeId(),
+            Units.TERRAN_STARPORT_TECHLAB.getUnitTypeId(), Units.TERRAN_STARPORT_REACTOR.getUnitTypeId()));
+
+    public static final Set<Integer> techlab = new HashSet<>(List.of(Units.TERRAN_BARRACKS_TECHLAB.getUnitTypeId(),
+            Units.TERRAN_FACTORY_TECHLAB.getUnitTypeId(), Units.TERRAN_TECHLAB.getUnitTypeId(),
+            Units.TERRAN_STARPORT_TECHLAB.getUnitTypeId()));
+
 
     public UnitType isAddonFor(UnitType type) {
+        if(!isAddon(type)) {
+            return null;
+        }
+
         if(type == Units.TERRAN_BARRACKS_TECHLAB || type == Units.TERRAN_BARRACKS_REACTOR) {
             return Units.TERRAN_BARRACKS;
         } else if(type == Units.TERRAN_FACTORY_TECHLAB || type == Units.TERRAN_FACTORY_REACTOR) {
@@ -61,5 +75,13 @@ public class BuildConstants {
         }
 
         return null;
+    }
+
+    public boolean isAddon(UnitType type) {
+        return addon.contains(type.getUnitTypeId());
+    }
+
+    public boolean isTechlab(UnitType type) {
+        return techlab.contains(type.getUnitTypeId());
     }
 }
