@@ -54,7 +54,7 @@ public class BuildOrder {
         algo.genetics(bog);
         algo.fitness(bof);
         algo.maxGenerations(5000);
-        //algo.sameSolution(100);
+        algo.sameSolution(200);
 
         Chromosome<BuildOrderGene> solution = algo.runAlgorithm(100, 64);
 

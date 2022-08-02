@@ -3,7 +3,6 @@ package com.shadowcs.optimizer.build.genetics;
 import com.github.ocraft.s2client.protocol.data.UnitType;
 import com.github.ocraft.s2client.protocol.data.Units;
 import com.google.common.util.concurrent.AtomicDouble;
-import com.google.gson.Gson;
 import com.shadowcs.optimizer.build.genetics.info.BaseInfo;
 import com.shadowcs.optimizer.build.genetics.info.BuildUnitInfo;
 import com.shadowcs.optimizer.build.genetics.info.MiningInfo;
@@ -23,6 +22,12 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Predicate;
 
+/**
+ * In order to vastly simplify the Fitness code we should not be doing really any validation checks that we don't need
+ * to do. So we do need to validate the materials, but we don't need to validate technology or supply as we should
+ * have both of those always as it is baked into the build order. Same with max supply as that should never go over what
+ * we have access to.
+ */
 @Data
 @Slf4j
 public class BuildOrderFitness implements Fitness<BuildOrderGene> {
@@ -286,7 +291,7 @@ public class BuildOrderFitness implements Fitness<BuildOrderGene> {
         chromo.extra("" + compleatedSteps);
 
         //log.info("got to the end {} {} {} {}", maxFrame, currentFrame, bonusducks, (maxFrame - currentFrame) + bonusducks);
-        return (maxFrame - currentFrame) + bonusducks;
+        return (maxFrame - currentFrame) * 100 + bonusducks;
     }
 
     private int getCasterId(LoadingHashMap<Integer, BuildUnitInfo> idToBuildUnit, UnitS2Data unit, UnitS2Data caster, Predicate<BuildUnitInfo> validate) {

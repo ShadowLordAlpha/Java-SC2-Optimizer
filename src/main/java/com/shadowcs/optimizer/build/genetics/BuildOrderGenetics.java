@@ -113,12 +113,12 @@ public class BuildOrderGenetics implements Genetics<BuildOrderGene> {
 
         private double abilityLowestFood = 0;
         private boolean abilityChanged = true;
+        private boolean gasCreated = false;
 
         BuildOrderGeneticsState init() {
 
             unitCount.clear();
             technologyUnit.clear();
-            technologyUnit.add(0);
 
             availableFood = 0;
             usedFood = 0;
@@ -192,6 +192,7 @@ public class BuildOrderGenetics implements Genetics<BuildOrderGene> {
         private void regenerateTechnologySet() {
 
             technologyUnit().clear();
+            technologyUnit().add(0);
 
             // Calculate what tech we have access to
             // Because we do this after counting units up we are able to use a simple set as we only care about one more step and not several more
@@ -304,7 +305,7 @@ public class BuildOrderGenetics implements Genetics<BuildOrderGene> {
         }
 
         private boolean checkValid(UnitS2Data created) {
-            return !BuildConstants.addon.contains(created.id()) && (/*created.techRequirement() == 0 || */technologyUnit().contains(created.techRequirement()));
+            return !BuildConstants.addon.contains(created.id()) && (technologyUnit().contains(created.techRequirement()));
         }
 
         private boolean checkFood(UnitS2Data created) {
