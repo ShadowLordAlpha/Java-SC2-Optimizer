@@ -1,18 +1,14 @@
 package com.shadowcs.optimizer.genetics;
 
 import com.github.ocraft.s2client.protocol.data.Units;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.shadowcs.optimizer.build.*;
-import com.shadowcs.optimizer.build.genetics.BuildOrderFitness;
-import com.shadowcs.optimizer.build.genetics.BuildOrderGene;
-import com.shadowcs.optimizer.build.genetics.BuildOrderGenetics;
+import com.shadowcs.optimizer.build.BuildOrder;
 import com.shadowcs.optimizer.build.state.BuildState;
 import com.shadowcs.optimizer.pojo.Pair;
+import com.shadowcs.optimizer.random.XORShiftRandom;
 import com.shadowcs.optimizer.sc2data.S2DataUtil;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Type;
+import java.util.Random;
 import java.util.Set;
 
 
@@ -41,35 +37,46 @@ public class SimpleGATest {
     public void basicIntegerGATest() {
 
         String solution = "10110010111100100100110110001101";
-        GeneticAlgorithm<String> ga = new GeneticAlgorithm<>();
-        ga.fitness(chromo -> {
-            if(!Double.isNaN(chromo.fitness())) {
-                return chromo.fitness();
-            }
+        Random random = new XORShiftRandom();
 
-            float score = 0;
-            for(int i = 0; i < chromo.geneList().size(); i++) {
-                if(chromo.geneList().get(i).equalsIgnoreCase(String.valueOf(solution.charAt(i)))) {
+        GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm();
+        geneticAlgorithm.fitnessFunction(chromo -> {
+
+            double score = 0;
+            for(int i = 0; i < chromo.length; i++) {
+                String data = chromo[i].data();
+                if(data.equalsIgnoreCase(String.valueOf(solution.charAt(i)))) {
                     score++;
                 }
             }
 
             return score;
         });
-        ga.genetics((gen, idx) -> Set.of("0", "1"));
 
-        ga.solutionFitness(32);
-        //ga.maxGenerations(200000);
-        ga.sameSolution(2000);
+        Gene gene1 = new Gene().data("1");
+        Gene gene2 = new Gene().data("0");
 
-        Chromosome<String> gasolution = ga.runAlgorithm(64, 32);
+        geneticAlgorithm.geneFunction(set -> {
+            if(random.nextDouble() > 0.5) {
+                return gene1;
+            } else {
+                return gene2;
+            }
+        });
+
+        geneticAlgorithm.geneLength(32);
+        geneticAlgorithm.solutionFitness(32);
+        geneticAlgorithm.maxGenerations(5000);
+        geneticAlgorithm.sameSolution(0);
+
+        var gasolution = geneticAlgorithm.runAlgorithm(64);
 
         StringBuilder builder = new StringBuilder();
-        for(var gene: gasolution.geneList()) {
-            builder.append(gene);
+        for(var gene: gasolution.genes()) {
+            builder.append((String) gene.data());
         }
         System.out.println("Requested Solu: " + solution);
-        System.out.println("Found Solution: " + builder.toString());
+        System.out.println("Found Solution: " + builder);
 
         assert solution.equalsIgnoreCase(builder.toString());
     }

@@ -1,4 +1,4 @@
-package com.shadowcs.optimizer.genetics;
+package com.shadowcs.optimizer.gen_old;
 
 /**
  * Having a good and functioning Fitness equation is INSANELY IMPORTANT. Even if you have one that works and will give

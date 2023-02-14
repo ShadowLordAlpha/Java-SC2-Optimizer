@@ -1,316 +1,218 @@
 package com.shadowcs.optimizer.build.genetics;
 
 import com.github.ocraft.s2client.protocol.data.Units;
-import com.shadowcs.optimizer.build.genetics.info.BuildUnitInfo;
-import com.shadowcs.optimizer.build.state.BuildState;
-import com.shadowcs.optimizer.genetics.Chromosome;
-import com.shadowcs.optimizer.genetics.Genetics;
-import com.shadowcs.optimizer.pojo.LoadingHashMap;
+import com.github.ocraft.s2client.protocol.game.Race;
+import com.shadowcs.optimizer.genetics.Gene;
+import com.shadowcs.optimizer.random.XORShiftRandom;
 import com.shadowcs.optimizer.sc2data.models.AbilityS2Data;
 import com.shadowcs.optimizer.sc2data.models.UnitS2Data;
 import com.shadowcs.optimizer.sc2data.models.UpgradeS2Data;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.ThreadLocalRandom;
-import java.util.stream.Collectors;
+import java.util.*;
+import java.util.function.Function;
 
 /**
  *
  */
 @Data
 @Slf4j
-public class BuildOrderGenetics implements Genetics<BuildOrderGene> {
-    private final BuildState state;
-    private final Map<Integer, UnitS2Data> unitS2DataMap;
-    private final Map<Integer, UnitS2Data> abilityToUnitS2DataMap;
-    private final Map<Integer, UpgradeS2Data> upgradeS2Data;
-    private final Map<Integer, AbilityS2Data> abilityS2Data;
-    private final LoadingHashMap<Long, BuildOrderGene> abilityToOrder;
+public class BuildOrderGenetics implements Function<Set<Gene>, Gene> {
 
-    public BuildOrderGenetics(BuildState state, Map<Integer, UnitS2Data> unitS2DataMap, Map<Integer, UnitS2Data> abilityToUnitS2DataMap, Set<UpgradeS2Data> upgrades, Set<AbilityS2Data> abilities) {
-        this.state = state;
-
-        this.unitS2DataMap = unitS2DataMap;
-        this.abilityToUnitS2DataMap = abilityToUnitS2DataMap;
-
-        upgradeS2Data = new HashMap<>(upgrades.size() + 1, 1.0f);
-        upgradeS2Data.putAll(upgrades.stream().collect(Collectors.toMap(UpgradeS2Data::id, x -> x)));
-
-        abilityS2Data = new HashMap<>(abilities.size() + 1, 1.0f);
-        abilityS2Data.putAll(abilities.stream().collect(Collectors.toMap(AbilityS2Data::id, x -> x)));
-
-        abilityToOrder = new LoadingHashMap<>(key -> new BuildOrderGene(unitS2DataMap.get(((int)(key >> 32))), abilityS2Data.get(key.intValue()), abilityToUnitS2DataMap.get(key.intValue()), null, false));
-    }
+    private final Random random = new XORShiftRandom();
+    private final List<Gene> geneList = new ArrayList<>();
 
     /**
-     * We assume that the chromosome up until index is correct and the only thing that we need to find out is the set of
-     * actions that we are able to take at the index.
+     * Generate the needed genes that are valid for us to make use of. Currently restricted to one race, in the future
+     * we may want to expand this as zerg can capture units and that may be fun to use
      *
-     * @param chromo
-     * @param index
-     *
-     * @return
+     * @param
+     * @param abilityS2DataMap
+     * @param abilityToUnitS2DataMap
      */
-    @Override
-    public Set<BuildOrderGene> available(Chromosome<BuildOrderGene> chromo, int index) {
+    public BuildOrderGenetics(Set<UnitS2Data> unitS2Data, Set<UpgradeS2Data> upgrades, Map<Integer, AbilityS2Data> abilityS2DataMap, Map<Integer, UnitS2Data> abilityToUnitS2DataMap, Race race) {
 
-        return availidate(new BuildOrderGeneticsState().init(), chromo, 0, index);
-    }
+        // If the unit is not the correct race we don't care about it... that sounds so wrong and its only in text
+        Set<UnitS2Data> care = new HashSet<>(unitS2Data);
+        care.removeIf(data -> data.race() != race);
 
-    @Override
-    public void validate(Chromosome<BuildOrderGene> chromo) {
+        // For every unit we care about make the initial gene object and store it so that we can modify it when we go
+        // through the list again to generate the actual build tree.
+        Gene nexus = null;
+        Gene techlabBarracks = null;
+        Gene techlabFactory = null;
+        Gene techlabStarport = null;
+        Map<UnitS2Data, Gene> unitGene = new HashMap<>();
+        Set<Integer> abilityData = new HashSet<>();
 
-        BuildOrderGeneticsState state = new BuildOrderGeneticsState().init();
+        for(UnitS2Data unit: care) {
 
-        int count = chromo.geneList().size();
-        for(int i = 0; i < count; i++) {
-            Set<BuildOrderGene> genes = availidate(state, chromo, Math.max(i - 1, 0), i);
-
-            if(!genes.contains(chromo.geneList().get(i))) {
-
-                int index = ThreadLocalRandom.current().nextInt(genes.size());
-                var itt = genes.iterator();
-                for(int idx = 0; idx < index; idx++) {
-                    itt.next();
-                }
-                var key = itt.next();
-
-                chromo.geneList().set(i, key);
+            // We need at least one basic gene per unit
+            unitGene.put(unit, new Gene());
+            if(unit.name().equalsIgnoreCase("nexus")) {
+                nexus = unitGene.get(unit);
+            } else if(unit.name().equalsIgnoreCase("BarracksTechLab")) {
+                techlabBarracks = unitGene.get(unit);
+            } else if(unit.name().equalsIgnoreCase("FactoryTechLab")) {
+                techlabFactory = unitGene.get(unit);
+            } else if(unit.name().equalsIgnoreCase("StarportTechLab")) {
+                techlabStarport = unitGene.get(unit);
             }
+
+            // For each ability within the unit
+            // At this point this is specifically so we can generate the upgrade data
+            abilityData.addAll(unit.abilities());
         }
-    }
 
-    private Set<BuildOrderGene> availidate(BuildOrderGeneticsState bos, Chromosome<BuildOrderGene> chromo, int start, int end) {
+        Set<UpgradeS2Data> careUpgrade = new HashSet<>(upgrades);
+        careUpgrade.removeIf(data -> !abilityData.contains(data.buildAbility()) && !abilityData.contains(abilityS2DataMap.get(data.buildAbility()).generalId()));
 
-        bos.processChromosome(chromo, start, end);
+        for(UpgradeS2Data upgrade: careUpgrade) {
 
-        bos.calculateAvailableAbilitySet();
-        return bos.activeGenes();
-    }
+            var ability = abilityS2DataMap.get(upgrade.buildAbility());
+            if(ability.generalId() != 0) {
+                // There is a general ability, we should use that one
+                ability = abilityS2DataMap.get(ability.generalId());
+            }
 
-    @Data
-    private class BuildOrderGeneticsState {
+            UnitS2Data caster = null;
+            for(UnitS2Data unit: care) {
 
-        // Unit ID and Count of units
-        private Map<Integer, BuildUnitInfo> unitCount = new HashMap<>();
+                // For each ability within the unit
+                // At this point this is specifically so we can generate the upgrade data
+                for (int abil : unit.abilities()) {
 
-        private Set<Integer> technologyUnit = new HashSet<>(128);
-
-        // What genes are currently allowed
-        private Set<BuildOrderGene> genes = new HashSet<>(256);
-        private Set<BuildOrderGene> activeGenes = new HashSet<>(256);
-
-        // total food we have "available" for use
-        private double availableFood = 0;
-
-        // How much food have we used overall, must be a positive number
-        private double usedFood = 0;
-
-        private double abilityLowestFood = 0;
-        private boolean abilityChanged = true;
-        private boolean gasCreated = false;
-
-        BuildOrderGeneticsState init() {
-
-            unitCount.clear();
-            technologyUnit.clear();
-
-            availableFood = 0;
-            usedFood = 0;
-
-            // Insert BuildState values into lists, this is always correct as it is the current state of the game
-            for(var entry: state.unitInfoMap().entrySet()) {
-                var entryUID = entry.getKey().getUnitTypeId();
-
-                int count = entry.getValue().units();
-
-                unitCount.computeIfAbsent(entryUID, key -> new BuildUnitInfo(Units.from(key))).units(count).addonTechlab(entry.getValue().addonTechlab()).addonReactor(entry.getValue().addonReactor());
-
-                UnitS2Data math = unitS2DataMap.get(entryUID);
-                double foodCount = math.food() * count;
-                availableFood += foodCount;
-                if(math.food() < 0) { // If negative we have used some food up
-                    usedFood -= foodCount;
+                    if(ability.id() == abil) {
+                        caster = unit;
+                    }
                 }
             }
 
-            regenerateTechnologySet();
-            regenerateAbilitySet();
+            if(caster != null) {
+                Set<Gene> need = new HashSet<>();
+                need.add(unitGene.get(caster));
 
-            return this;
+                BuildOrderGene bog = new BuildOrderGene(caster, ability, null, upgrade, false);
+                Gene upgradeGene = new Gene().data(bog);
+                upgradeGene.needed().add(need);
+
+                geneList.add(upgradeGene);
+            }
         }
 
-        BuildOrderGeneticsState processChromosome(Chromosome<BuildOrderGene> chromo, int start, int index) {
+        // We now need to loop through and add the previous levels to the needed upgrades
+        for(var gene: geneList) {
 
-            // Insert the Chromosome data for all the steps we care about
-            for(int i = start; i < index; i++) {
-                var bog = chromo.geneList().get(i);
-                if(bog != null && bog.ability() != null) {
-                    UnitS2Data created = bog.unitCreated();
-                    UnitS2Data caster = bog.caster();
-                    AbilityS2Data ability = bog.ability();
+            BuildOrderGene bog = gene.data();
+            UpgradeS2Data us2d = bog.upgradeResearched();
+            if(us2d != null) {
 
-                    if (ability.name().contains("Morph") || ability.name().contains("Cancel") || caster.id() == Units.ZERG_DRONE.getUnitTypeId()) {
-                        // Morphed units always use up whatever was morphed
-                        var casterHold = unitCount.computeIfAbsent(caster.id(), key -> new BuildUnitInfo(Units.from(key)));
-                        casterHold.units(unitCount.get(caster.id()).units() - 1); // We already must have a unit in order to cancel it
-                        if(casterHold.units() == 0) {
-                            // regenerateTechnologySet(); // unless tech dies we never need to do this
-                            // regenerateAbilitySet();
-                            removeAbilityUnit(casterHold);
-                        }
-                        availableFood -= caster.food();
-                        if(caster.food() < 0) { // If negative we have used some food up
-                            usedFood += caster.food();
+                String lookfor = null;
+                if (us2d.name().toLowerCase().contains("level2")) {
+                    lookfor = us2d.name().replace('2', '1');
+                } else if(us2d.name().toLowerCase().contains("level3")) {
+                    lookfor = us2d.name().replace('3', '2');
+                }
+
+                if(lookfor != null) {
+                    for(var gene2: geneList) {
+                        BuildOrderGene bog2 = gene2.data();
+                        UpgradeS2Data us2d2 = bog.upgradeResearched();
+                        if(us2d2 != null && us2d2.name().equalsIgnoreCase(lookfor)) {
+                            // We will always need the previous level gene so just go ahead and add it to all lists
+                            gene.needed().forEach(l -> l.add(gene2));
                         }
                     }
-
-                    //log.info("Created {}", created);
-                    //log.info("Created check {} {} {}", created.food(), availableFood, usedFood);
-                    var createdHold = unitCount.computeIfAbsent(created.id(), key -> new BuildUnitInfo(Units.from(key)));
-                    if(createdHold.units() == 0) {
-                        addAbilityUnit(createdHold);
-                        addTechnologyUnit(createdHold);
-                    }
-                    createdHold.units(unitCount.get(created.id()).units() + 1);
-                    availableFood += created.food();
-                    if(created.food() < 0) { // If negative we have used some food up
-                        usedFood -= created.food();
-                    }
-                    //log.info("After   check {} {} {}", created.food(), availableFood, usedFood);
-                }
-            }
-
-            return this;
-        }
-
-        private void regenerateTechnologySet() {
-
-            technologyUnit().clear();
-            technologyUnit().add(0);
-
-            // Calculate what tech we have access to
-            // Because we do this after counting units up we are able to use a simple set as we only care about one more step and not several more
-            // Overall this may make some things a little slower with the merged methods but its worth it for the simplicity of the overall code
-            for(var key: unitCount().values()) {
-                if (key.units() > 0) {
-                    addTechnologyUnit(key);
                 }
             }
         }
 
-        private void addTechnologyUnit(BuildUnitInfo info) {
-            UnitS2Data tech = unitS2DataMap.get(info.type().getUnitTypeId());
-            technologyUnit.add(tech.id());
-            technologyUnit.addAll(tech.techAliases());
 
-            abilityChanged = true;
-            // TODO: does this need the techlabs as well? probably TBH...
-        }
+        // For every unit we care about
+        for(UnitS2Data unit: care) {
 
-        private void regenerateAbilitySet() {
+            // For each ability within the unit
+            for(int ability: unit.abilities()) {
 
-            genes().clear();
+                // For each unit
+                var created = abilityToUnitS2DataMap.get(ability);
+                var aData = abilityS2DataMap.get(ability);
+                if(created != null) {
 
-            // TODO: take addons into consideration as well, to make sure we don't make more then we can actually make...
-            // TODO food max;
+                    Gene gene = unitGene.get(created);
 
-            for(var key: unitCount().values()) {
-                if(key.units() > 0) {
-                    addAbilityUnit(key);
-                }
-            }
-        }
+                    if(gene.data() == null) {
+                        Gene creator = unitGene.get(unit);
 
-        private void removeAbilityUnit(BuildUnitInfo info) {
+                        BuildOrderGene bog = new BuildOrderGene(creator, aData, created, null, false);
+                        bog.alternate().add(creator);
 
-            var unitKey = unitS2DataMap.get(info.type().getUnitTypeId());
-            for (int ability : unitKey.abilities()) {
+                        gene.data(bog);
+                    } else {
+                        Gene creator = unitGene.get(unit);
 
-                UnitS2Data data = abilityToUnitS2DataMap.get(ability);
-                if(data != null) {
-                    abilityChanged = true;
-                    long l = (((long) info.type().getUnitTypeId()) << 32) | (ability & 0xffffffffL);
-                    var abil = abilityToOrder.get(l);
-                    genes.remove(abil);
-                    activeGenes.remove(abil);
-                }
-            }
-        }
-
-        private void addAbilityUnit(BuildUnitInfo info) {
-
-            var unitKey = unitS2DataMap.get(info.type().getUnitTypeId());
-            for (int ability : unitKey.abilities()) {
-
-                UnitS2Data data = abilityToUnitS2DataMap.get(ability);
-                if(data != null) {
-                    //if(checkValid(data)) {
-                        abilityChanged = true;
-                        long l = (((long) info.type().getUnitTypeId()) << 32) | (ability & 0xffffffffL);
-                        genes.add(abilityToOrder.get(l));
-                    //}
-                    // TODO: may need to move failures into another list... or something like that at least
-                }
-            }
-        }
-
-        void calculateAvailableAbilitySet() {
-
-            // We have enough food for everything, so we don't need to worry about anything...
-            //log.info("Food c {} {} {}", abilityLowestFood, availableFood(), abilityChanged);
-            if(availableFood() >= abilityLowestFood && !abilityChanged) {
-                return;
-            }
-
-            if(availableFood() < abilityLowestFood) {
-                //log.info("Purging data");
-                abilityLowestFood = 0;
-                activeGenes().removeIf(test -> {
-                    var created = test.unitCreated();
-                    // Check that we have the food needed to make the thing
-                    if (checkFood(created)) {
-                        abilityLowestFood = Math.max(-created.food(), abilityLowestFood);
-                        return false;
+                        BuildOrderGene bog = gene.data();
+                        bog.alternate().add(creator);
                     }
 
-                    return true;
-                });
-            }
 
-            // We have gained more food
-            if(availableFood() > abilityLowestFood || abilityChanged) {
-                // TODO: something in here...
-                //log.info("adding data");
 
-                // activeGenes(new HashSet<>(128));
-
-                abilityLowestFood = 0;
-                for(var test: genes) {
-                    var created = test.unitCreated();
-                    // Check that we have the food needed to make the thing
-                    if (checkFood(created) && checkValid(created)) {
-                        activeGenes.add(test);
-                        abilityLowestFood = Math.max(-created.food(), abilityLowestFood);
+                    switch (created.name().toLowerCase()) {
+                        case "thor":
+                            created.requireAttached(true);
+                            created.techRequirement(Units.TERRAN_ARMORY.getUnitTypeId());
+                            break;
+                        case "ghost":
+                            created.requireAttached(true);
+                            created.techRequirement(Units.TERRAN_GHOST_ACADEMY.getUnitTypeId());
+                            break;
+                        case "battlecruiser":
+                            created.requireAttached(true);
+                            created.techRequirement(Units.TERRAN_FUSION_CORE.getUnitTypeId());
+                            break;
                     }
-                }
 
-                abilityChanged = false;
+                    Set<Gene> needed = new HashSet<>();
+                    needed.add(unitGene.get(unit));
+
+                    if(created.requireAttached()) {
+
+                        if(created.techRequirement() == 5) {
+                            created.techRequirement(0);
+                        }
+
+                        // We need a techlab of some kind to build this unit
+
+                        if(unit.name().equalsIgnoreCase("Factory")) {
+                            needed.add(techlabFactory);
+                        } else if(unit.name().equalsIgnoreCase("Starport")) {
+                            needed.add(techlabStarport);
+                        } else if(unit.name().equalsIgnoreCase("Barracks")) {
+                            needed.add(techlabBarracks);
+                        }
+                    }
+
+                    if(created.techRequirement() != 0) {
+                        for(var testGene: unitGene.keySet()) {
+                            if(testGene.id() == created.techRequirement() || testGene.techAliases().contains(created.techRequirement())) {
+                                Set<Gene> alias = new HashSet<>(needed);
+                                alias.add(unitGene.get(testGene));
+                                gene.needed().add(alias);
+                            }
+                        }
+                    } else {
+                        gene.needed().add(needed);
+                    }
+
+                    geneList.add(gene);
+                }
             }
         }
+    }
 
-        private boolean checkValid(UnitS2Data created) {
-            return !BuildConstants.addon.contains(created.id()) && (technologyUnit().contains(created.techRequirement()));
-        }
-
-        private boolean checkFood(UnitS2Data created) {
-            // log.info("Food {} {} {}", created.food(), availableFood(), usedFood());
-            return created.food() >= 0 || (availableFood() >= -created.food() && (usedFood() + -created.food() <= 200));
-        }
+    @Override
+    public Gene apply(Set<Gene> genes) {
+        return geneList.get(random.nextInt(geneList().size()));
     }
 }

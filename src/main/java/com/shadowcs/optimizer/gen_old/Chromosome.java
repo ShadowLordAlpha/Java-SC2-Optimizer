@@ -1,4 +1,4 @@
-package com.shadowcs.optimizer.genetics;
+package com.shadowcs.optimizer.gen_old;
 
 import lombok.Data;
 

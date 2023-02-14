@@ -27,6 +27,8 @@ public class BuildConstants {
 
     public static final float startingEnergy = 50f;
     public static final float maxEnergy = 200f;
+
+    public static final double maxFood = 200.0;
     public static final float energyPerFrame = 0.5625f * secondsToFrame;
     /**
      * This is so we can use multiplication which is much faster then division on a computer, pointless little improvement
@@ -38,7 +40,7 @@ public class BuildConstants {
 
     public static final float larvaEnergy = 25f; // How much energy to use ability
     public static final float larvaDuration = 29f * secondsToFrame; // How long until more larva are spanwed
-    public static final float larvaCooldown = 1.8f * secondsToFrame; // How long until a queen can use the ability again
+    public static final float larvaInjectCooldown = 1.8f * secondsToFrame; // How long until a queen can use the ability again
     public static final float larvaNaturalRate = 11f * secondsToFrame; // How long to spawn one larva
     public static final float naturalMaxLarva = 3f; // How many larva are we able to have before we stop naturally spawning them
     public static final float maxLarva = 19f; // How many larva are we actually allowed to have

@@ -1,4 +1,4 @@
-package com.shadowcs.optimizer.genetics;
+package com.shadowcs.optimizer.gen_old;
 
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
