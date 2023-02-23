@@ -23,7 +23,74 @@ public class BuildOrderGenetics implements Function<Set<Gene>, Gene> {
     private final Random random = new XORShiftRandom();
     private final List<Gene> geneList = new ArrayList<>();
 
+
     /**
+     * Generate the list of all Genes that we need for the given race(s). This will filter down the full lists to only
+     * the ones we care about. Extra Genes for specific cases may also be created to make it easier on us later.
+     *
+     * @param units The list of all units in a game of SC2
+     * @param upgrades The list of all upgrades in a game of SC2
+     * @param abilities The list of all abilities in a game of SC2
+     * @param race What specific races do we care about
+     */
+    public BuildOrderGenetics(Set<UnitS2Data> units, Set<UpgradeS2Data> upgrades, Set<AbilityS2Data> abilities, Race...race) {
+
+        // Convert the array of races to a set to make it easier to use
+        var validRace = new HashSet<>(List.of(race));
+
+        // Because units are the only data object that has race we need to start with those
+        var validUnits = new HashSet<>(units);
+        validUnits.removeIf(unit -> !validRace.contains(unit.race()));
+
+        // we now need to filter the abilities based on the units that we have
+        Set<Integer> abilityIdSet = new HashSet<>();
+        validUnits.forEach(u -> abilityIdSet.addAll(u.abilities()));
+        var validAbilities = new HashSet<>(abilities);
+        validAbilities.removeIf(ability -> !abilityIdSet.contains(ability.id()));
+
+        // after that we are now able to do our upgrades...
+        var validUpgrades = new HashSet<>(upgrades);
+        validUpgrades.removeIf(upgrade -> {
+            var abil = abilities.stream().filter(ad -> ad.id() == upgrade.buildAbility()).findFirst().orElse(null);
+            if(abil == null) {
+                return true;
+            }
+
+            if(validAbilities.stream().anyMatch(ab -> abil.id() == ab.id() || abil.generalId() == ab.id())) {
+                validAbilities.add(abil);
+                return false;
+            }
+
+            return true;
+        });
+
+        // Put all the valid IDs into a map for easy and faster lookup later?
+        Map<Integer, AbilityS2Data> abilityIdMap = new HashMap<>();
+
+        // Unit Genes
+        validUnits.forEach(u -> {
+
+        });
+
+        // Upgrade Genes
+        HashMap<UpgradeS2Data, Gene>;
+        validUpgrades.forEach(u -> {
+            new Gene();
+        });
+
+        if(log.isDebugEnabled()) {
+            log.debug("=====< Valid Units >=====");
+            validUnits.forEach(u -> log.debug(u.name()));
+            log.debug("=====< Valid Upgrades >=====");
+            validUpgrades.forEach(u -> log.debug(u.name()));
+            log.debug("=====< Valid Abilities >=====");
+            validAbilities.forEach(a -> log.debug(a.name()));
+        }
+    }
+
+    /**
+     * TODO: old, need to remove
+     *
      * Generate the needed genes that are valid for us to make use of. Currently restricted to one race, in the future
      * we may want to expand this as zerg can capture units and that may be fun to use
      *
@@ -93,7 +160,7 @@ public class BuildOrderGenetics implements Function<Set<Gene>, Gene> {
                 Set<Gene> need = new HashSet<>();
                 need.add(unitGene.get(caster));
 
-                BuildOrderGene bog = new BuildOrderGene(caster, ability, null, upgrade, false);
+                BuildOrderGene bog = new BuildOrderGene(unitGene.get(caster), ability, null, upgrade, false);
                 Gene upgradeGene = new Gene().data(bog);
                 upgradeGene.needed().add(need);
 

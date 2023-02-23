@@ -26,13 +26,13 @@ public class BuildOrder {
 
     private BuildOrder(Individual solution) {
 
-        try {
+        /*try {
             int orders = Integer.parseInt(solution.extra());
 
             this.orders = solution.geneList().subList(0, orders);
         } catch (Exception e) {
 
-        }
+        }*/
     }
 
     public static BuildOrder findFastestBuildOrder(BuildState state, Pair<UnitType, Integer>...output) {

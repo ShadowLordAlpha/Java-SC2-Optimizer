@@ -90,6 +90,4 @@ public class Gene {
     public <T> T data() {
         return (T)  data;
     }
-
-    @Ov
 }
