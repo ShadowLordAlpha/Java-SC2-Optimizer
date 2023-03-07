@@ -27,7 +27,7 @@ public class Collector {
         S2Coordinator s2Coordinator = S2Coordinator.setup()
                 .loadSettings(args)
                 .setMultithreaded(true)
-                //.setUseGeneralizedAbilityId(true)
+                .setUseGeneralizedAbilityId(true)
                 //.setFeatureLayers(builder.build())
                 //.setRawAffectsSelection(true)
                 .setShowBurrowed(true)
@@ -37,7 +37,7 @@ public class Collector {
                         S2Coordinator.createParticipant(Race.TERRAN, new CollectorBot(), "Collector"))
 
                 .launchStarcraft()
-                .startGame(LocalMap.of(Paths.get("Melee/Empty128.SC2MAP")));
+                .startGame(LocalMap.of(Paths.get("Flat482Spawns.SC2MAP")));
 
         while(s2Coordinator.update()) {
 

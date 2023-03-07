@@ -339,19 +339,19 @@
     ]
   },
   {
-    "id": 42,
-    "pName": "EFFECT_EXPLODE",
-    "name": "ExplodeEffect Explode",
-    "generalId": 0,
+    "id": 1066,
+    "pName": "RESEARCH_PROTOSS_GROUND_ARMOR_LEVEL2",
+    "name": "ForgeResearchResearch ProtossGroundArmorLevel2",
+    "generalId": 3694,
     "target": [
       "NONE"
     ]
   },
   {
-    "id": 1066,
-    "pName": "RESEARCH_PROTOSS_GROUND_ARMOR_LEVEL2",
-    "name": "ForgeResearchResearch ProtossGroundArmorLevel2",
-    "generalId": 3694,
+    "id": 42,
+    "pName": "EFFECT_EXPLODE",
+    "name": "ExplodeEffect Explode",
+    "generalId": 0,
     "target": [
       "NONE"
     ]
@@ -366,19 +366,19 @@
     ]
   },
   {
-    "id": 1068,
-    "pName": "RESEARCH_PROTOSS_SHIELDS_LEVEL1",
-    "name": "ForgeResearchResearch ProtossShieldsLevel1",
-    "generalId": 3696,
+    "id": 44,
+    "pName": "RESEARCH_INTERCEPTOR_GRAVITON_CATAPULT",
+    "name": "FleetBeaconResearchResearch InterceptorGravitonCatapult",
+    "generalId": 0,
     "target": [
       "NONE"
     ]
   },
   {
-    "id": 44,
-    "pName": "RESEARCH_INTERCEPTOR_GRAVITON_CATAPULT",
-    "name": "FleetBeaconResearchResearch InterceptorGravitonCatapult",
-    "generalId": 0,
+    "id": 1068,
+    "pName": "RESEARCH_PROTOSS_SHIELDS_LEVEL1",
+    "name": "ForgeResearchResearch ProtossShieldsLevel1",
+    "generalId": 3696,
     "target": [
       "NONE"
     ]
@@ -393,19 +393,19 @@
     ]
   },
   {
-    "id": 1070,
-    "pName": "RESEARCH_PROTOSS_SHIELDS_LEVEL3",
-    "name": "ForgeResearchResearch ProtossShieldsLevel3",
-    "generalId": 3696,
+    "id": 46,
+    "pName": "RESEARCH_PHOENIX_ANION_PULSE_CRYSTALS",
+    "name": "FleetBeaconResearchResearch PhoenixAnionPulseCrystals",
+    "generalId": 0,
     "target": [
       "NONE"
     ]
   },
   {
-    "id": 46,
-    "pName": "RESEARCH_PHOENIX_ANION_PULSE_CRYSTALS",
-    "name": "FleetBeaconResearchResearch PhoenixAnionPulseCrystals",
-    "generalId": 0,
+    "id": 1070,
+    "pName": "RESEARCH_PROTOSS_SHIELDS_LEVEL3",
+    "name": "ForgeResearchResearch ProtossShieldsLevel3",
+    "generalId": 3696,
     "target": [
       "NONE"
     ]
@@ -525,15 +525,6 @@
     "generalId": 3685,
     "target": [
       "UNIT"
-    ]
-  },
-  {
-    "id": 80,
-    "pName": "TRAIN_BANELING",
-    "name": "MorphZerglingToBanelingTrain Baneling",
-    "generalId": 0,
-    "target": [
-      "NONE"
     ]
   },
   {
@@ -780,19 +771,19 @@
     ]
   },
   {
-    "id": 1186,
-    "pName": "RESEARCH_ZERG_MELEE_WEAPONS_LEVEL1",
-    "name": "evolutionchamberresearchResearch ZergMeleeWeaponsLevel1",
-    "generalId": 3705,
+    "id": 162,
+    "pName": "HALLUCINATION_WARP_PRISM",
+    "name": "HallucinationWarpPrismHallucination WarpPrism",
+    "generalId": 0,
     "target": [
       "NONE"
     ]
   },
   {
-    "id": 162,
-    "pName": "HALLUCINATION_WARP_PRISM",
-    "name": "HallucinationWarpPrismHallucination WarpPrism",
-    "generalId": 0,
+    "id": 1186,
+    "pName": "RESEARCH_ZERG_MELEE_WEAPONS_LEVEL1",
+    "name": "evolutionchamberresearchResearch ZergMeleeWeaponsLevel1",
+    "generalId": 3705,
     "target": [
       "NONE"
     ]
@@ -843,19 +834,19 @@
     ]
   },
   {
-    "id": 167,
-    "pName": "HARVEST_RETURN_MULE",
-    "name": "MULEGatherHarvest Return Mule",
-    "generalId": 3667,
+    "id": 1191,
+    "pName": "RESEARCH_ZERG_GROUND_ARMOR_LEVEL3",
+    "name": "evolutionchamberresearchResearch ZergGroundArmorLevel3",
+    "generalId": 3704,
     "target": [
       "NONE"
     ]
   },
   {
-    "id": 1191,
-    "pName": "RESEARCH_ZERG_GROUND_ARMOR_LEVEL3",
-    "name": "evolutionchamberresearchResearch ZergGroundArmorLevel3",
-    "generalId": 3704,
+    "id": 167,
+    "pName": "HARVEST_RETURN_MULE",
+    "name": "MULEGatherHarvest Return Mule",
+    "generalId": 3667,
     "target": [
       "NONE"
     ]
@@ -962,21 +953,21 @@
     ]
   },
   {
-    "id": 1220,
-    "pName": "MORPH_GREATER_SPIRE",
-    "name": "UpgradeToGreaterSpireMorph GreaterSpire",
-    "generalId": 0,
-    "target": [
-      "NONE"
-    ]
-  },
-  {
     "id": 2244,
     "pName": "EFFECT_TIME_WARP",
     "name": "TemporalFieldEffect TimeWarp",
     "generalId": 0,
     "target": [
       "POINT"
+    ]
+  },
+  {
+    "id": 1220,
+    "pName": "MORPH_GREATER_SPIRE",
+    "name": "UpgradeToGreaterSpireMorph GreaterSpire",
+    "generalId": 0,
+    "target": [
+      "NONE"
     ]
   },
   {
@@ -1291,21 +1282,21 @@
     ]
   },
   {
-    "id": 2346,
-    "pName": "EFFECT_PURIFICATION_NOVA",
-    "name": "PurificationNovaTargetedEffect PurificationNova",
-    "generalId": 0,
-    "target": [
-      "POINT"
-    ]
-  },
-  {
     "id": 298,
     "pName": "HARVEST_GATHER_PROBE",
     "name": "ProbeHarvestHarvest Gather Probe",
     "generalId": 3666,
     "target": [
       "UNIT"
+    ]
+  },
+  {
+    "id": 2346,
+    "pName": "EFFECT_PURIFICATION_NOVA",
+    "name": "PurificationNovaTargetedEffect PurificationNova",
+    "generalId": 0,
+    "target": [
+      "POINT"
     ]
   },
   {
@@ -1399,15 +1390,6 @@
     ]
   },
   {
-    "id": 2364,
-    "pName": "MORPH_THOR_EXPLOSIVE_MODE",
-    "name": "ThorNormalModeMorph ThorExplosiveMode",
-    "generalId": 0,
-    "target": [
-      "NONE"
-    ]
-  },
-  {
     "id": 316,
     "pName": "EFFECT_REPAIR_SCV",
     "name": "RepairEffect Repair SCV",
@@ -1417,9 +1399,9 @@
     ]
   },
   {
-    "id": 1342,
-    "pName": "TRAIN_DRONE",
-    "name": "LarvaTrainTrain Drone",
+    "id": 2364,
+    "pName": "MORPH_THOR_EXPLOSIVE_MODE",
+    "name": "ThorNormalModeMorph ThorExplosiveMode",
     "generalId": 0,
     "target": [
       "NONE"
@@ -1432,6 +1414,15 @@
     "generalId": 0,
     "target": [
       "POINT"
+    ]
+  },
+  {
+    "id": 1342,
+    "pName": "TRAIN_DRONE",
+    "name": "LarvaTrainTrain Drone",
+    "generalId": 0,
+    "target": [
+      "NONE"
     ]
   },
   {
@@ -1453,15 +1444,6 @@
     ]
   },
   {
-    "id": 1344,
-    "pName": "TRAIN_OVERLORD",
-    "name": "LarvaTrainTrain Overlord",
-    "generalId": 0,
-    "target": [
-      "NONE"
-    ]
-  },
-  {
     "id": 320,
     "pName": "BUILD_REFINERY",
     "name": "TerranBuildBuild Refinery",
@@ -1471,12 +1453,12 @@
     ]
   },
   {
-    "id": 321,
-    "pName": "BUILD_BARRACKS",
-    "name": "TerranBuildBuild Barracks",
+    "id": 1344,
+    "pName": "TRAIN_OVERLORD",
+    "name": "LarvaTrainTrain Overlord",
     "generalId": 0,
     "target": [
-      "POINT"
+      "NONE"
     ]
   },
   {
@@ -1486,6 +1468,15 @@
     "generalId": 0,
     "target": [
       "NONE"
+    ]
+  },
+  {
+    "id": 321,
+    "pName": "BUILD_BARRACKS",
+    "name": "TerranBuildBuild Barracks",
+    "generalId": 0,
+    "target": [
+      "POINT"
     ]
   },
   {
@@ -1579,6 +1570,15 @@
     ]
   },
   {
+    "id": 1352,
+    "pName": "TRAIN_INFESTOR",
+    "name": "LarvaTrainTrain Infestor",
+    "generalId": 0,
+    "target": [
+      "NONE"
+    ]
+  },
+  {
     "id": 328,
     "pName": "BUILD_FACTORY",
     "name": "TerranBuildBuild Factory",
@@ -1591,15 +1591,6 @@
     "id": 2376,
     "pName": "BEHAVIOR_PULSAR_BEAM_OFF",
     "name": "OracleWeaponBehavior PulsarBeamOff",
-    "generalId": 0,
-    "target": [
-      "NONE"
-    ]
-  },
-  {
-    "id": 1352,
-    "pName": "TRAIN_INFESTOR",
-    "name": "LarvaTrainTrain Infestor",
     "generalId": 0,
     "target": [
       "NONE"
@@ -1696,19 +1687,19 @@
     ]
   },
   {
-    "id": 348,
-    "pName": "HALT_TERRAN_BUILD",
-    "name": "TerranBuildHalt TerranBuild",
-    "generalId": 3660,
+    "id": 1372,
+    "pName": "MORPH_BROODLORD",
+    "name": "MorphToBroodLordMorph BroodLord",
+    "generalId": 0,
     "target": [
       "NONE"
     ]
   },
   {
-    "id": 1372,
-    "pName": "MORPH_BROODLORD",
-    "name": "MorphToBroodLordMorph BroodLord",
-    "generalId": 0,
+    "id": 348,
+    "pName": "HALT_TERRAN_BUILD",
+    "name": "TerranBuildHalt TerranBuild",
+    "generalId": 3660,
     "target": [
       "NONE"
     ]
@@ -1931,21 +1922,21 @@
     ]
   },
   {
-    "id": 1418,
-    "pName": "TRAIN_WARP_SENTRY",
-    "name": "WarpGateTrainTrainWarp Sentry",
-    "generalId": 0,
-    "target": [
-      "POINT"
-    ]
-  },
-  {
     "id": 394,
     "pName": "LOAD_MEDIVAC",
     "name": "MedivacTransportLoad Medivac",
     "generalId": 3668,
     "target": [
       "UNIT"
+    ]
+  },
+  {
+    "id": 1418,
+    "pName": "TRAIN_WARP_SENTRY",
+    "name": "WarpGateTrainTrainWarp Sentry",
+    "generalId": 0,
+    "target": [
+      "POINT"
     ]
   },
   {
@@ -2292,6 +2283,15 @@
     ]
   },
   {
+    "id": 1518,
+    "pName": "MORPH_WARP_GATE",
+    "name": "UpgradeToWarpGateMorph WarpGate",
+    "generalId": 0,
+    "target": [
+      "NONE"
+    ]
+  },
+  {
     "id": 2542,
     "pName": "EFFECT_PARASITIC_BOMB",
     "name": "ParasiticBombEffect ParasiticBomb",
@@ -2301,9 +2301,9 @@
     ]
   },
   {
-    "id": 1518,
-    "pName": "MORPH_WARP_GATE",
-    "name": "UpgradeToWarpGateMorph WarpGate",
+    "id": 1520,
+    "pName": "MORPH_GATEWAY",
+    "name": "MorphBackToGatewayMorph Gateway",
     "generalId": 0,
     "target": [
       "NONE"
@@ -2316,15 +2316,6 @@
     "generalId": 0,
     "target": [
       "POINT"
-    ]
-  },
-  {
-    "id": 1520,
-    "pName": "MORPH_GATEWAY",
-    "name": "MorphBackToGatewayMorph Gateway",
-    "generalId": 0,
-    "target": [
-      "NONE"
     ]
   },
   {
@@ -2346,15 +2337,6 @@
     ]
   },
   {
-    "id": 1526,
-    "pName": "EFFECT_FORCE_FIELD",
-    "name": "ForceFieldEffect ForceField",
-    "generalId": 0,
-    "target": [
-      "POINT"
-    ]
-  },
-  {
     "id": 2550,
     "pName": "BEHAVIOR_HOLD_FIRE_ON_LURKER",
     "name": "LurkerHoldFireBehavior HoldFireOn Lurker",
@@ -2364,12 +2346,12 @@
     ]
   },
   {
-    "id": 1528,
-    "pName": "MORPH_WARP_PRISM_PHASING_MODE",
-    "name": "PhasingModeMorph WarpPrismPhasingMode",
+    "id": 1526,
+    "pName": "EFFECT_FORCE_FIELD",
+    "name": "ForceFieldEffect ForceField",
     "generalId": 0,
     "target": [
-      "NONE"
+      "POINT"
     ]
   },
   {
@@ -2377,6 +2359,15 @@
     "pName": "BEHAVIOR_HOLD_FIRE_OFF_LURKER",
     "name": "LurkerRemoveHoldFireBehavior HoldFireOff Lurker",
     "generalId": 3689,
+    "target": [
+      "NONE"
+    ]
+  },
+  {
+    "id": 1528,
+    "pName": "MORPH_WARP_PRISM_PHASING_MODE",
+    "name": "PhasingModeMorph WarpPrismPhasingMode",
+    "generalId": 0,
     "target": [
       "NONE"
     ]
@@ -2481,6 +2472,15 @@
     ]
   },
   {
+    "id": 1564,
+    "pName": "RESEARCH_PROTOSS_AIR_WEAPONS_LEVEL3",
+    "name": "CyberneticsCoreResearchResearch ProtossAirWeaponsLevel3",
+    "generalId": 3693,
+    "target": [
+      "NONE"
+    ]
+  },
+  {
     "id": 2588,
     "pName": "EFFECT_KD8CHARGE",
     "name": "KD8ChargeEffect KD8Charge",
@@ -2488,15 +2488,6 @@
     "target": [
       "UNIT",
       "POINT"
-    ]
-  },
-  {
-    "id": 1564,
-    "pName": "RESEARCH_PROTOSS_AIR_WEAPONS_LEVEL3",
-    "name": "CyberneticsCoreResearchResearch ProtossAirWeaponsLevel3",
-    "generalId": 3693,
-    "target": [
-      "NONE"
     ]
   },
   {
@@ -2680,18 +2671,18 @@
     ]
   },
   {
-    "id": 591,
-    "pName": "TRAIN_SIEGE_TANK",
-    "name": "FactoryTrainTrain SiegeTank",
+    "id": 3663,
+    "pName": "LOAD_ALL",
+    "name": "TransportLoadAllLoadAll",
     "generalId": 0,
     "target": [
       "NONE"
     ]
   },
   {
-    "id": 3663,
-    "pName": "LOAD_ALL",
-    "name": "TransportLoadAllLoadAll",
+    "id": 591,
+    "pName": "TRAIN_SIEGE_TANK",
+    "name": "FactoryTrainTrain SiegeTank",
     "generalId": 0,
     "target": [
       "NONE"
@@ -2752,6 +2743,15 @@
     ]
   },
   {
+    "id": 3668,
+    "pName": "LOAD",
+    "name": "TransportLoadLoad",
+    "generalId": 0,
+    "target": [
+      "UNIT"
+    ]
+  },
+  {
     "id": 596,
     "pName": "TRAIN_HELLBAT",
     "name": "FactoryTrainTrain Hellbat",
@@ -2761,12 +2761,12 @@
     ]
   },
   {
-    "id": 3668,
-    "pName": "LOAD",
-    "name": "TransportLoadLoad",
+    "id": 597,
+    "pName": "TRAIN_CYCLONE",
+    "name": "FactoryTrainTrain Cyclone",
     "generalId": 0,
     "target": [
-      "UNIT"
+      "NONE"
     ]
   },
   {
@@ -2777,15 +2777,6 @@
     "target": [
       "UNIT",
       "POINT"
-    ]
-  },
-  {
-    "id": 597,
-    "pName": "TRAIN_CYCLONE",
-    "name": "FactoryTrainTrain Cyclone",
-    "generalId": 0,
-    "target": [
-      "NONE"
     ]
   },
   {
@@ -2836,21 +2827,21 @@
     ]
   },
   {
-    "id": 3676,
-    "pName": "BEHAVIOR_CLOAK_ON",
-    "name": "GeneralCloakOnBehavior CloakOn",
-    "generalId": 0,
-    "target": [
-      "NONE"
-    ]
-  },
-  {
     "id": 1628,
     "pName": "EFFECT_EMP",
     "name": "EMPEffect EMP",
     "generalId": 0,
     "target": [
       "POINT"
+    ]
+  },
+  {
+    "id": 3676,
+    "pName": "BEHAVIOR_CLOAK_ON",
+    "name": "GeneralCloakOnBehavior CloakOn",
+    "generalId": 0,
+    "target": [
+      "NONE"
     ]
   },
   {
@@ -3008,18 +2999,18 @@
     ]
   },
   {
-    "id": 3692,
-    "pName": "RESEARCH_PROTOSS_AIR_ARMOR",
-    "name": "ResearchProtossAirArmorResearch ProtossAirArmor",
+    "id": 620,
+    "pName": "TRAIN_MEDIVAC",
+    "name": "StarportTrainTrain Medivac",
     "generalId": 0,
     "target": [
       "NONE"
     ]
   },
   {
-    "id": 620,
-    "pName": "TRAIN_MEDIVAC",
-    "name": "StarportTrainTrain Medivac",
+    "id": 3692,
+    "pName": "RESEARCH_PROTOSS_AIR_ARMOR",
+    "name": "ResearchProtossAirArmorResearch ProtossAirArmor",
     "generalId": 0,
     "target": [
       "NONE"
@@ -3062,18 +3053,18 @@
     ]
   },
   {
-    "id": 623,
-    "pName": "TRAIN_BATTLECRUISER",
-    "name": "StarportTrainTrain Battlecruiser",
+    "id": 3695,
+    "pName": "RESEARCH_PROTOSS_GROUND_WEAPONS",
+    "name": "ResearchProtossGroundWeaponsResearch ProtossGroundWeapons",
     "generalId": 0,
     "target": [
       "NONE"
     ]
   },
   {
-    "id": 3695,
-    "pName": "RESEARCH_PROTOSS_GROUND_WEAPONS",
-    "name": "ResearchProtossGroundWeaponsResearch ProtossGroundWeapons",
+    "id": 623,
+    "pName": "TRAIN_BATTLECRUISER",
+    "name": "StarportTrainTrain Battlecruiser",
     "generalId": 0,
     "target": [
       "NONE"
@@ -3233,21 +3224,21 @@
     ]
   },
   {
-    "id": 2700,
-    "pName": "EFFECT_SHADOW_STRIDE",
-    "name": "DarkTemplarBlinkEffect ShadowStride",
-    "generalId": 3687,
-    "target": [
-      "POINT"
-    ]
-  },
-  {
     "id": 652,
     "pName": "RESEARCH_TERRAN_INFANTRY_WEAPONS_LEVEL1",
     "name": "EngineeringBayResearchResearch TerranInfantryWeaponsLevel1",
     "generalId": 3698,
     "target": [
       "NONE"
+    ]
+  },
+  {
+    "id": 2700,
+    "pName": "EFFECT_SHADOW_STRIDE",
+    "name": "DarkTemplarBlinkEffect ShadowStride",
+    "generalId": 3687,
+    "target": [
+      "POINT"
     ]
   },
   {
@@ -3278,21 +3269,21 @@
     ]
   },
   {
-    "id": 2704,
-    "pName": "EFFECT_SPAWN_LOCUSTS",
-    "name": "SpawnLocustsTargetedEffect SpawnLocusts",
-    "generalId": 0,
-    "target": [
-      "POINT"
-    ]
-  },
-  {
     "id": 656,
     "pName": "RESEARCH_TERRAN_INFANTRY_ARMOR_LEVEL1",
     "name": "EngineeringBayResearchResearch TerranInfantryArmorLevel1",
     "generalId": 3697,
     "target": [
       "NONE"
+    ]
+  },
+  {
+    "id": 2704,
+    "pName": "EFFECT_SPAWN_LOCUSTS",
+    "name": "SpawnLocustsTargetedEffect SpawnLocusts",
+    "generalId": 0,
+    "target": [
+      "POINT"
     ]
   },
   {
@@ -3454,15 +3445,6 @@
     "pName": "BATTLECRUISER_MOVE_MOVE",
     "name": "BattlecruiserMoveMove Battlecruiser",
     "generalId": 3794,
-    "target": [
-      "NONE"
-    ]
-  },
-  {
-    "id": 3777,
-    "pName": "BATTLECRUISER_MOVE_MOVE_PATROL",
-    "name": "BattlecruiserMovePatrol Battlecruiser",
-    "generalId": 3795,
     "target": [
       "NONE"
     ]

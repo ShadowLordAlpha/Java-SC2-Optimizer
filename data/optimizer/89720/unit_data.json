@@ -54,7 +54,7 @@
     "name": "LiberatorAG",
     "cost": {
       "minerals": 150,
-      "vespene": 150,
+      "vespene": 125,
       "buildTime": 64.66797
     },
     "buildAbility": 2554,
@@ -1857,8 +1857,8 @@
     "name": "Raven",
     "cost": {
       "minerals": 100,
-      "vespene": 200,
-      "buildTime": 960.0
+      "vespene": 150,
+      "buildTime": 768.0
     },
     "buildAbility": 622,
     "race": "TERRAN",
@@ -2402,7 +2402,7 @@
     "cost": {
       "minerals": 50,
       "vespene": 100,
-      "buildTime": 592.0
+      "buildTime": 512.0
     },
     "buildAbility": 921,
     "race": "PROTOSS",
@@ -3626,32 +3626,6 @@
     "requireAttached": false
   },
   {
-    "id": 894,
-    "pName": "PROTOSS_PYLON_OVERCHARGED",
-    "name": "PylonOvercharged",
-    "cost": {
-      "minerals": 100,
-      "vespene": 0,
-      "buildTime": 0.0
-    },
-    "buildAbility": 2716,
-    "race": "PROTOSS",
-    "food": 8.0,
-    "hasVespene": false,
-    "hasMinerals": false,
-    "abilities": [
-      1,
-      3665,
-      3674
-    ],
-    "techAliases": [
-      60
-    ],
-    "unitAlias": 60,
-    "techRequirement": 0,
-    "requireAttached": false
-  },
-  {
     "id": 126,
     "pName": "ZERG_QUEEN",
     "name": "Queen",
@@ -3680,6 +3654,32 @@
     "techAliases": [],
     "unitAlias": 0,
     "techRequirement": 89,
+    "requireAttached": false
+  },
+  {
+    "id": 894,
+    "pName": "PROTOSS_PYLON_OVERCHARGED",
+    "name": "PylonOvercharged",
+    "cost": {
+      "minerals": 100,
+      "vespene": 0,
+      "buildTime": 0.0
+    },
+    "buildAbility": 2716,
+    "race": "PROTOSS",
+    "food": 8.0,
+    "hasVespene": false,
+    "hasMinerals": false,
+    "abilities": [
+      1,
+      3665,
+      3674
+    ],
+    "techAliases": [
+      60
+    ],
+    "unitAlias": 60,
+    "techRequirement": 0,
     "requireAttached": false
   },
   {
@@ -4080,7 +4080,7 @@
     "cost": {
       "minerals": 100,
       "vespene": 100,
-      "buildTime": 196.0
+      "buildTime": 272.0
     },
     "buildAbility": 2330,
     "race": "ZERG",
@@ -4108,7 +4108,7 @@
     "name": "Liberator",
     "cost": {
       "minerals": 150,
-      "vespene": 150,
+      "vespene": 125,
       "buildTime": 960.0
     },
     "buildAbility": 626,

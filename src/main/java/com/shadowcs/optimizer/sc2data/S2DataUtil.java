@@ -24,17 +24,17 @@ public class S2DataUtil {
     public Set<UnitS2Data> loadUnitData() {
 
         Type listType = new TypeToken<Set<UnitS2Data>>(){}.getType();
-        return new Gson().fromJson(readFromFile("./data/optimizer/87702/unit_data.json"), listType);
+        return new Gson().fromJson(readFromFile("./data/optimizer/89720/unit_data.json"), listType);
     }
 
     public Set<AbilityS2Data> loadAbilityData() {
         Type listType = new TypeToken<Set<AbilityS2Data>>(){}.getType();
-        return new Gson().fromJson(readFromFile("./data/optimizer/87702/ability_data.json"), listType);
+        return new Gson().fromJson(readFromFile("./data/optimizer/89720/ability_data.json"), listType);
     }
 
     public Set<UpgradeS2Data> loadUpgradeData() {
         Type listType = new TypeToken<Set<UpgradeS2Data>>(){}.getType();
-        return new Gson().fromJson(readFromFile("./data/optimizer/87702/upgrade_data.json"), listType);
+        return new Gson().fromJson(readFromFile("./data/optimizer/89720/upgrade_data.json"), listType);
     }
 
     public String readResDataFile() {

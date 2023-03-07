@@ -65,7 +65,7 @@ public class BuildOrderGenetics implements Function<Set<Gene>, Gene> {
         });
 
         // Put all the valid IDs into a map for easy and faster lookup later?
-        Map<Integer, AbilityS2Data> abilityIdMap = new HashMap<>();
+        /*Map<Integer, AbilityS2Data> abilityIdMap = new HashMap<>();
 
         // Unit Genes
         validUnits.forEach(u -> {
@@ -76,7 +76,7 @@ public class BuildOrderGenetics implements Function<Set<Gene>, Gene> {
         HashMap<UpgradeS2Data, Gene>;
         validUpgrades.forEach(u -> {
             new Gene();
-        });
+        });*/
 
         if(log.isDebugEnabled()) {
             log.debug("=====< Valid Units >=====");

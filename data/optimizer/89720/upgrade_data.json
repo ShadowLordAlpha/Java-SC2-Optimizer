@@ -264,17 +264,6 @@
     "buildAbility": 820
   },
   {
-    "id": 26,
-    "pName": "GHOST_MOEBIUS_REACTOR",
-    "name": "GhostMoebiusReactor",
-    "cost": {
-      "minerals": 100,
-      "vespene": 100,
-      "buildTime": 1280.0
-    },
-    "buildAbility": 821
-  },
-  {
     "id": 27,
     "pName": "TERRAN_VEHICLE_ARMORS_LEVEL1",
     "name": "TerranVehicleArmorsLevel1",
@@ -479,9 +468,20 @@
     "cost": {
       "minerals": 100,
       "vespene": 100,
-      "buildTime": 2880.0
+      "buildTime": 2720.0
     },
     "buildAbility": 1062
+  },
+  {
+    "id": 40,
+    "pName": "PROTOSS_GROUND_WEAPONS_LEVEL2",
+    "name": "ProtossGroundWeaponsLevel2",
+    "cost": {
+      "minerals": 150,
+      "vespene": 150,
+      "buildTime": 3240.0
+    },
+    "buildAbility": 1063
   },
   {
     "id": 296,
@@ -495,52 +495,8 @@
     "buildAbility": 49
   },
   {
-    "id": 40,
-    "pName": "PROTOSS_GROUND_WEAPONS_LEVEL2",
-    "name": "ProtossGroundWeaponsLevel2",
-    "cost": {
-      "minerals": 150,
-      "vespene": 150,
-      "buildTime": 3440.0
-    },
-    "buildAbility": 1063
-  },
-  {
-    "id": 41,
-    "pName": "PROTOSS_GROUND_WEAPONS_LEVEL3",
-    "name": "ProtossGroundWeaponsLevel3",
-    "cost": {
-      "minerals": 200,
-      "vespene": 200,
-      "buildTime": 4000.0
-    },
-    "buildAbility": 1064
-  },
-  {
     "id": 297,
     "pName": "ENHANCED_SHOCKWAVES",
-    "name": "EnhancedShockwaves",
-    "cost": {
-      "minerals": 150,
-      "vespene": 150,
-      "buildTime": 1760.0
-    },
-    "buildAbility": 822
-  },
-  {
-    "id": 42,
-    "pName": "PROTOSS_GROUND_ARMORS_LEVEL1",
-    "name": "ProtossGroundArmorsLevel1",
-    "cost": {
-      "minerals": 100,
-      "vespene": 100,
-      "buildTime": 2880.0
-    },
-    "buildAbility": 1065
-  },
-  {
-    "id": 298,
-    "pName": "UPGRADE_298",
     "name": "MicrobialShroud",
     "cost": {
       "minerals": 150,
@@ -550,8 +506,30 @@
     "buildAbility": 1457
   },
   {
-    "id": 299,
-    "pName": "UPGRADE_299",
+    "id": 41,
+    "pName": "PROTOSS_GROUND_WEAPONS_LEVEL3",
+    "name": "ProtossGroundWeaponsLevel3",
+    "cost": {
+      "minerals": 200,
+      "vespene": 200,
+      "buildTime": 3760.0
+    },
+    "buildAbility": 1064
+  },
+  {
+    "id": 42,
+    "pName": "PROTOSS_GROUND_ARMORS_LEVEL1",
+    "name": "ProtossGroundArmorsLevel1",
+    "cost": {
+      "minerals": 100,
+      "vespene": 100,
+      "buildTime": 2720.0
+    },
+    "buildAbility": 1065
+  },
+  {
+    "id": 298,
+    "pName": "UPGRADE_298",
     "name": "SunderingImpact",
     "cost": {
       "minerals": 100,
@@ -561,30 +539,8 @@
     "buildAbility": 1595
   },
   {
-    "id": 43,
-    "pName": "PROTOSS_GROUND_ARMORS_LEVEL2",
-    "name": "ProtossGroundArmorsLevel2",
-    "cost": {
-      "minerals": 150,
-      "vespene": 150,
-      "buildTime": 3440.0
-    },
-    "buildAbility": 1066
-  },
-  {
-    "id": 44,
-    "pName": "PROTOSS_GROUND_ARMORS_LEVEL3",
-    "name": "ProtossGroundArmorsLevel3",
-    "cost": {
-      "minerals": 200,
-      "vespene": 200,
-      "buildTime": 4000.0
-    },
-    "buildAbility": 1067
-  },
-  {
-    "id": 300,
-    "pName": "UPGRADE_300",
+    "id": 299,
+    "pName": "UPGRADE_299",
     "name": "AmplifiedShielding",
     "cost": {
       "minerals": 100,
@@ -594,8 +550,19 @@
     "buildAbility": 1596
   },
   {
-    "id": 301,
-    "pName": "UPGRADE_301",
+    "id": 43,
+    "pName": "PROTOSS_GROUND_ARMORS_LEVEL2",
+    "name": "ProtossGroundArmorsLevel2",
+    "cost": {
+      "minerals": 150,
+      "vespene": 150,
+      "buildTime": 3240.0
+    },
+    "buildAbility": 1066
+  },
+  {
+    "id": 300,
+    "pName": "UPGRADE_300",
     "name": "PsionicAmplifiers",
     "cost": {
       "minerals": 100,
@@ -605,19 +572,19 @@
     "buildAbility": 1597
   },
   {
-    "id": 45,
-    "pName": "PROTOSS_SHIELDS_LEVEL1",
-    "name": "ProtossShieldsLevel1",
+    "id": 44,
+    "pName": "PROTOSS_GROUND_ARMORS_LEVEL3",
+    "name": "ProtossGroundArmorsLevel3",
     "cost": {
-      "minerals": 150,
-      "vespene": 150,
-      "buildTime": 2880.0
+      "minerals": 200,
+      "vespene": 200,
+      "buildTime": 3760.0
     },
-    "buildAbility": 1068
+    "buildAbility": 1067
   },
   {
-    "id": 302,
-    "pName": "UPGRADE_302",
+    "id": 301,
+    "pName": "UPGRADE_301",
     "name": "SecretedCoating",
     "cost": {
       "minerals": 100,
@@ -627,13 +594,24 @@
     "buildAbility": 1195
   },
   {
+    "id": 45,
+    "pName": "PROTOSS_SHIELDS_LEVEL1",
+    "name": "ProtossShieldsLevel1",
+    "cost": {
+      "minerals": 150,
+      "vespene": 150,
+      "buildTime": 2720.0
+    },
+    "buildAbility": 1068
+  },
+  {
     "id": 46,
     "pName": "PROTOSS_SHIELDS_LEVEL2",
     "name": "ProtossShieldsLevel2",
     "cost": {
       "minerals": 225,
       "vespene": 225,
-      "buildTime": 3440.0
+      "buildTime": 3240.0
     },
     "buildAbility": 1069
   },
@@ -644,7 +622,7 @@
     "cost": {
       "minerals": 300,
       "vespene": 300,
-      "buildTime": 4000.0
+      "buildTime": 3760.0
     },
     "buildAbility": 1070
   },
@@ -1291,9 +1269,9 @@
     "pName": "BANSHEE_SPEED",
     "name": "BansheeSpeed",
     "cost": {
-      "minerals": 150,
-      "vespene": 150,
-      "buildTime": 2720.0
+      "minerals": 125,
+      "vespene": 125,
+      "buildTime": 2240.0
     },
     "buildAbility": 799
   },
