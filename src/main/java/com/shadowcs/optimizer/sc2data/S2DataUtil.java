@@ -1,48 +1,43 @@
 package com.shadowcs.optimizer.sc2data;
 
 import com.google.gson.Gson;
+import com.google.gson.internal.LinkedTreeMap;
 import com.google.gson.reflect.TypeToken;
-import com.shadowcs.optimizer.sc2data.models.AbilityS2Data;
-import com.shadowcs.optimizer.sc2data.models.UnitS2Data;
-import com.shadowcs.optimizer.sc2data.models.UpgradeS2Data;
+import com.shadowcs.optimizer.genetics.Gene;
+import com.shadowcs.optimizer.sc2data.models.TechTree;
 import lombok.experimental.UtilityClass;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @UtilityClass
 public class S2DataUtil {
 
-    public Set<UnitS2Data> loadUnitData() {
+    public Set<Gene> generateGenes(TechTree tree) {
 
-        Type listType = new TypeToken<Set<UnitS2Data>>(){}.getType();
-        return new Gson().fromJson(readFromFile("./data/optimizer/89720/unit_data.json"), listType);
+        Set<Gene> geneSet = new HashSet<>();
+
+        for(var ability: tree.ability()) {
+            if(ability.target() instanceof Map<?,?>) {
+                LinkedTreeMap target = (LinkedTreeMap) ability.target();
+                System.out.println("Wanted: " + ability.name() + " Type: " + target.keySet() + target.values());
+            }
+        }
+
+        System.out.println();
+
+        return geneSet;
     }
 
-    public Set<AbilityS2Data> loadAbilityData() {
-        Type listType = new TypeToken<Set<AbilityS2Data>>(){}.getType();
-        return new Gson().fromJson(readFromFile("./data/optimizer/89720/ability_data.json"), listType);
-    }
+    public TechTree loadData() {
 
-    public Set<UpgradeS2Data> loadUpgradeData() {
-        Type listType = new TypeToken<Set<UpgradeS2Data>>(){}.getType();
-        return new Gson().fromJson(readFromFile("./data/optimizer/89720/upgrade_data.json"), listType);
-    }
-
-    public String readResDataFile() {
-
-        // for static access, uses the class name directly
-        InputStream is = S2DataUtil.class.getClassLoader().getResourceAsStream("com/shadowcs/optimizer/sc2data/data.json");
-
-        return new BufferedReader(new InputStreamReader(is)).lines().collect(Collectors.joining("\n"));
+        return new Gson().fromJson(readFromFile("./data/optimizer/89720/data.json"), TechTree.class);
     }
 
     public String readFromFile(String file) {

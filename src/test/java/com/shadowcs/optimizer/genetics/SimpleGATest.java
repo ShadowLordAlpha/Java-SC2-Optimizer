@@ -1,11 +1,9 @@
 package com.shadowcs.optimizer.genetics;
 
 import com.github.ocraft.s2client.protocol.data.Units;
-import com.shadowcs.optimizer.build.BuildOrder;
-import com.shadowcs.optimizer.build.state.BuildState;
-import com.shadowcs.optimizer.pojo.Pair;
 import com.shadowcs.optimizer.random.XORShiftRandom;
 import com.shadowcs.optimizer.sc2data.S2DataUtil;
+import com.shadowcs.optimizer.sc2data.models.TechTree;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;
@@ -17,8 +15,14 @@ public class SimpleGATest {
     @Test
     public void loadResTest() {
 
+        TechTree data = S2DataUtil.loadData();
+
+        data.unit().forEach(u -> {
+            System.out.println("Unit: (" + u.name() + ")");
+        });
+
         // Start with what units
-        BuildState state = new BuildState(
+        /*BuildState state = new BuildState(
                 new Pair<>(Units.TERRAN_COMMAND_CENTER, 1),
                 new Pair<>(Units.TERRAN_SCV, 12)
         );
@@ -30,7 +34,7 @@ public class SimpleGATest {
         // Find the build order
         BuildOrder buildOrder = BuildOrder.findFastestBuildOrder(state);
 
-        System.out.println(S2DataUtil.readResDataFile());
+        System.out.println(S2DataUtil.readResDataFile());*/
     }
 
     @Test
