@@ -20,7 +20,7 @@ public class Gene {
     /**
      * What Genes are preconditions for this gene to be valid to be done.
      */
-    private final Set<Gene> required = new HashSet<>();
+    private final Set<Set<Gene>> preconditions = new HashSet<>();
 
     /**
      * Return true if at least one set of genes within the required list is fully satisfied.
@@ -30,6 +30,11 @@ public class Gene {
      */
     public boolean valid(Set<Gene> comm) {
 
+        for(var con: preconditions) {
+            if(comm.containsAll(con)) {
+                return true;
+            }
+        }
 
         return false;
     }

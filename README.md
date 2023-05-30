@@ -3,8 +3,13 @@ Optimizer the build things
 ___
 
 ### Tasks
-- [ ] Automatically load data from json or from game 
-- [ ] Things
+- [x] Automatically load data from json or from game 
+- [x] Generate Genes from loaded data
+- [ ] Generate random build orders out of current units 
+- [ ] Calculate fitness of each build order generated
+- [ ] Calculate army effectiveness vs another army composition
+- [ ] Calculate army counter based on buildings we have and speed
+- [ ] alternative fitness functions such as based on speed or economy
 
 ___
 

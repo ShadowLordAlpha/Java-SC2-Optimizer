@@ -68,11 +68,11 @@ public class Individual {
         for (int i = 0; i < size(); i++) {
 
             Gene current = getGene(i);
-            if (random.nextDouble() <= rate || !current.valid(geneSet)) {
+            /*if (random.nextDouble() <= rate || !current.valid(geneSet)) {
                 // Get a random gene, note that we will need to validate all genes after a mutated one
                 Gene gene = geneFunction().apply(geneSet);
                 setGene(i, gene);
-            }
+            }*/
 
             geneSet.add(current);
         }
@@ -101,10 +101,10 @@ public class Individual {
             }
 
             // Validate the gene at this position
-            if(gene == null || !gene.valid(geneSet)) {
+            /*if(gene == null || !gene.valid(geneSet)) {
                 // Gene is not valid, get a random one that is
                 gene = geneFunction().apply(geneSet);
-            }
+            }*/
 
             // Set the gene
             setGene(i, gene);
