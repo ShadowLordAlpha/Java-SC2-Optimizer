@@ -1,13 +1,11 @@
 package com.shadowcs.optimizer.genetics;
 
-import com.github.ocraft.s2client.protocol.data.Units;
 import com.shadowcs.optimizer.random.XORShiftRandom;
 import com.shadowcs.optimizer.sc2data.S2DataUtil;
 import com.shadowcs.optimizer.sc2data.models.TechTree;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;
-import java.util.Set;
 
 
 public class SimpleGATest {

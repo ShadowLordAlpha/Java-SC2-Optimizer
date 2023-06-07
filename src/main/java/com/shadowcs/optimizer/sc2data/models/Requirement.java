@@ -5,8 +5,8 @@ import lombok.Data;
 
 @Data
 public class Requirement {
-    @SerializedName("addon_to") private Integer addonTo;
-    private Integer upgrade;
-    private Integer building;
-    private Integer addon;
+    @SerializedName("addon_to") private int addonTo;
+    private int upgrade;
+    private int building;
+    private int addon;
 }

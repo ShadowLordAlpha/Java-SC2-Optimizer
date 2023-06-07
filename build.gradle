@@ -11,7 +11,7 @@ repositories {
 
 dependencies {
     // Not the best SC2 API but its the only one for Java so its what we are going to use
-    implementation 'com.github.ocraft:ocraft-s2client-bot:0.4.9'
+    implementation 'com.github.ocraft:ocraft-s2client-bot:+'
 
     // Object pool
     // implementation 'com.github.chrisvest:stormpot:3.2'
@@ -29,9 +29,14 @@ dependencies {
     implementation (group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.0-alpha7')
     testImplementation (group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.0-alpha7')
 
+    // Only using for now until EVO is done and rebuilt into my own codebase
+    // https://mvnrepository.com/artifact/net.sf.jgap/jgap
+    implementation group: 'net.sf.jgap', name: 'jgap', version: '3.4.4'
+
+
     // Lombok Annotations
-    compileOnly 'org.projectlombok:lombok:1.18.24'
-    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    compileOnly 'org.projectlombok:lombok:1.18.+'
+    annotationProcessor 'org.projectlombok:lombok:1.18.+'
 
     // GSON de/serialization
     implementation 'com.google.code.gson:gson:2.9.0'

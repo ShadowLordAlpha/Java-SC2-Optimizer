@@ -1,5 +1,6 @@
 package com.shadowcs.optimizer.sc2data.models;
 
+import com.google.gson.annotations.SerializedName;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -12,22 +13,22 @@ public class Unit {
     private String race;
     private Double supply;
     private Integer cargoSize;
-    private Double maxHealth;
+    @SerializedName("max_health") private Double maxHealth;
     private Double armor;
     private Double sight;
     private Double speed;
     private Double speedCreepMul;
-    private List<String> attributes = new ArrayList<String>();
+    private List<String> attributes = new ArrayList<>();
     private Integer size;
     private Double radius;
     private Boolean acceptsAddon;
     private Boolean needsPower;
     private Boolean needsCreep;
-    private Boolean needsGeyser;
+    @SerializedName("needs_geyser") private boolean needsGeyser;
     private Boolean isStructure;
-    private Boolean isAddon;
-    private Boolean isWorker;
-    private Boolean isTownhall;
+    @SerializedName("is_addon") private boolean addon;
+    @SerializedName("is_worker") private boolean worker;
+    @SerializedName("is_townhall") private boolean townhall;
     private Integer minerals;
     private Integer gas;
     private Double time;
