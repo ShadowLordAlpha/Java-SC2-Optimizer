@@ -1,49 +1,148 @@
 package com.shadowcs.optimizer;
 
 import com.github.ocraft.s2client.protocol.data.Units;
+import com.github.ocraft.s2client.protocol.data.Upgrades;
 import com.github.ocraft.s2client.protocol.game.Race;
+import com.shadowcs.optimizer.genetics.Gene;
 import com.shadowcs.optimizer.genetics.GeneticAlgorithm;
+import com.shadowcs.optimizer.genetics.Individual;
 import com.shadowcs.optimizer.random.XORShiftRandom;
 import com.shadowcs.optimizer.sc2data.S2DataUtil;
-import com.shadowcs.optimizer.sc2data.genetics.S2BaseInfo;
-import com.shadowcs.optimizer.sc2data.genetics.S2Fitness;
-import com.shadowcs.optimizer.sc2data.genetics.S2GameState;
+import com.shadowcs.optimizer.sc2data.engibay.EbRequirementTree;
+import com.shadowcs.optimizer.sc2data.engibay.EbState;
+import com.shadowcs.optimizer.sc2data.engibay.EngineeringBay;
+import com.shadowcs.optimizer.sc2data.engibay.action.EbAction;
+import com.shadowcs.optimizer.sc2data.engibay.fitness.EbFitness;
+import com.shadowcs.optimizer.sc2data.engibay.fitness.EbStandardFitness;
 import com.shadowcs.optimizer.sc2data.models.TechTree;
+import io.jenetics.*;
+import io.jenetics.engine.Codec;
+import io.jenetics.engine.Codecs;
+import io.jenetics.engine.Engine;
+import io.jenetics.engine.EvolutionResult;
+import io.jenetics.util.Factory;
+import io.jenetics.util.ISeq;
 
 import java.util.Random;
+
+import static io.jenetics.engine.Limits.bySteadyFitness;
 
 public class Test {
 
     public static void main(String...args) {
+
         TechTree data = S2DataUtil.loadData();
 
-        var genes = S2DataUtil.generateGenes(data, Race.TERRAN);
+        var genes = S2DataUtil.generateGenes(data, Race.TERRAN, Race.ZERG, Race.PROTOSS);
+
+        EbState init = new EbState();
+        init.techTree(data);
+        init.unitCountMap().put(Units.ZERG_DRONE.getUnitTypeId(), 12);
+        init.unitCountMap().put(Units.ZERG_OVERLORD.getUnitTypeId(), 1);
+        init.unitCountMap().put(Units.ZERG_HATCHERY.getUnitTypeId(), 1);
+        init.unitCountMap().put(Units.ZERG_LARVA.getUnitTypeId(), 3);
+
+        EbState goal = new EbState();
+        goal.unitCountMap().put(Units.ZERG_DRONE.getUnitTypeId(), 14);
+        goal.unitCountMap().put(Units.ZERG_OVERLORD.getUnitTypeId(), 1);
+        goal.unitCountMap().put(Units.ZERG_EXTRACTOR.getUnitTypeId(), 1);
+        goal.unitCountMap().put(Units.ZERG_HATCHERY.getUnitTypeId(), 2);
+        goal.upgradesMap().add(Upgrades.BURROW.getUpgradeId());
+
+        EbRequirementTree requirementTree = new EbRequirementTree(data, goal);
+
+        System.out.println(requirementTree);
 
         Random random = new XORShiftRandom();
-        GeneticAlgorithm ga = new GeneticAlgorithm().geneFunction(set -> genes.get(random.nextInt(genes.size())));
+        EbFitness fitness = new EbStandardFitness().tree(data).goal(goal).initial(init);
 
-        var state = new S2GameState().minerals(50).supply(3).totalSupply(12);
-        for(int i = 0; i < 8; i++) {
-            state.baseInfo().add(new S2BaseInfo());
-        }
-        state.unitsIdle().put(Units.TERRAN_COMMAND_CENTER.getUnitTypeId(), 1);
-        state.unitsIdle().put(Units.TERRAN_SCV.getUnitTypeId(), 12);
-        state.techTree(data);
+        Factory<Genotype<AnyGene<EbAction>>> gtf = Genotype.of(AnyChromosome.of(() -> requirementTree.actionSet().get(random.nextInt(requirementTree.actionSet().size())), 32));
 
-        ga.fitnessFunction(new S2Fitness().gameState(state));
+        Engine<AnyGene<EbAction>, Double> engine = Engine
+                .builder(
+                        fitness::simulateOrderGt,
+                        gtf
+                )
+                .populationSize(50)
+                .survivorsSelector(new EliteSelector<>(5))
+                .optimize(Optimize.MAXIMUM)
+                .alterers(new Mutator<>(0.1), new MultiPointCrossover<>(0.6))
+                .build();
 
-        ga.geneLength(128);
-        ga.maxGenerations(5000);
-        ga.sameSolution(32);
+        Genotype<AnyGene<EbAction>> result = engine.stream()
+                .limit(bySteadyFitness(100))
+                .collect(EvolutionResult.toBestGenotype());
 
-        data.ability().forEach(u -> {
-            //System.out.println("Unit: (" + u.name() + ")" + u.target().getClass().getSimpleName());
-        });
+        System.out.println("Best solution: " + result);
+        //result.stream().forEach(gene -> System.out.println(gene.gene().allele().name()));
 
-        //ga.runAlgorithm(128);
+        var order = fitness.simulateOrderOrder(result);
+        System.out.println(order);
+        System.out.println(fitness.score(order));
+        System.out.println(order.currentFrame() + " / " + fitness.maxTime());
+        System.out.println(order.currentFrame() / 22.4);
+        System.out.println(order.minerals());
+        System.out.println(order.gas());
+        System.out.println(order.supply());
+        System.out.println(goal.isSatisfied(order));
 
-        for(var pri: state.DFBB(Units.TERRAN_SCV.getUnitTypeId(), Units.TERRAN_STARPORT.getUnitTypeId(), 0)) {
-            System.out.println(data.abilityMap().get(pri.action()).name());
+        for(var action: order.validActions()) {
+            System.out.println(action.name());
         }
     }
+
+    /*public static void test(String...args) {
+        TechTree data = S2DataUtil.loadData();
+
+        var genes = S2DataUtil.generateGenes(data, Race.TERRAN, Race.ZERG, Race.PROTOSS);
+
+        EbState init = new EbState();
+        init.techTree(data);
+        init.unitCountMap().put(Units.ZERG_DRONE.getUnitTypeId(), 12);
+        init.unitCountMap().put(Units.ZERG_OVERLORD.getUnitTypeId(), 1);
+        init.unitCountMap().put(Units.ZERG_HATCHERY.getUnitTypeId(), 1);
+        init.unitCountMap().put(Units.ZERG_LARVA.getUnitTypeId(), 3);
+
+        EbState goal = new EbState();
+        goal.unitCountMap().put(Units.ZERG_DRONE.getUnitTypeId(), 14);
+        goal.unitCountMap().put(Units.ZERG_OVERLORD.getUnitTypeId(), 1);
+        goal.unitCountMap().put(Units.ZERG_EXTRACTOR.getUnitTypeId(), 1);
+        goal.unitCountMap().put(Units.ZERG_HATCHERY.getUnitTypeId(), 2);
+        // goal.upgradesMap().add(Upgrades.BURROW.getUpgradeId());
+
+
+        System.out.println(goal.isSatisfied(init));
+
+        EbRequirementTree requirementTree = new EbRequirementTree(data, goal);
+
+        System.out.println(requirementTree);
+
+        Random random = new XORShiftRandom();
+        GeneticAlgorithm ga = new GeneticAlgorithm().geneFunction(set -> new Gene().data(requirementTree.actionSet().get(random.nextInt(requirementTree.actionSet().size()))));
+
+        EbFitness fitness = new EbStandardFitness().tree(data).goal(goal).initial(init);
+        // EbFitness fitness = new EbTimeFitness().goal(goal).initial(init);
+
+        ga.fitnessFunction(fitness::simulateOrder);
+        ga.maxGenerations(5000);
+        ga.sameSolution(64);
+        ga.geneLength(32);
+        Individual individual = ga.runAlgorithm(64);
+
+        EngineeringBay.DEBUG = true;
+
+        System.out.println(individual);
+        var order = fitness.simulateOrder(individual.genes(), false);
+        System.out.println(order);
+        System.out.println(order.currentFrame() + " / " + fitness.maxTime());
+        System.out.println(order.currentFrame() / 22.4);
+        System.out.println(order.minerals());
+        System.out.println(order.gas());
+        System.out.println(order.supply());
+        System.out.println(goal.isSatisfied(order));
+
+        for(var action: order.validActions()) {
+            System.out.println(action.name());
+        }
+    }*/
 }

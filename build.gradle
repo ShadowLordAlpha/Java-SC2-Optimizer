@@ -16,8 +16,6 @@ dependencies {
     // Object pool
     // implementation 'com.github.chrisvest:stormpot:3.2'
 
-    // implementation 'io.jenetics:jenetics:7.1.0'
-
     // Fast caching stuff for java
     implementation 'com.github.ben-manes.caffeine:caffeine:3.1.1'
     // Optional extensions
@@ -29,9 +27,10 @@ dependencies {
     implementation (group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.0-alpha7')
     testImplementation (group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.0-alpha7')
 
-    // Only using for now until EVO is done and rebuilt into my own codebase
-    // https://mvnrepository.com/artifact/net.sf.jgap/jgap
-    implementation group: 'net.sf.jgap', name: 'jgap', version: '3.4.4'
+    implementation 'it.unimi.dsi:fastutil:8.5.6'
+
+    // GA stuff
+    implementation 'io.jenetics:jenetics:7.1.0'
 
 
     // Lombok Annotations

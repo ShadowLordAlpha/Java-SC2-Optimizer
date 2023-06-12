@@ -12,7 +12,7 @@ public class GeneticAlgorithm {
 
     private Random random = new XORShiftRandom();
     private static final double MUTATION_RATE = 0.075;
-    private static final int TOURNAMENT_SIZE = 10;
+    private static final int TOURNAMENT_SIZE = 5;
     private static final boolean ELITISM = true;
 
     private boolean NEW_BLOOD = true;
@@ -33,7 +33,7 @@ public class GeneticAlgorithm {
         return new Population(size, initialize, this::createIndividual);
     }
 
-    private Individual createIndividual() {
+    public Individual createIndividual() {
         return new Individual(geneLength, geneFunction(), fitnessFunction());
     }
 
@@ -64,10 +64,11 @@ public class GeneticAlgorithm {
             pop = evolvePopulation(pop);
 
             var tempfit = pop.getFittest();
-            if(fittest != tempfit) {
+            if(fittest == null || fittest != tempfit && tempfit.fitness() > fittest.fitness()) {
                 fittest = tempfit;
                 sameSol = 0;
             } else {
+                // pop.saveIndividual(0, fittest);
                 sameSol++;
             }
 
@@ -109,32 +110,32 @@ public class GeneticAlgorithm {
             for(int i = 0; i < gitt.size(); i++) {
                 individual.setGene(i, gitt.getGene(i));
             }
-            nextPopulation.saveIndividual(elitismOffset, individual.mutate(MUTATION_RATE));
+            nextPopulation.saveIndividual(elitismOffset, individual.mutate(MUTATION_RATE * 2));
             elitismOffset += 1;
         }
 
-        // New blood for the new set
-        if(NEW_BLOOD) {
-            nextPopulation.saveIndividual(elitismOffset, createIndividual().generateIndividual());
-            elitismOffset += 1;
-        }
 
         // Crossover population
         // Loop over the new population's size and create individuals from
         // Current population
         for (int i = elitismOffset; i < nextPopulation.size(); i++) {
-            // Select parents
-            Individual parent1 = tournamentSelection(pop);
-            Individual parent2 = tournamentSelection(pop);
-            // Crossover parents
-            Individual child = createIndividual().crossover(parent1, parent2, 0.5);
-            // Add child to new population
-            nextPopulation.saveIndividual(i, child);
-        }
+            if(NEW_BLOOD && random.nextDouble() < 0.01) {
+                nextPopulation.saveIndividual(i, createIndividual().generateIndividual());
+            } else {
+                // Select parents
+                Individual parent1 = tournamentSelection(pop);
+                ;
+                Individual parent2 = tournamentSelection(pop);
+                // Crossover parents
+                Individual child = createIndividual().crossover(parent1, parent2, 0.5);
+                // Add child to new population
 
-        // Mutate the new population a bit to add some new genetic material
-        for (int i = elitismOffset; i < nextPopulation.size(); i++) {
-            nextPopulation.getIndividual(i).mutate(MUTATION_RATE);
+                // Mutate the new population a bit to add some new genetic material
+                if(random.nextDouble() < 0.75) {
+                    child.mutate(MUTATION_RATE);
+                }
+                nextPopulation.saveIndividual(i, child);
+            }
         }
 
         return nextPopulation;

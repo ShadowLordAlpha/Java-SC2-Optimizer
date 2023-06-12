@@ -4,7 +4,9 @@ import com.github.ocraft.s2client.protocol.data.Units;
 import com.github.ocraft.s2client.protocol.game.Race;
 import com.google.gson.Gson;
 import com.shadowcs.optimizer.genetics.Gene;
-import com.shadowcs.optimizer.sc2data.genetics.S2GeneAction;
+import com.shadowcs.optimizer.sc2data.engibay.action.EbCondition;
+import com.shadowcs.optimizer.sc2data.engibay.action.EbConditionType;
+import com.shadowcs.optimizer.sc2data.engibay.action.unit.EbBuildAction;
 import com.shadowcs.optimizer.sc2data.models.Ability;
 import com.shadowcs.optimizer.sc2data.models.TechTree;
 import com.shadowcs.optimizer.sc2data.models.Unit;
@@ -63,9 +65,10 @@ public class S2DataUtil {
 
             // System.out.println("Unit: " + unitMap.get(unit.id()).name() + " - " + unitMap.get(unit.id()));
 
-            /*if(unit.id() != Units.TERRAN_SCV.getUnitTypeId()) {
+            // We always ignore the burrow types of units, we don't need to know about them for build orders
+            if(unit.name().toLowerCase().contains("burrow")) {
                 return;
-            }*/
+            }
 
             // TODO: figure out how to filter to only units that are valid in mp
 
@@ -79,25 +82,25 @@ public class S2DataUtil {
                     var data = (Map<?,?>) target.get(key);
 
                     var abilityData = abilityMap.get(ability.ability());
-                    var s2action = new S2GeneAction().action(abilityData.id());
+                    var s2action = new EbBuildAction().action(abilityData.id()).name(abilityData.name());
 
                     ability.requirements().forEach(requirement -> {
                         // We don't really care about the addonTo because we don't actually use it... its fine to have though
                         if(requirement.addonTo() != 0) {
-                            s2action.consumed().add(new S2GeneAction.Condition().type(S2GeneAction.ConditionType.UNIT).data(requirement.addonTo()));
+                            s2action.consumed().add(new EbCondition(EbConditionType.UNIT, requirement.addonTo()));
                         }
 
                         if(requirement.building() != 0) {
-                            s2action.required().add(new S2GeneAction.Condition().type(S2GeneAction.ConditionType.UNIT).data(requirement.building()));
+                            s2action.required().add(new EbCondition(EbConditionType.UNIT, requirement.building()));
                         }
 
                         if(requirement.addon() != 0) {
                             // TODO: check this to make sure its the specific one instead of the general one
-                            s2action.required().add(new S2GeneAction.Condition().type(S2GeneAction.ConditionType.UNIT).data(requirement.addon()));
+                            s2action.required().add(new EbCondition(EbConditionType.UNIT, requirement.addon()));
                         }
 
                         if(requirement.upgrade() != 0) {
-                            s2action.required().add(new S2GeneAction.Condition().type(S2GeneAction.ConditionType.RESEARCH).data(requirement.upgrade()));
+                            s2action.required().add(new EbCondition(EbConditionType.RESEARCH, requirement.upgrade()));
                         }
                     });
 
@@ -116,42 +119,42 @@ public class S2DataUtil {
                             reduceGas = unit.gas();
                             reduceSupply = unit.supply();
 
-                            s2action.consumed().add(new S2GeneAction.Condition().type(S2GeneAction.ConditionType.UNIT).data(unit.id()));
+                            s2action.consumed().add(new EbCondition(EbConditionType.UNIT, unit.id()));
                         } else {
-                            s2action.borrowed().add(new S2GeneAction.Condition().type(S2GeneAction.ConditionType.UNIT).data(unit.id()));
+                            s2action.borrowed().add(new EbCondition(EbConditionType.UNIT, unit.id()));
                         }
 
                         double supply = produced.supply() - reduceSupply;
                         if(supply > 0) {
-                            s2action.consumed().add(new S2GeneAction.Condition().type(S2GeneAction.ConditionType.SUPPLY).data(supply));
+                            s2action.consumed().add(new EbCondition(EbConditionType.SUPPLY, supply));
                         }
 
                         if(supply < 0) {
-                            s2action.produced().add(new S2GeneAction.Condition().type(S2GeneAction.ConditionType.SUPPLY).data(-1 * supply));
+                            s2action.produced().add(new EbCondition(EbConditionType.SUPPLY, -1 * supply));
                         }
 
                         if(produced.time() > 0) {
-                            s2action.consumed().add(new S2GeneAction.Condition().type(S2GeneAction.ConditionType.TIME).data(produced.time()));
+                            s2action.consumed().add(new EbCondition(EbConditionType.TIME, produced.time()));
                         }
 
                         int min = produced.minerals() - reduceMin;
                         if(min > 0) {
-                            s2action.consumed().add(new S2GeneAction.Condition().type(S2GeneAction.ConditionType.MINERAL).data(min));
+                            s2action.consumed().add(new EbCondition(EbConditionType.MINERAL, min));
                         }
 
                         int gas = produced.gas() - reduceGas;
                         if(gas > 0) {
-                            s2action.consumed().add(new S2GeneAction.Condition().type(S2GeneAction.ConditionType.GAS).data(gas));
+                            s2action.consumed().add(new EbCondition(EbConditionType.GAS, gas));
                         }
 
                         if(abilityData.energyCost() > 0) {
-                            s2action.consumed().add(new S2GeneAction.Condition().type(S2GeneAction.ConditionType.ENERGY).data(abilityData.energyCost()));
+                            s2action.consumed().add(new EbCondition(EbConditionType.ENERGY, abilityData.energyCost()));
                         }
 
-                        s2action.produced().add(new S2GeneAction.Condition().type(S2GeneAction.ConditionType.UNIT).data(produced.id()));
+                        s2action.produced().add(new EbCondition(EbConditionType.UNIT, produced.id()));
                         // Some units produce double, this adds a second copy of them to the list
                         if(produced.id() == Units.ZERG_ZERGLING.getUnitTypeId() && unit.id() != Units.ZERG_ZERGLING_BURROWED.getUnitTypeId()) {
-                            s2action.produced().add(new S2GeneAction.Condition().type(S2GeneAction.ConditionType.UNIT).data(produced.id()));
+                            s2action.produced().add(new EbCondition(EbConditionType.UNIT, produced.id()));
                         }
 
                         tree.unitGeneMap().putIfAbsent(produced.id(), new HashSet<>());
@@ -164,21 +167,21 @@ public class S2DataUtil {
 
                         var produced = upgradeMap.get((int) (double) data.get("upgrade"));
 
-                        s2action.borrowed().add(new S2GeneAction.Condition().type(S2GeneAction.ConditionType.UNIT).data(unit.id()));
+                        s2action.borrowed().add(new EbCondition(EbConditionType.UNIT, unit.id()));
 
                         if(produced.cost().time() > 0) {
-                            s2action.consumed().add(new S2GeneAction.Condition().type(S2GeneAction.ConditionType.TIME).data(produced.cost().time()));
+                            s2action.consumed().add(new EbCondition(EbConditionType.TIME, produced.cost().time()));
                         }
 
                         if(produced.cost().minerals() > 0) {
-                            s2action.consumed().add(new S2GeneAction.Condition().type(S2GeneAction.ConditionType.MINERAL).data(produced.cost().minerals()));
+                            s2action.consumed().add(new EbCondition(EbConditionType.MINERAL, produced.cost().minerals()));
                         }
 
                         if(produced.cost().gas() > 0) {
-                            s2action.consumed().add(new S2GeneAction.Condition().type(S2GeneAction.ConditionType.GAS).data(produced.cost().gas()));
+                            s2action.consumed().add(new EbCondition(EbConditionType.GAS, produced.cost().gas()));
                         }
 
-                        s2action.produced().add(new S2GeneAction.Condition().type(S2GeneAction.ConditionType.RESEARCH).data(produced.id()));
+                        s2action.produced().add(new EbCondition(EbConditionType.RESEARCH, produced.id()));
 
                         tree.upgradeGeneMap().put(produced.id(), s2action);
                     }

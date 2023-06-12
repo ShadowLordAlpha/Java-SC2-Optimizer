@@ -1,7 +1,7 @@
 package com.shadowcs.optimizer.sc2data.models;
 
 import com.google.gson.annotations.SerializedName;
-import com.shadowcs.optimizer.sc2data.genetics.S2GeneAction;
+import com.shadowcs.optimizer.sc2data.engibay.action.EbAction;
 import lombok.Data;
 
 import java.util.*;
@@ -14,8 +14,8 @@ public class TechTree {
 
     private transient Map<Integer, Ability> abilityMap = new HashMap<>();
     private transient Map<Integer, Unit> unitMap = new HashMap<>();
-    private transient Map<Integer, Set<S2GeneAction>> unitGeneMap = new HashMap<>();
-    private transient Map<Integer, S2GeneAction> upgradeGeneMap = new HashMap<>();
+    private transient Map<Integer, Set<EbAction>> unitGeneMap = new HashMap<>();
+    private transient Map<Integer, EbAction> upgradeGeneMap = new HashMap<>();
 
-    private transient Map<Integer, Set<S2GeneAction>> unitChildActionMap = new HashMap<>();
+    private transient Map<Integer, Set<EbAction>> unitChildActionMap = new HashMap<>();
 }
