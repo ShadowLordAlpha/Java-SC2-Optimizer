@@ -14,6 +14,7 @@ import com.shadowcs.optimizer.sc2data.engibay.EngineeringBay;
 import com.shadowcs.optimizer.sc2data.engibay.action.EbAction;
 import com.shadowcs.optimizer.sc2data.engibay.fitness.EbFitness;
 import com.shadowcs.optimizer.sc2data.engibay.fitness.EbStandardFitness;
+import com.shadowcs.optimizer.sc2data.engibay.fitness.EbTimeFitness;
 import com.shadowcs.optimizer.sc2data.models.TechTree;
 import io.jenetics.*;
 import io.jenetics.engine.Codec;
@@ -47,14 +48,14 @@ public class Test {
         goal.unitCountMap().put(Units.ZERG_OVERLORD.getUnitTypeId(), 1);
         goal.unitCountMap().put(Units.ZERG_EXTRACTOR.getUnitTypeId(), 1);
         goal.unitCountMap().put(Units.ZERG_HATCHERY.getUnitTypeId(), 2);
-        goal.upgradesMap().add(Upgrades.BURROW.getUpgradeId());
+        //goal.upgradesMap().add(Upgrades.BURROW.getUpgradeId());
 
         EbRequirementTree requirementTree = new EbRequirementTree(data, goal);
 
         System.out.println(requirementTree);
 
         Random random = new XORShiftRandom();
-        EbFitness fitness = new EbStandardFitness().tree(data).goal(goal).initial(init);
+        EbFitness fitness = new EbTimeFitness().goal(goal).initial(init);
 
         Factory<Genotype<AnyGene<EbAction>>> gtf = Genotype.of(AnyChromosome.of(() -> requirementTree.actionSet().get(random.nextInt(requirementTree.actionSet().size())), 32));
 
@@ -65,7 +66,7 @@ public class Test {
                 )
                 .populationSize(50)
                 .survivorsSelector(new EliteSelector<>(5))
-                .optimize(Optimize.MAXIMUM)
+                .optimize(Optimize.MINIMUM)
                 .alterers(new Mutator<>(0.1), new MultiPointCrossover<>(0.6))
                 .build();
 
