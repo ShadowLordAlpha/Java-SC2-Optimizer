@@ -1,8 +1,8 @@
-package com.shadowcs.optimizer.sc2data.engibay.action.macro;
+package com.shadowcs.optimizer.engibay.old.action.macro;
 
 import com.github.ocraft.s2client.protocol.data.Units;
-import com.shadowcs.optimizer.sc2data.engibay.EbBuildOrder;
-import com.shadowcs.optimizer.sc2data.engibay.EngineeringBay;
+import com.shadowcs.optimizer.engibay.old.EbBuildOrder;
+import com.shadowcs.optimizer.engibay.EngineeringBay;
 import lombok.extern.slf4j.Slf4j;
 
 /**

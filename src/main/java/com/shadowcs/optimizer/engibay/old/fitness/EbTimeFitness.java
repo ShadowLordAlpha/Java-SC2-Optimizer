@@ -1,7 +1,6 @@
-package com.shadowcs.optimizer.sc2data.engibay.fitness;
+package com.shadowcs.optimizer.engibay.old.fitness;
 
-import com.shadowcs.optimizer.sc2data.engibay.EbBuildOrder;
-import com.shadowcs.optimizer.sc2data.engibay.EbState;
+import com.shadowcs.optimizer.engibay.old.EbBuildOrder;
 
 /**
  * Note, for this one we want the LOWEST value, not the highest

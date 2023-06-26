@@ -1,6 +1,6 @@
-package com.shadowcs.optimizer.sc2data.engibay.action.macro;
+package com.shadowcs.optimizer.engibay.old.action.macro;
 
-import com.shadowcs.optimizer.sc2data.engibay.EbBuildOrder;
+import com.shadowcs.optimizer.engibay.old.EbBuildOrder;
 
 public class EbMacroActionExtractorTrick implements EbMacroAction {
 

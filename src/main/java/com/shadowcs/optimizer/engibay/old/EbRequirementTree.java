@@ -1,9 +1,9 @@
-package com.shadowcs.optimizer.sc2data.engibay;
+package com.shadowcs.optimizer.engibay.old;
 
-import com.shadowcs.optimizer.sc2data.engibay.action.EbAction;
-import com.shadowcs.optimizer.sc2data.engibay.action.macro.EbMacroActionMineGas;
-import com.shadowcs.optimizer.sc2data.engibay.action.macro.EbMacroActionMineMineral;
-import com.shadowcs.optimizer.sc2data.engibay.action.macro.EbMacroActionWait;
+import com.shadowcs.optimizer.engibay.old.action.EbAction;
+import com.shadowcs.optimizer.engibay.old.action.macro.EbMacroActionMineGas;
+import com.shadowcs.optimizer.engibay.old.action.macro.EbMacroActionMineMineral;
+import com.shadowcs.optimizer.engibay.old.action.macro.EbMacroActionWait;
 import com.shadowcs.optimizer.sc2data.models.TechTree;
 import lombok.Data;
 

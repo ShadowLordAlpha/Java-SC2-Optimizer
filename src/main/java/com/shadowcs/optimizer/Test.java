@@ -1,28 +1,19 @@
 package com.shadowcs.optimizer;
 
 import com.github.ocraft.s2client.protocol.data.Units;
-import com.github.ocraft.s2client.protocol.data.Upgrades;
 import com.github.ocraft.s2client.protocol.game.Race;
-import com.shadowcs.optimizer.genetics.Gene;
-import com.shadowcs.optimizer.genetics.GeneticAlgorithm;
-import com.shadowcs.optimizer.genetics.Individual;
 import com.shadowcs.optimizer.random.XORShiftRandom;
 import com.shadowcs.optimizer.sc2data.S2DataUtil;
-import com.shadowcs.optimizer.sc2data.engibay.EbRequirementTree;
-import com.shadowcs.optimizer.sc2data.engibay.EbState;
-import com.shadowcs.optimizer.sc2data.engibay.EngineeringBay;
-import com.shadowcs.optimizer.sc2data.engibay.action.EbAction;
-import com.shadowcs.optimizer.sc2data.engibay.fitness.EbFitness;
-import com.shadowcs.optimizer.sc2data.engibay.fitness.EbStandardFitness;
-import com.shadowcs.optimizer.sc2data.engibay.fitness.EbTimeFitness;
+import com.shadowcs.optimizer.engibay.old.EbRequirementTree;
+import com.shadowcs.optimizer.engibay.old.EbState;
+import com.shadowcs.optimizer.engibay.old.action.EbAction;
+import com.shadowcs.optimizer.engibay.old.fitness.EbFitness;
+import com.shadowcs.optimizer.engibay.old.fitness.EbTimeFitness;
 import com.shadowcs.optimizer.sc2data.models.TechTree;
 import io.jenetics.*;
-import io.jenetics.engine.Codec;
-import io.jenetics.engine.Codecs;
 import io.jenetics.engine.Engine;
 import io.jenetics.engine.EvolutionResult;
 import io.jenetics.util.Factory;
-import io.jenetics.util.ISeq;
 
 import java.util.Random;
 
@@ -34,9 +25,10 @@ public class Test {
 
         TechTree data = S2DataUtil.loadData();
 
-        var genes = S2DataUtil.generateGenes(data, Race.TERRAN, Race.ZERG, Race.PROTOSS);
+        //var genes = S2DataUtil.generateGenes(data, Race.TERRAN, Race.ZERG, Race.PROTOSS);
+        var actions = S2DataUtil.generateActions(data, Race.ZERG);
 
-        EbState init = new EbState();
+        /*EbState init = new EbState();
         init.techTree(data);
         init.unitCountMap().put(Units.ZERG_DRONE.getUnitTypeId(), 12);
         init.unitCountMap().put(Units.ZERG_OVERLORD.getUnitTypeId(), 1);
@@ -144,6 +136,6 @@ public class Test {
 
         for(var action: order.validActions()) {
             System.out.println(action.name());
-        }
-    }*/
+        }*/
+    }
 }

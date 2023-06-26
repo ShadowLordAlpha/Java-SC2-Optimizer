@@ -1,10 +1,8 @@
-package com.shadowcs.optimizer.sc2data.engibay.fitness;
+package com.shadowcs.optimizer.engibay.old.fitness;
 
-import com.google.gson.Gson;
-import com.shadowcs.optimizer.genetics.Gene;
-import com.shadowcs.optimizer.sc2data.engibay.EbBuildOrder;
-import com.shadowcs.optimizer.sc2data.engibay.EbState;
-import com.shadowcs.optimizer.sc2data.engibay.action.EbAction;
+import com.shadowcs.optimizer.engibay.old.EbBuildOrder;
+import com.shadowcs.optimizer.engibay.old.EbState;
+import com.shadowcs.optimizer.engibay.old.action.EbAction;
 import io.jenetics.AnyGene;
 import io.jenetics.Genotype;
 import lombok.Data;

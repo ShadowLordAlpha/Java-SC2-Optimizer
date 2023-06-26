@@ -1,4 +1,4 @@
-package com.shadowcs.optimizer.sc2data.engibay;
+package com.shadowcs.optimizer.engibay.old;
 
 import com.shadowcs.optimizer.sc2data.models.TechTree;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;

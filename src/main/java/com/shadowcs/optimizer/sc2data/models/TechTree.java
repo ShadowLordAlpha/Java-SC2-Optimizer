@@ -1,7 +1,7 @@
 package com.shadowcs.optimizer.sc2data.models;
 
 import com.google.gson.annotations.SerializedName;
-import com.shadowcs.optimizer.sc2data.engibay.action.EbAction;
+import com.shadowcs.optimizer.engibay.old.action.EbAction;
 import lombok.Data;
 
 import java.util.*;

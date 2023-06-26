@@ -1,4 +1,4 @@
-package com.shadowcs.optimizer.sc2data.engibay.fitness;
+package com.shadowcs.optimizer.engibay.old.fitness;
 
 import lombok.Getter;
 

@@ -1,11 +1,11 @@
-package com.shadowcs.optimizer.sc2data.engibay.action.unit;
+package com.shadowcs.optimizer.engibay.old.action.unit;
 
 import com.github.ocraft.s2client.protocol.data.Units;
-import com.shadowcs.optimizer.sc2data.engibay.EbBuildOrder;
-import com.shadowcs.optimizer.sc2data.engibay.EngineeringBay;
-import com.shadowcs.optimizer.sc2data.engibay.action.EbAction;
-import com.shadowcs.optimizer.sc2data.engibay.action.EbCondition;
-import com.shadowcs.optimizer.sc2data.engibay.action.EbConditionType;
+import com.shadowcs.optimizer.engibay.old.EbBuildOrder;
+import com.shadowcs.optimizer.engibay.EngineeringBay;
+import com.shadowcs.optimizer.engibay.old.action.EbAction;
+import com.shadowcs.optimizer.engibay.old.action.EbCondition;
+import com.shadowcs.optimizer.engibay.old.action.EbConditionType;
 import lombok.Data;
 
 import java.util.HashSet;

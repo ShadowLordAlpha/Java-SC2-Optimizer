@@ -1,4 +1,4 @@
-package com.shadowcs.optimizer.sc2data.engibay;
+package com.shadowcs.optimizer.engibay;
 
 /**
  * This is a Genetic Algorithm base build order finder with ideas from <a href="https://code.google.com/archive/p/evolutionchamber/">EvolutionChamber</a>
@@ -21,4 +21,10 @@ public class EngineeringBay {
      */
     public static double WORKER_GAS_PER_FRAME = 0.04; // 163.0 / 3.0 / 60.0 / 22.4
     public static double WORKER_GAS_PER_FRAME_RICH = 0.08; // 325.0 / 3.0 / 60.0 / 22.4
+
+    public EngineeringBay() {
+
+    }
+
+
 }

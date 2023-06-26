@@ -1,4 +1,4 @@
-package com.shadowcs.optimizer.sc2data.engibay.action;
+package com.shadowcs.optimizer.engibay.old.action;
 
 public enum EbConditionType {
     UNIT,

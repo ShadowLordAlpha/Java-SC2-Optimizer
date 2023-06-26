@@ -3,10 +3,11 @@ package com.shadowcs.optimizer.sc2data;
 import com.github.ocraft.s2client.protocol.data.Units;
 import com.github.ocraft.s2client.protocol.game.Race;
 import com.google.gson.Gson;
+import com.shadowcs.optimizer.engibay.old.action.EbAction;
 import com.shadowcs.optimizer.genetics.Gene;
-import com.shadowcs.optimizer.sc2data.engibay.action.EbCondition;
-import com.shadowcs.optimizer.sc2data.engibay.action.EbConditionType;
-import com.shadowcs.optimizer.sc2data.engibay.action.unit.EbBuildAction;
+import com.shadowcs.optimizer.engibay.old.action.EbCondition;
+import com.shadowcs.optimizer.engibay.old.action.EbConditionType;
+import com.shadowcs.optimizer.engibay.old.action.unit.EbBuildAction;
 import com.shadowcs.optimizer.sc2data.models.Ability;
 import com.shadowcs.optimizer.sc2data.models.TechTree;
 import com.shadowcs.optimizer.sc2data.models.Unit;
@@ -21,6 +22,37 @@ import java.util.*;
 
 @UtilityClass
 public class S2DataUtil {
+
+    public Set<EbAction> generateActions(TechTree tree, Race...race) {
+
+        Map<Integer, Ability> abilityMap = tree.abilityMap();
+        tree.ability().forEach(ability -> abilityMap.put(ability.id(), ability));
+
+        Map<Integer, Unit> unitMap = tree.unitMap();
+        tree.unit().forEach(unit -> unitMap.put(unit.id(), unit));
+
+        Map<Integer, Upgrade> upgradeMap = new HashMap<>();
+        tree.upgrade().forEach(upgrade -> upgradeMap.put(upgrade.id(), upgrade));
+
+        Set<EbAction> actionSet = new HashSet<>();
+
+        // Generate our initial actions
+
+        tree.unit().stream().filter(unit -> Arrays.stream(race).anyMatch(r -> unit.race().equalsIgnoreCase(r.name()))).forEach(unit -> {
+            System.out.println("Unit: " + unit.name() + " " + unit.race());
+        });
+
+        // TODO: generate the special actions
+
+        // Now we generate the needed requirements
+
+        return actionSet;
+    }
+
+
+
+
+    // TODO: review below for if we need anymore or if we do not
 
     public List<Gene> generateGenes(TechTree tree, Race...race) {
 

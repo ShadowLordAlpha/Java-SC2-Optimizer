@@ -1,6 +1,7 @@
-package com.shadowcs.optimizer.sc2data.engibay;
+package com.shadowcs.optimizer.engibay.old;
 
-import com.shadowcs.optimizer.sc2data.engibay.action.EbAction;
+import com.shadowcs.optimizer.engibay.EngineeringBay;
+import com.shadowcs.optimizer.engibay.old.action.EbAction;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import lombok.Data;

@@ -1,6 +1,6 @@
-package com.shadowcs.optimizer.sc2data.engibay.action;
+package com.shadowcs.optimizer.engibay.old.action;
 
-import com.shadowcs.optimizer.sc2data.engibay.EbBuildOrder;
+import com.shadowcs.optimizer.engibay.old.EbBuildOrder;
 
 public interface EbAction {
 
