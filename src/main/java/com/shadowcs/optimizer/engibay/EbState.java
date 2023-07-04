@@ -1,4 +1,4 @@
-package com.shadowcs.optimizer.engibay.old;
+package com.shadowcs.optimizer.engibay;
 
 import com.shadowcs.optimizer.sc2data.models.TechTree;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
@@ -31,32 +31,22 @@ public class EbState {
      */
     private double gas = 0;
 
-    /**
-     * This is game time in simulation frames, 22.4 frames per second
-     */
-    private int currentFrame = 0;
+    // TODO: a target frame?
 
     /**
-     * This is the supply used up by in active production units
+     * This contains a list of all our units that are currently completed.
      */
-    private int activeSupply = 0;
+    private final Int2IntOpenHashMap unitCountMap = new Int2IntOpenHashMap(20); // There are 204 unit definitions but we should never be using them all so set to about half
 
     /**
-     * This map contains a list of all our units by their ID and how many of that unit we currently have available. Even
-     * if a unit is in use it should be in this map as a count, if we don't have any of a unit then it should be removed
-     * from the list
+     * This map contains a list of all our completed upgrades
      */
-    private final Int2IntOpenHashMap unitCountMap = new Int2IntOpenHashMap(225); // There are 204 unit definitions so we do slightly larger
-
-    /**
-     * This map contains a list of all our upgrades, if the value exists in the list we have it, otherwise we don't
-     */
-    private final IntOpenHashSet upgradesMap = new IntOpenHashSet(150); // There are 122 upgrades so we do slightly larger just in case
+    private final IntOpenHashSet upgradeSet = new IntOpenHashSet(10); // There are 122 upgrades but normally only a few are actually used, so we prepopulate to a reasonable amount
 
     /**
      * A list of waypoints for this state in terms of state
      *
-     * TODO: something with this
+     * TODO: something with this...
      */
     private final List<EbState> waypoints = new ArrayList<>();
 
@@ -72,14 +62,8 @@ public class EbState {
         return bases;
     }
 
-    public double supply() {
-        double supply = 0.0;
-
-        for(int data: unitCountMap.keySet()) {
-            supply -= techTree().unitMap().get(data).supply() * unitCountMap.get(data);
-        }
-
-        return supply - activeSupply;
+    public double supplyAvailable() {
+        return supplyUsed() - supplyCap();
     }
 
     public double supplyUsed() {
@@ -107,7 +91,7 @@ public class EbState {
             }
         }
 
-        return supply;
+        return Math.min(supply, EngineeringBay.MAX_SUPPLY);
     }
 
     public boolean isSatisfied(EbState candidate) {
@@ -122,8 +106,8 @@ public class EbState {
             }
         }
 
-        for(var upgradeId: upgradesMap.toArray()) {
-            if(!candidate.upgradesMap.contains(upgradeId)) {
+        for(var upgradeId: upgradeSet.toIntArray()) {
+            if(!candidate.upgradeSet.contains(upgradeId)) {
                 return false;
             }
         }

@@ -1,7 +1,6 @@
-package com.shadowcs.optimizer.engibay.old;
+package com.shadowcs.optimizer.engibay;
 
-import com.shadowcs.optimizer.engibay.EngineeringBay;
-import com.shadowcs.optimizer.engibay.old.action.EbAction;
+import com.shadowcs.optimizer.engibay.build.EbAction;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import lombok.Data;
@@ -13,11 +12,22 @@ import java.util.TreeMap;
 @Data
 public class EbBuildOrder extends EbState {
 
+    private double maxTime = 2.0 * 60.0 * 60.0 * 22.4;
+
+    private int workersGoingOnGas;
     private int workersOnGas;
+    private int workersGoingOnMinerals;
     private int workersOnMinerals;
     private int mulesOnMinerals;
 
     private int waits;
+    private int badGenes;
+    private int noop;
+
+    /**
+     * This is game time in simulation frames, 22.4 frames per second
+     */
+    private int currentFrame = 0;
 
     /**
      * This map contains a list of units that are in production
@@ -33,6 +43,54 @@ public class EbBuildOrder extends EbState {
     private final TreeMap<Integer, List<Runnable>> futureActions = new TreeMap<>();
 
     private List<EbAction> validActions = new ArrayList<>();
+
+    public double supplyAvailableFuture() {
+        return supplyAvailable() + supplyAvailable();
+    }
+
+    public double supplyAvailable() {
+        return supplyUsedFuture() - supplyCapFuture();
+    }
+
+    public int basesFuture() {
+        int bases = 0;
+
+        for(int data: unitInProgressMap.keySet()) {
+            if(techTree().unitMap().get(data).townhall()) {
+                bases++;
+            }
+        }
+
+        return bases + bases();
+    }
+
+    public double supplyUsedFuture() {
+
+        double supply = 0.0;
+
+        for(int data: unitInProgressMap.keySet()) {
+            double supp = techTree().unitMap().get(data).supply();
+            if(supp > 0) {
+                supply += supp;
+            }
+        }
+
+        return supply;
+    }
+
+    public double supplyCapFuture() {
+
+        double supply = 0.0;
+
+        for(int data: unitInProgressMap.keySet()) {
+            double supp = techTree().unitMap().get(data).supply();
+            if(supp < 0) {
+                supply -= supp;
+            }
+        }
+
+        return Math.min(supply, EngineeringBay.MAX_SUPPLY);
+    }
 
     public void addFutureAction(int frame, Runnable task) {
         futureActions.computeIfAbsent(currentFrame() + frame, k -> new ArrayList<>()).add(task);
@@ -56,11 +114,12 @@ public class EbBuildOrder extends EbState {
     }
 
     public void executeNextAction() {
+
         var currentTasks = futureActions.pollFirstEntry();
+        collectResources(currentTasks.getKey() - currentFrame());
         for (Runnable task: currentTasks.getValue()) {
             task.run();
         }
-        collectResources(currentTasks.getKey() - currentFrame());
         currentFrame(currentTasks.getKey());
     }
 
@@ -94,9 +153,10 @@ public class EbBuildOrder extends EbState {
     public static EbBuildOrder create(EbState state) {
 
         EbBuildOrder order = new EbBuildOrder();
-        order.minerals(state.minerals()).gas(state.gas()).techTree(state.techTree()).currentFrame(state.currentFrame());
+        order.minerals(state.minerals()).gas(state.gas()).techTree(state.techTree());
+        // order.currentFrame(state.currentFrame());
         order.unitCountMap().putAll(state.unitCountMap());
-        order.upgradesMap().addAll(state.upgradesMap());
+        order.upgradeSet().addAll(state.upgradeSet());
 
         return order;
     }

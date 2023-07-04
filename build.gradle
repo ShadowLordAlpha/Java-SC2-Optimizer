@@ -5,13 +5,24 @@ plugins {
 group 'com.shadowcs.optimizer'
 version '0.0.1'
 
+configurations.all {
+    resolutionStrategy {
+
+        // cache dynamic versions for 30 minutes
+        cacheDynamicVersionsFor 30 * 60, 'seconds'
+        // don't cache changing modules at all
+        cacheChangingModulesFor 0, 'seconds'
+    }
+}
+
 repositories {
     mavenCentral()
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
     // Not the best SC2 API but its the only one for Java so its what we are going to use
-    implementation 'com.github.ocraft:ocraft-s2client-bot:+'
+    implementation ('com.github.ShadowLordAlpha.ocraft-s2client:ocraft-s2client-bot:Allow-Multiple-requests-of-same-type-SNAPSHOT') { changing = true }
 
     // Object pool
     // implementation 'com.github.chrisvest:stormpot:3.2'

@@ -9,6 +9,8 @@ public class EngineeringBay {
     public static boolean DEBUG = false;
     public static boolean PULL_THREE_WORKERS = false;
 
+    public static int MAX_SUPPLY = 200;
+
     /**
      * Roughly how much mining per worker can we get, using these values the math is much faster
      */

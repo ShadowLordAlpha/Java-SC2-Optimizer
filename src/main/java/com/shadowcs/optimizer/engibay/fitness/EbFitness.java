@@ -1,76 +1,72 @@
-package com.shadowcs.optimizer.engibay.old.fitness;
+package com.shadowcs.optimizer.engibay.fitness;
 
-import com.shadowcs.optimizer.engibay.old.EbBuildOrder;
-import com.shadowcs.optimizer.engibay.old.EbState;
-import com.shadowcs.optimizer.engibay.old.action.EbAction;
+import com.shadowcs.optimizer.engibay.EbBuildOrder;
+import com.shadowcs.optimizer.engibay.EbState;
+import com.shadowcs.optimizer.engibay.build.EbAction;
 import io.jenetics.AnyGene;
 import io.jenetics.Genotype;
+import io.jenetics.Optimize;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public abstract class EbFitness {
 
+    @Deprecated
     private double maxTime = 2.0 * 60.0 * 60.0 * 22.4;
 
     private EbState initial;
     private EbState goal;
 
+    public Optimize optimize() {
+        return Optimize.MAXIMUM;
+    }
+
     public double simulateOrderGt(Genotype<AnyGene<EbAction>> gt) {
 
-        var list = gt.chromosome().stream().toList();
-        EbAction[] arr = new EbAction[list.size()];
-        for(int i = 0; i < list.size(); i++) {
-            arr[i] = list.get(i).allele();
-        }
-
-        return score(simulateOrder(arr, false));
+        return score(simulateOrderOrder(gt));
     }
 
     public EbBuildOrder simulateOrderOrder(Genotype<AnyGene<EbAction>> gt) {
 
         var list = gt.chromosome().stream().toList();
-        EbAction[] arr = new EbAction[list.size()];
-        for(int i = 0; i < list.size(); i++) {
-            arr[i] = list.get(i).allele();
-        }
 
-        return simulateOrder(arr, false);
+        return simulateOrder(list, false);
     }
 
-    public EbBuildOrder simulateOrder(EbAction[] genes, boolean order) {
+    public EbBuildOrder simulateOrder(List<AnyGene<EbAction>> genes, boolean order) {
 
         EbBuildOrder candidate = EbBuildOrder.create(initial);
-
-        // TODO: workers to minerals stuff instead of hardcode
         candidate.workersOnMinerals(12);
 
-        for(EbAction action: genes) {
+        mainloop: for(var gene: genes) {
 
-            // EbAction action = gene.data();
+            EbAction action = gene.allele();
 
             if(!action.isValid(candidate)) {
                 // TODO: mark invalid action?
+                candidate.badGenes(candidate.badGenes() + 1);
                 continue;
             }
 
-            while(!action.canExecute(candidate)) {
+            int time;
+            while((time = action.canExecute(candidate)) > 0) {
+                time = Math.min(time, candidate.getNextActionFrame() - candidate.currentFrame());
+                candidate.executeFutureActions(time);
+
                 if(maxTime < candidate.currentFrame()) {
-                    return candidate;
+                    candidate.badGenes(candidate.badGenes() + 1);
+                    continue mainloop;
                 }
             }
 
             candidate.validActions().add(action);
             action.execute(candidate);
+        }
 
-            if(goal.isSatisfied(candidate)) {
-
-                // We are done, we just need to finish up any running action
-                if(candidate.futureActions().size() > 0) {
-                    candidate.executeNextAction();
-                }
-
-                break;
-            }
+        while(candidate.futureActions().size() > 0) {
+            candidate.executeNextAction();
         }
 
         return candidate;

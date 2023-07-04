@@ -1,6 +1,6 @@
-package com.shadowcs.optimizer.engibay.old.fitness;
+package com.shadowcs.optimizer.engibay.fitness;
 
-import com.shadowcs.optimizer.engibay.old.EbBuildOrder;
+import com.shadowcs.optimizer.engibay.EbBuildOrder;
 
 public class EbArmyFitness extends EbFitness {
 

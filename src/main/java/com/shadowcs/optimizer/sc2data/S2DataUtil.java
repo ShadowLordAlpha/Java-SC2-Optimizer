@@ -3,11 +3,10 @@ package com.shadowcs.optimizer.sc2data;
 import com.github.ocraft.s2client.protocol.data.Units;
 import com.github.ocraft.s2client.protocol.game.Race;
 import com.google.gson.Gson;
-import com.shadowcs.optimizer.engibay.old.action.EbAction;
-import com.shadowcs.optimizer.genetics.Gene;
-import com.shadowcs.optimizer.engibay.old.action.EbCondition;
-import com.shadowcs.optimizer.engibay.old.action.EbConditionType;
-import com.shadowcs.optimizer.engibay.old.action.unit.EbBuildAction;
+import com.shadowcs.optimizer.engibay.build.EbAction;
+import com.shadowcs.optimizer.engibay.build.EbBasicAction;
+import com.shadowcs.optimizer.engibay.build.EbCondition;
+import com.shadowcs.optimizer.engibay.build.EbConditionType;
 import com.shadowcs.optimizer.sc2data.models.Ability;
 import com.shadowcs.optimizer.sc2data.models.TechTree;
 import com.shadowcs.optimizer.sc2data.models.Unit;
@@ -19,9 +18,19 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.stream.Collectors;
+
+import static java.util.Arrays.asList;
 
 @UtilityClass
 public class S2DataUtil {
+
+    private static final Set<Integer> unitOverridSet = new HashSet<>(asList(
+            Units.TERRAN_MULE.getUnitTypeId(),
+            Units.TERRAN_REACTOR.getUnitTypeId(),
+            Units.TERRAN_TECHLAB.getUnitTypeId(),
+            Units.ZERG_LARVA.getUnitTypeId()
+    ));
 
     public Set<EbAction> generateActions(TechTree tree, Race...race) {
 
@@ -37,216 +46,223 @@ public class S2DataUtil {
         Set<EbAction> actionSet = new HashSet<>();
 
         // Generate our initial actions
+        Map<Unit, Set<Ability>> unitProductionMap = new HashMap<>();
 
-        tree.unit().stream().filter(unit -> Arrays.stream(race).anyMatch(r -> unit.race().equalsIgnoreCase(r.name()))).forEach(unit -> {
-            System.out.println("Unit: " + unit.name() + " " + unit.race());
-        });
+        var raceUnits = tree.unit().stream().filter(unit -> Arrays.stream(race).anyMatch(r -> unit.race().equalsIgnoreCase(r.name()))).collect(Collectors.toSet());
+        var raceAbilities = tree.ability().stream().filter(ability -> unitHasAbility(raceUnits, ability)).collect(Collectors.toSet());
 
-        // TODO: generate the special actions
+        var producibleUnits = new HashSet<>(raceUnits);
+        var producibleAbilities = new HashSet<>(raceAbilities);
 
-        // Now we generate the needed requirements
+        int size = 0;
+        while (size != producibleUnits.size()) {
+            size = producibleUnits.size();
 
-        return actionSet;
-    }
+            producibleUnits.removeIf(unit -> !abilityMakesUnit(producibleAbilities, unit));
+            producibleAbilities.removeIf(ability -> !unitHasAbility(producibleUnits, ability));
+        }
 
+        var raceUpgrades = tree.upgrade().stream().filter(u -> abilityMakesUpgrade(producibleAbilities, u)).collect(Collectors.toSet());
 
+        //producibleUnits.forEach(u -> System.out.println("Unit: " + u.name()));
+        //producibleAbilities.forEach(u -> System.out.println("Ability: " + u.name()));
+        //raceUpgrades.forEach(u -> System.out.println("Upgrade: " + u.name()));
 
+        producibleUnits.forEach(u -> {
 
-    // TODO: review below for if we need anymore or if we do not
+            //System.out.println("Unit: " + u.name());
 
-    public List<Gene> generateGenes(TechTree tree, Race...race) {
+            u.abilities().forEach(a -> {
 
-        List<Gene> geneSet = new ArrayList<>();
-
-        Map<Integer, Ability> abilityMap = tree.abilityMap();
-        tree.ability().forEach(ability -> abilityMap.put(ability.id(), ability));
-
-        Map<Integer, Unit> unitMap = tree.unitMap();
-        tree.unit().forEach(unit -> unitMap.put(unit.id(), unit));
-
-        Map<Integer, Upgrade> upgradeMap = new HashMap<>();
-        tree.upgrade().forEach(upgrade -> upgradeMap.put(upgrade.id(), upgrade));
-
-        Map<Integer, Gene> abilityGeneMap = new HashMap<>();
-        Map<Integer, Gene> researchGeneMap = new HashMap<>();
-        Map<Integer, Set<Gene>> unitGeneMap = new HashMap<>();
-
-        // Filter to only units we care about, specifically using a races worker as the entry point and doing a depth
-        // search for the unit IDs
-        Set<Integer> unitIdList = new HashSet<>();
-        tree.unit().forEach(unit -> {
-            // For terran we also care about the TechLab and Reactor even though its really annoying to create those
-
-            if(Arrays.stream(race).noneMatch(r -> r.name().equalsIgnoreCase(unit.race()))) {
-                return;
-            }
-
-            if(unit.worker() || unit.addon() || unit.id() == Units.ZERG_LARVA.getUnitTypeId()) {
-                getAbilityUnits(unitIdList, unit, abilityMap, unitMap);
-            }
-
-            // TODO: there are a few extra buildings that we may want to be able to create, will need to modify actions
-        });
-
-        // Only units can use abilities so we only need to loop through them and get the ability data to create our genes
-        tree.unit().forEach(unit -> {
-
-            if(!unitIdList.contains(unit.id())) {
-                return;
-            }
-
-            // System.out.println("Unit: " + unitMap.get(unit.id()).name() + " - " + unitMap.get(unit.id()));
-
-            // We always ignore the burrow types of units, we don't need to know about them for build orders
-            if(unit.name().toLowerCase().contains("burrow")) {
-                return;
-            }
-
-            // TODO: figure out how to filter to only units that are valid in mp
-
-            unit.abilities().forEach(ability -> {
-
-                var action = abilityMap.get(ability.ability());
-
-                if(action.target() instanceof Map<?,?>) {
-                    var target = (Map<?,?>) action.target();
+                var ability = abilityMap.get(a.ability());
+                if(ability.target() instanceof Map<?, ?> target) {
                     String key = (String) target.keySet().iterator().next();
-                    var data = (Map<?,?>) target.get(key);
+                    var data = (Map<?, ?>) target.get(key);
 
-                    var abilityData = abilityMap.get(ability.ability());
-                    var s2action = new EbBuildAction().action(abilityData.id()).name(abilityData.name());
+                    boolean upgrade = key.equalsIgnoreCase("Research");
+                    String produce = upgrade ? "upgrade" : "produces";
+                    int prodId = (int) (double) data.get(produce);
 
-                    ability.requirements().forEach(requirement -> {
-                        // We don't really care about the addonTo because we don't actually use it... its fine to have though
+                    //System.out.println("    Ability: " + ability.name());
+                    //System.out.println("        Requirements: " + key);
+
+                    Set<EbCondition> required = new HashSet<>();
+                    for(var requirement: a.requirements()) {
                         if(requirement.addonTo() != 0) {
-                            s2action.consumed().add(new EbCondition(EbConditionType.UNIT, requirement.addonTo()));
+                            var un = unitMap.get(requirement.addonTo());
+                            required.add(new EbCondition(EbConditionType.UNIT, un.name(), un.id()));
+                            //System.out.println("        Requirements: " + un.name());
                         }
-
-                        if(requirement.building() != 0) {
-                            s2action.required().add(new EbCondition(EbConditionType.UNIT, requirement.building()));
-                        }
-
                         if(requirement.addon() != 0) {
-                            // TODO: check this to make sure its the specific one instead of the general one
-                            s2action.required().add(new EbCondition(EbConditionType.UNIT, requirement.addon()));
+                            var un = unitMap.get(requirement.addon());
+                            required.add(new EbCondition(EbConditionType.UNIT, un.name(), un.id()));
+                            //System.out.println("        Requirements: " + un.name());
+                        }
+                        if(requirement.building() != 0) {
+                            var un = unitMap.get(requirement.building());
+                            required.add(new EbCondition(EbConditionType.UNIT, un.name(), un.id()));
+                            //System.out.println("        Requirements: " + un.name());
                         }
 
                         if(requirement.upgrade() != 0) {
-                            s2action.required().add(new EbCondition(EbConditionType.RESEARCH, requirement.upgrade()));
+                            var up = upgradeMap.get(requirement.upgrade());
+                            required.add(new EbCondition(EbConditionType.RESEARCH, up.name(), up.id()));
+                            //System.out.println("        Requirements: " + up.name());
                         }
-                    });
-
-                    if(!key.equalsIgnoreCase("Research")) { // if research
-                        // If we are any of the morph types we need to calculate some things
-                        //System.out.println("Ability: " + key + " : " + abilityData.name());
-
-                        var produced = unitMap.get((int) (double) data.get("produces"));
-
-                        int reduceMin = 0;
-                        int reduceGas = 0;
-                        double reduceSupply = 0;
-
-                        if(key.toLowerCase().contains("morph")) {
-                            reduceMin = unit.minerals();
-                            reduceGas = unit.gas();
-                            reduceSupply = unit.supply();
-
-                            s2action.consumed().add(new EbCondition(EbConditionType.UNIT, unit.id()));
-                        } else {
-                            s2action.borrowed().add(new EbCondition(EbConditionType.UNIT, unit.id()));
-                        }
-
-                        double supply = produced.supply() - reduceSupply;
-                        if(supply > 0) {
-                            s2action.consumed().add(new EbCondition(EbConditionType.SUPPLY, supply));
-                        }
-
-                        if(supply < 0) {
-                            s2action.produced().add(new EbCondition(EbConditionType.SUPPLY, -1 * supply));
-                        }
-
-                        if(produced.time() > 0) {
-                            s2action.consumed().add(new EbCondition(EbConditionType.TIME, produced.time()));
-                        }
-
-                        int min = produced.minerals() - reduceMin;
-                        if(min > 0) {
-                            s2action.consumed().add(new EbCondition(EbConditionType.MINERAL, min));
-                        }
-
-                        int gas = produced.gas() - reduceGas;
-                        if(gas > 0) {
-                            s2action.consumed().add(new EbCondition(EbConditionType.GAS, gas));
-                        }
-
-                        if(abilityData.energyCost() > 0) {
-                            s2action.consumed().add(new EbCondition(EbConditionType.ENERGY, abilityData.energyCost()));
-                        }
-
-                        s2action.produced().add(new EbCondition(EbConditionType.UNIT, produced.id()));
-                        // Some units produce double, this adds a second copy of them to the list
-                        if(produced.id() == Units.ZERG_ZERGLING.getUnitTypeId() && unit.id() != Units.ZERG_ZERGLING_BURROWED.getUnitTypeId()) {
-                            s2action.produced().add(new EbCondition(EbConditionType.UNIT, produced.id()));
-                        }
-
-                        tree.unitGeneMap().putIfAbsent(produced.id(), new HashSet<>());
-                        tree.unitGeneMap().get(produced.id()).add(s2action);
-
-                        tree.unitChildActionMap().putIfAbsent(unit.id(), new HashSet<>());
-                        tree.unitChildActionMap().get(unit.id()).add(s2action);
-                    } else {
-                        //System.out.println("Ability RESEARCH: " + abilityData.name());
-
-                        var produced = upgradeMap.get((int) (double) data.get("upgrade"));
-
-                        s2action.borrowed().add(new EbCondition(EbConditionType.UNIT, unit.id()));
-
-                        if(produced.cost().time() > 0) {
-                            s2action.consumed().add(new EbCondition(EbConditionType.TIME, produced.cost().time()));
-                        }
-
-                        if(produced.cost().minerals() > 0) {
-                            s2action.consumed().add(new EbCondition(EbConditionType.MINERAL, produced.cost().minerals()));
-                        }
-
-                        if(produced.cost().gas() > 0) {
-                            s2action.consumed().add(new EbCondition(EbConditionType.GAS, produced.cost().gas()));
-                        }
-
-                        s2action.produced().add(new EbCondition(EbConditionType.RESEARCH, produced.id()));
-
-                        tree.upgradeGeneMap().put(produced.id(), s2action);
                     }
 
-                    geneSet.add(new Gene().data(s2action));
+                    double gas;
+                    double mineral;
+                    double time;
+                    double supply = 0;
+
+                    Set<EbCondition> produced = new HashSet<>();
+                    if(upgrade) {
+                        var up = upgradeMap.get(prodId);
+                        gas = up.cost().gas();
+                        mineral = up.cost().minerals();
+                        time = up.cost().time();
+                        produced.add(new EbCondition(EbConditionType.RESEARCH, up.name(), up.id()));
+                        //System.out.println("        Requirements: Gas " + up.cost().gas());
+                        //System.out.println("        Requirements: Minerals " + up.cost().minerals());
+                        //System.out.println("        Requirements: Time " + up.cost().time());
+                        //System.out.println("        Upgrade: " + up.name());
+                    } else {
+                        var un = unitMap.get(prodId);
+                        gas = un.gas();
+                        mineral = un.minerals();
+                        supply = un.supply();
+                        time = un.time();
+                        produced.add(new EbCondition(EbConditionType.UNIT, un.name(), un.id()));
+                        if(un.id() == Units.ZERG_ZERGLING.getUnitTypeId()) {
+                            supply = 1;
+                            produced.add(new EbCondition(EbConditionType.UNIT, un.name(), un.id()));
+                        }
+                        //System.out.println("        Requirements: Gas " + un.gas());
+                        //System.out.println("        Requirements: Minerals " + un.minerals());
+                        //System.out.println("        Requirements: Supply " + un.supply());
+                        //System.out.println("        Requirements: Time " + un.time());
+                        //System.out.println("        Unit: " + un.name());
+                    }
+
+                    Set<EbCondition> borrowed = new HashSet<>();
+                    Set<EbCondition> consumed = new HashSet<>();
+                    if(key.toUpperCase().contains("MORPH")) {
+                        gas -= u.gas();
+                        mineral -= u.minerals();
+                        supply = u.supply();
+                        time -= u.time();
+
+                        consumed.add(new EbCondition(EbConditionType.UNIT, u.name(), u.id()));
+                    } else {
+                        borrowed.add(new EbCondition(EbConditionType.UNIT, u.name(), u.id()));
+                    }
+
+                    if(mineral > 0) {
+                        consumed.add(new EbCondition(EbConditionType.MINERAL, "mineral", mineral));
+                    }
+                    if(gas > 0) {
+                        consumed.add(new EbCondition(EbConditionType.GAS, "gas", gas));
+                    }
+                    if(supply > 0) {
+                        consumed.add(new EbCondition(EbConditionType.SUPPLY, "supply", supply));
+                    }
+                    if(time > 0) {
+                        consumed.add(new EbCondition(EbConditionType.TIME, "time", time));
+                    }
+
+                    actionSet.add(new EbBasicAction(ability.name(), ability.id(), required, borrowed, consumed, produced));
                 }
             });
         });
 
-        return geneSet;
+        actionSet.forEach(as -> System.out.println(as));
+
+        return actionSet;
     }
 
-    private void getAbilityUnits(Set<Integer> knownUnits, Unit unit, Map<Integer, Ability> abilityMap, Map<Integer, Unit> unitMap) {
+    /**
+     * Check if there is a unit in the given set that has the ability.
+     *
+     * @param raceUnits The unit set we have to work with
+     * @param ability The ability we are looking for
+     * @return true iff there is a unit that has the ability we are looking for
+     */
+    private boolean unitHasAbility(Set<Unit> raceUnits, Ability ability) {
 
-        // If we know the unit already we can assume that we have already processed that unit
-        if(knownUnits.contains(unit.id())) {
-            return;
-        } else {
-            knownUnits.add(unit.id());
-        }
-
-        unit.abilities().forEach(ability -> {
-            var action = abilityMap.get(ability.ability());
-
-            if(action.target() instanceof Map<?,?>) {
-                var target = (Map<?,?>) action.target();
-                String key = (String) target.keySet().iterator().next();
-                var data = (Map<?,?>) target.get(key);
-                if(!key.equalsIgnoreCase("Research")) { // if research
-                    getAbilityUnits(knownUnits, unitMap.get((int) (double) data.get("produces")), abilityMap, unitMap);
+        for(var unit: raceUnits) {
+            for(var unitAbility: unit.abilities()) {
+                if(Objects.equals(unitAbility.ability(), ability.id())) {
+                    return true;
                 }
             }
-        });
+        }
+
+        return false;
+    }
+
+    /**
+     * Check if there is an ability in the given set that creates the needed unit
+     *
+     * @param raceAbilities The ability se we have to work with
+     * @param unit The Unit we are looking for
+     * @return true if there is an ability that produces the unit we are looking for or the unit is in one we want no
+     * matter what.
+     */
+    private boolean abilityMakesUnit(Set<Ability> raceAbilities, Unit unit) {
+
+        // There are some units that we want as they are auto generated or generated from other commands that we have to
+        //  make exceptions for
+        if(unitOverridSet.contains(unit.id())) {
+            return true;
+        }
+
+        // These are not used units
+        if(unit.id() == Units.ZERG_INFESTOR_TERRAN.getUnitTypeId()) {
+            return false;
+        }
+
+        for(var ability: raceAbilities) {
+            if(ability.target() instanceof Map<?, ?> target) {
+                String key = (String) target.keySet().iterator().next();
+                if(!key.equalsIgnoreCase("Research")) {
+                    var data = (Map<?, ?>) target.get(key);
+                    int prodId = (int) (double) data.get("produces");
+                    if(unit.id() == prodId) {
+                        // We found the ability so we can return right away
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Check if there is an ability in the given set that creates the needed upgrade.
+     *
+     * @param raceAbilities The ability set we have to work with
+     * @param upgrade The upgrade we are looking for
+     * @return true iff there is an ability in the set that produces the upgrade we are looking for
+     */
+    private boolean abilityMakesUpgrade(Set<Ability> raceAbilities, Upgrade upgrade) {
+
+        for(var ability: raceAbilities) {
+            if(ability.target() instanceof Map<?, ?> target) {
+                String key = (String) target.keySet().iterator().next();
+                if(key.equalsIgnoreCase("Research")) {
+                    var data = (Map<?, ?>) target.get(key);
+                    int prodId = (int) (double) data.get("upgrade");
+                    if(upgrade.id() == prodId) {
+                        // We found the ability so we can return right away
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 
     public TechTree loadData() {
