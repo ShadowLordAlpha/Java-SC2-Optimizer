@@ -14,20 +14,21 @@ import lombok.Data;
 public class EbTimeFitness extends EbFitness {
 
     private double badGenePenalty = -1000;
-    private double goodGenePenalty = 1;
+    private double goodGenePenalty = 10;
     private double workerGoodGenePenalty = 2;
-    private double noopGenePenalty = 0.5;
+    private double noopGenePenalty = 1.0;
 
     @Override
     public double score(EbBuildOrder candidate) {
 
-        double score = candidate.maxTime() - candidate.currentFrame();
+        // Ad a multiplier for time
+        double score = (1 - (candidate.currentFrame() / candidate.maxTime())) * 200000.0;
 
         score += goal().isSatisfied(candidate) ? 0: -2 * candidate.maxTime();
         score += candidate.badGenes() * badGenePenalty;
         score += candidate.validActions().size() * goodGenePenalty;
         score += candidate.noop() * noopGenePenalty;
-        score += (candidate.workersOnGas() + candidate.workersOnMinerals()) * workerGoodGenePenalty;
+        // score += (candidate.workersOnGas() + candidate.workersOnMinerals()) * workerGoodGenePenalty;
 
         return score;
     }

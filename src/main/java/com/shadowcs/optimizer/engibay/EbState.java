@@ -63,7 +63,7 @@ public class EbState {
     }
 
     public double supplyAvailable() {
-        return supplyUsed() - supplyCap();
+        return supplyCap() - supplyUsed();
     }
 
     public double supplyUsed() {
@@ -73,7 +73,7 @@ public class EbState {
         for(int data: unitCountMap.keySet()) {
             double supp = techTree().unitMap().get(data).supply();
             if(supp > 0) {
-                supply += supp;
+                supply += (supp * unitCountMap.getOrDefault(data, 0));
             }
         }
 
@@ -87,7 +87,7 @@ public class EbState {
         for(int data: unitCountMap.keySet()) {
             double supp = techTree().unitMap().get(data).supply();
             if(supp < 0) {
-                supply -= supp;
+                supply -= (supp * unitCountMap.getOrDefault(data, 0));
             }
         }
 
@@ -108,6 +108,27 @@ public class EbState {
 
         for(var upgradeId: upgradeSet.toIntArray()) {
             if(!candidate.upgradeSet.contains(upgradeId)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public boolean isSatisfiedFuture(EbBuildOrder candidate) {
+
+        for(var unitId: unitCountMap.keySet()) {
+            if(!candidate.unitCountMap().containsKey((int) unitId) && !candidate.unitInProgressMap().containsKey((int) unitId)) {
+                return false;
+            }
+
+            if(candidate.unitCountMap().getOrDefault((int) unitId, 0) + candidate.unitInProgressMap().getOrDefault((int) unitId, 0)  < unitCountMap.getOrDefault((int) unitId, 0)) {
+                return false;
+            }
+        }
+
+        for(var upgradeId: upgradeSet.toIntArray()) {
+            if(!candidate.upgradeSet().contains(upgradeId) && !candidate.upgradesInProgressMap().contains(upgradeId)) {
                 return false;
             }
         }

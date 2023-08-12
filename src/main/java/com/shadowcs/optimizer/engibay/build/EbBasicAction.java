@@ -21,7 +21,7 @@ import java.util.Set;
  * @param consumed What conditions are consumed for the action
  * @param produced What does the action produce
  */
-public record EbBasicAction(String name, int ability, Set<EbCondition> required, Set<EbCondition> borrowed, Set<EbCondition> consumed, Set<EbCondition> produced) implements EbAction {
+public record EbBasicAction(String name, int caster, String casterName, boolean upgrade, int created, String createdName, int ability, Set<EbCondition> required, Set<EbCondition> borrowed, Set<EbCondition> consumed, Set<EbCondition> produced) implements EbAction {
 
     /**
      * Is it possible for us to actually do this build order with the only possibly needed thing being to wait.
@@ -32,7 +32,15 @@ public record EbBasicAction(String name, int ability, Set<EbCondition> required,
     @Override
     public boolean isValid(EbBuildOrder candidate) {
 
-        // TODO: do i need to check anything else? not really sure actually
+        // Because research just has to be a paint in the ass to do...
+        for(var prod: produced) {
+            if(prod.type() == EbConditionType.RESEARCH) {
+                // Don't allow duplicate research
+                if(candidate.upgradeSet().contains((int) prod.data()) || candidate.upgradesInProgressMap().contains((int) prod.data())) {
+                    return false;
+                }
+            }
+        }
 
         return checkFutureCondition(candidate, required) && checkFutureCondition(candidate, borrowed) && checkFutureCondition(candidate, consumed);
     }
@@ -157,7 +165,7 @@ public record EbBasicAction(String name, int ability, Set<EbCondition> required,
                 }
                 case SUPPLY -> {
                     // Check if we have the supply needed
-                    if(candidate.supplyAvailable() >= condition.data()) {
+                    if((candidate.supplyAvailable() - candidate.supplyUsedFuture()) >= condition.data()) {
                         continue;
                     }
                     return false;
@@ -233,6 +241,29 @@ public record EbBasicAction(String name, int ability, Set<EbCondition> required,
                         if (added) {
                             candidate.unitInProgressMap().addTo((int) condition.data(), -1);
                             candidate.unitCountMap().addTo((int) condition.data(), 1);
+
+                            if(Units.TERRAN_SCV.getUnitTypeId() == ((int) condition.data())
+                                    || Units.ZERG_DRONE.getUnitTypeId() == ((int) condition.data())
+                                    || Units.PROTOSS_PROBE.getUnitTypeId() == ((int) condition.data())) {
+
+                                candidate.workersGoingOnMinerals(candidate.workersGoingOnMinerals() + 1);
+                                candidate.addFutureAction(90, () -> {
+                                    candidate.workersGoingOnMinerals(candidate.workersGoingOnMinerals() - 1);
+                                    candidate.workersOnMinerals(candidate.workersOnMinerals() + 1);
+                                });
+                            } else if(Units.ZERG_EXTRACTOR.getUnitTypeId() == ((int) condition.data())
+                                    || Units.PROTOSS_ASSIMILATOR.getUnitTypeId() == ((int) condition.data())
+                                    || Units.TERRAN_REFINERY.getUnitTypeId() == ((int) condition.data())) {
+
+                                // We automatically assign 3 workers
+                                int count = Math.max(0, Math.min(3, candidate.workersOnMinerals() - 1));
+                                candidate.workersOnMinerals(candidate.workersOnMinerals() - count);
+                                candidate.workersGoingOnGas(candidate.workersGoingOnGas() + count);
+                                candidate.addFutureAction(90, () -> {
+                                    candidate.workersGoingOnGas(candidate.workersGoingOnGas() - count);
+                                    candidate.workersOnGas(candidate.workersOnGas() + count);
+                                });
+                            }
                         } else if(consumed) {
                             candidate.unitCountMap().addTo((int) condition.data(), -1);
 
@@ -256,30 +287,48 @@ public record EbBasicAction(String name, int ability, Set<EbCondition> required,
                             candidate.unitInProgressMap().addTo((int) condition.data(), 1);
                         }
                     } else {
+                        // If we are using a worker we need to remove them from minerals or gas if no mineral one left
                         if(!added) {
                             if(Units.PROTOSS_PROBE.getUnitTypeId() == ((int) condition.data())
                                     || Units.ZERG_DRONE.getUnitTypeId() == ((int) condition.data())
                                     || Units.TERRAN_SCV.getUnitTypeId() == ((int) condition.data())) {
 
-                                // TODO: check for workers not currently doing anything
                                 if(candidate.workersOnMinerals() > 0) {
                                     candidate.workersOnMinerals(candidate.workersOnMinerals() - 1);
-                                } else {
+                                } else if(candidate.workersOnGas() > 0) {
                                     candidate.workersOnGas(candidate.workersOnGas() - 1);
+                                } else {
+                                    System.out.println("ERROR: NO WORKER");
                                 }
                             }
                         }
 
+                        // Probes basically start back up right away
                         if(Units.PROTOSS_PROBE.getUnitTypeId() == ((int) condition.data())) {
                             if(!added) {
                                 // Probes are only occupied for a little bit and not the full time
                                 candidate.unitInUseMap().addTo((int) condition.data(), (int) multiple);
                                 candidate.addFutureAction(90, () -> {
-                                    candidate.unitInProgressMap().addTo(Units.PROTOSS_PROBE.getUnitTypeId(), -1);
-                                    // TODO: lets see if the build order figures it out or if we need to automatically add to minerals
+                                    candidate.unitInUseMap().addTo(Units.PROTOSS_PROBE.getUnitTypeId(), -1);
+
+                                    candidate.workersGoingOnMinerals(candidate.workersGoingOnMinerals() + 1);
+                                    candidate.addFutureAction(90, () -> {
+                                        candidate.workersGoingOnMinerals(candidate.workersGoingOnMinerals() - 1);
+                                        candidate.workersOnMinerals(candidate.workersOnMinerals() + 1);
+                                    });
                                 });
                             }
                         } else {
+                            // Drones basically just die mostly but not always (extractor trick) and scvs are just in use the whole time
+                            if(Units.TERRAN_SCV.getUnitTypeId() == ((int) condition.data()) || Units.ZERG_DRONE.getUnitTypeId() == ((int) condition.data())) {
+                                if(added) {
+                                    candidate.workersGoingOnMinerals(candidate.workersGoingOnMinerals() + 1);
+                                    candidate.addFutureAction(90, () -> {
+                                        candidate.workersGoingOnMinerals(candidate.workersGoingOnMinerals() - 1);
+                                        candidate.workersOnMinerals(candidate.workersOnMinerals() + 1);
+                                    });
+                                }
+                            }
                             candidate.unitInUseMap().addTo((int) condition.data(), (int) multiple);
                         }
                     }

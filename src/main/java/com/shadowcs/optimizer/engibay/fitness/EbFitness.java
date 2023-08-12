@@ -63,10 +63,20 @@ public abstract class EbFitness {
 
             candidate.validActions().add(action);
             action.execute(candidate);
-        }
 
-        while(candidate.futureActions().size() > 0) {
-            candidate.executeNextAction();
+            // As we basically always want to get the fastest in some manner we can end right after we meat the goal
+            // we just need this if to be off if we don't want this for some reason
+            // This if Check if we will be satisfied in the future based off the current actions
+            if(goal.isSatisfiedFuture(candidate)) {
+                // TODO: can probably replace this loop now with a last action and the loop for all the future actions... i'll do it later
+                while(candidate.futureActions().size() > 0) {
+                    candidate.executeNextAction();
+                }
+
+                if(goal.isSatisfied(candidate)) {
+                    break;
+                }
+            }
         }
 
         return candidate;

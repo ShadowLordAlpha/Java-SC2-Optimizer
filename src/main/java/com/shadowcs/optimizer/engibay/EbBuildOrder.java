@@ -45,11 +45,7 @@ public class EbBuildOrder extends EbState {
     private List<EbAction> validActions = new ArrayList<>();
 
     public double supplyAvailableFuture() {
-        return supplyAvailable() + supplyAvailable();
-    }
-
-    public double supplyAvailable() {
-        return supplyUsedFuture() - supplyCapFuture();
+        return supplyAvailable() - (supplyUsedFuture() - supplyCapFuture());
     }
 
     public int basesFuture() {
@@ -71,7 +67,7 @@ public class EbBuildOrder extends EbState {
         for(int data: unitInProgressMap.keySet()) {
             double supp = techTree().unitMap().get(data).supply();
             if(supp > 0) {
-                supply += supp;
+                supply += (supp * unitInProgressMap.getOrDefault(data, 0));;
             }
         }
 
@@ -85,7 +81,7 @@ public class EbBuildOrder extends EbState {
         for(int data: unitInProgressMap.keySet()) {
             double supp = techTree().unitMap().get(data).supply();
             if(supp < 0) {
-                supply -= supp;
+                supply -= (supp * unitInProgressMap.getOrDefault(data, 0));
             }
         }
 
@@ -130,6 +126,10 @@ public class EbBuildOrder extends EbState {
      */
     public int getNextActionFrame() {
         return !futureActions.isEmpty() ? futureActions.firstKey(): Integer.MAX_VALUE;
+    }
+
+    public int getLastActionFrame() {
+        return !futureActions.isEmpty() ? futureActions.lastKey(): Integer.MAX_VALUE;
     }
 
     public void collectResources(int delta) {
